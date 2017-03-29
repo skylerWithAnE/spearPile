@@ -1,0 +1,16 @@
+This is correct.
+
+Romeo, a variable.
+Juliet, another variable.
+Tybalt, the adversary.
+Benvolio, a friend.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo, Tybalt and Juliet]
+
+Romeo: I am a toad.
+
+[Exeunt omnes]
+

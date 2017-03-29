@@ -1,0 +1,15 @@
+This is incorrect due to duplicated actors.
+
+Romeo, a variable.
+Juliet, another variable.
+Tybalt, the adversary.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo]
+[Enter Tybalt, Juliet and Romeo]
+
+Romeo: Juliet, I am a toad.
+
+[Exeunt]

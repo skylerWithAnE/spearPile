@@ -1,0 +1,18 @@
+XYZ.
+
+Romeo, XYZ.
+Juliet, XYZ.
+Tybalt, XYZ.
+Benvolio, XYZ.
+
+Act I: XYZ.
+
+Scene I: XYZ.
+
+[Enter Romeo and Juliet]
+Romeo: Am I as fancy as a toad?
+Juliet: Is Romeo better than a toad?
+Romeo: Are you better than a fancy purse?
+Juliet: Is Romeo more furry than you?
+Romeo: Is a fancy lad worse than Romeo?
+[Exeunt]

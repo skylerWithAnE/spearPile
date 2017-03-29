@@ -1,0 +1,34 @@
+Countdown iteration.
+
+Romeo, the counter.
+Tybalt, a foil for Romeo.
+
+Act I: Acting.
+
+Scene I: Main.
+
+[Enter Romeo]
+
+Romeo: I am an amazing attractive beautiful lad. I am 
+    the sum of myself and a noble roman.
+    
+[Exit Romeo]
+
+Scene II: Setting up the newline.
+[Enter Tybalt]
+
+Tybalt: I am Romeo.
+
+[Exit Tybalt]
+
+
+Scene III: The Loop.
+
+[Enter Romeo and Tybalt]
+
+Tybalt: Open your heart. 
+Romeo: Speak your mind. I am the difference between
+    myself and a stone. Am I as good as nothing? If not, let us proceed
+    posthaste to Act I, Scene III.
+    
+[Exit Romeo]

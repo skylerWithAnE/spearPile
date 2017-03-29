@@ -1,0 +1,23 @@
+This is incorrect since we skipped an act.
+
+Romeo, a variable.
+Juliet, another variable.
+
+Act II: The first act.
+Scene I: The first scene.
+
+[Enter Romeo and Juliet]
+
+Romeo: You are a toad.
+
+[Exeunt]
+
+Act III: The first act.
+Scene I: The first scene.
+
+[Enter Romeo and Juliet]
+
+Romeo: You are a toad.
+
+[Exeunt]
+

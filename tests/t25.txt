@@ -1,0 +1,19 @@
+This is incorrect due to the exit.
+
+Romeo, a variable.
+Juliet, another variable.
+Tybalt, the adversary.
+Benvolio, a friend.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo, Tybalt and Juliet]
+
+Romeo: Juliet, I am a toad.
+
+[Exit Tybalt]
+
+Romeo: Juliet, you are a toad.
+
+[Exit Benvolio]

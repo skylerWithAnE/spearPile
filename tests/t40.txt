@@ -1,0 +1,14 @@
+This is correct.
+
+Romeo, a variable.
+Juliet, another variable.
+Tybalt, the adversary.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo and Juliet]
+
+Romeo: Recall the Emancipation Proclamation.
+
+[Exeunt omnes]

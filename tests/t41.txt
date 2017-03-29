@@ -1,0 +1,15 @@
+This is correct.
+
+Romeo, a variable.
+Juliet, another variable.
+Tybalt, the adversary.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo and Juliet]
+
+Juliet: Am I as good as a toad?
+Romeo: If so, remember me.
+
+[Exeunt omnes]
