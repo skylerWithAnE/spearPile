@@ -68,9 +68,9 @@ func printMap(m map[string]*regexp.Regexp) {
 }
 
 func tokenize(s string) (bool, string, token, int) {
-	// fmt.Println(s)
-	var rstr string
+
 	var newtoken token
+	rstr := s
 	linebreaks := 0
 	pass := false
 	for key, value := range t {
@@ -103,13 +103,20 @@ func main() {
 	for {
 		pass, leftover, newtoken, linebreaks := tokenize(input)
 		if pass == false {
-			fmt.Println("Error, could not tokenize input! At line", linenum) //, "\ninput:", input)
-			return
+			if len(input) > 1 {
+				input = input[1:]
+				// fmt.Println("take one away..")
+			} else {
+				fmt.Println("Fucking fail.")
+				return
+			}
+
+		} else {
+			newtoken.linenum = linenum
+			fmt.Println("new token:\n\t\tSYM:", newtoken.sym, "\n\t\tLEX:", newtoken.lex, "\n\t\tLINE:", newtoken.linenum)
+			tokens = append(tokens, newtoken)
+			input = leftover
+			linenum += linebreaks
 		}
-		newtoken.linenum = linenum
-		fmt.Println("new token: SYM:", newtoken.sym, "LEX:", newtoken.lex, "LINE:", newtoken.linenum)
-		tokens = append(tokens, newtoken)
-		input = leftover
-		linenum += linebreaks
 	}
 }
