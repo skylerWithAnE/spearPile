@@ -11,7 +11,8 @@ import (
 )
 
 var t map[string]*regexp.Regexp
-var nt map[string][]string
+
+//var nt map[string][]string
 var currState []string
 var terminalCandidates []*regexp.Regexp
 var verbose bool
@@ -64,7 +65,7 @@ func readTerminals(fname string) map[string]*regexp.Regexp {
 	return m
 }
 
-func printMap(m map[string]*regexp.Regexp) {
+func printRegexMap(m map[string]*regexp.Regexp) {
 	for key, value := range m {
 		fmt.Println("Token:\t\t", key, "\nProduction:\t", value)
 	}
@@ -111,7 +112,7 @@ func main() {
 	verbose = false
 	t = readTerminals("terminals.txt")
 	if verbose {
-		printMap(t)
+		printRegexMap(t)
 	}
 	data, err := ioutil.ReadFile("inputs/11-1.txt")
 	check(err)
@@ -120,11 +121,12 @@ func main() {
 	var tokens []token
 	for {
 		pass, leftover, newtoken := tokenize(input)
-		if pass == false {
+		if !pass {
 			if len(input) > 1 {
 				if input[0:1] == "\n" {
 					linenum++
 				}
+				//BUG(?)
 				input = input[1:]
 			} else {
 				if input == "$" {
