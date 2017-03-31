@@ -3,11 +3,9 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"io"
 	"io/ioutil"
 	"os"
 	"regexp"
-	"strings"
 )
 
 var t map[string]*regexp.Regexp
@@ -17,58 +15,9 @@ var currState []string
 var terminalCandidates []*regexp.Regexp
 var verbose bool
 
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
 type token struct {
 	sym, lex string
 	linenum  int
-}
-
-func readTerminals(fname string) map[string]*regexp.Regexp {
-	f, err := os.Open(fname)
-	check(err)
-	defer f.Close()
-
-	r := bufio.NewReader(f)
-	m := make(map[string]*regexp.Regexp)
-
-	for {
-		l, _, err := r.ReadLine()
-		if err == io.EOF {
-			break
-		}
-
-		entry := strings.Split(string(l), "->")
-
-		if len(entry) == 2 {
-
-			token := strings.Trim(entry[0], " ")
-			production := strings.Trim(entry[1], " ")
-
-			if verbose {
-				fmt.Println(token, production)
-			}
-
-			rex, err := regexp.Compile("(?i)" + production)
-			if err == nil {
-				m[token] = rex
-			} else {
-				fmt.Println("Internal error! Production failed to compile to regex!")
-			}
-		}
-	}
-
-	return m
-}
-
-func printRegexMap(m map[string]*regexp.Regexp) {
-	for key, value := range m {
-		fmt.Println("Token:\t\t", key, "\nProduction:\t", value)
-	}
 }
 
 func tokenize(s string) (bool, string, token) {
@@ -92,7 +41,7 @@ func tokenize(s string) (bool, string, token) {
 
 func writeTokensToFile(tokens []token) {
 	f, err := os.Create("tokenFile")
-	check(err)
+	Check(err)
 	defer f.Close()
 	w := bufio.NewWriter(f)
 	currLine := 1
@@ -110,12 +59,12 @@ func writeTokensToFile(tokens []token) {
 
 func main() {
 	verbose = false
-	t = readTerminals("terminals.txt")
+	t = ReadTerminals("terminals.txt")
 	if verbose {
-		printRegexMap(t)
+		PrintRegexMap(t)
 	}
 	data, err := ioutil.ReadFile("inputs/11-1.txt")
-	check(err)
+	Check(err)
 	input := string(data) + "$"
 	linenum := 1
 	var tokens []token

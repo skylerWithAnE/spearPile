@@ -13,7 +13,7 @@ import (
 // Or statments create new productions for convenience/consistency.
 func ReadNonTerminals(fname string) map[string][]string {
 	f, err := os.Open(fname)
-	check(err)
+	Check(err)
 	defer f.Close()
 
 	r := bufio.NewReader(f)
@@ -49,7 +49,7 @@ func ReadNonTerminals(fname string) map[string][]string {
 // ReadTerminals Takes a filename, returns a map of terminals and their regexes.
 func ReadTerminals(fname string) map[string]*regexp.Regexp {
 	f, err := os.Open(fname)
-	check(err)
+	Check(err)
 	defer f.Close()
 
 	r := bufio.NewReader(f)
