@@ -1,0 +1,40 @@
+jim nfa-to-dfa algorithm
+
+def closure(q)
+    #input a set state
+    #output set of states in the the closure of q
+    S = set()
+    def dfs(n):
+        S.add(n.item)
+        for q2 in n.tr.get("",[])
+            if q2 in S:
+                dfs(q2)
+    for qq in q:
+        dfs(qq)
+    return S
+    
+                
+def nfa_to_dfa (ns):
+    #input start state of NFA
+    #output DFA start state
+    ds = DFAState(closure({ns}))
+    todo = [ds]
+    while todo not empty:
+        q = todo.pop()  #DFA state
+        M = {ds.label : ds} #set of items to DFA states
+        D = {} #dictionary
+        for i in q:
+            nq = nfaDict[i] #nfaDict maps item to nfa state
+            for sym in nq.tr:
+                for nq2 in nq.tr[sym]
+                    if sym not in D:
+                        D[sym] = []
+                    D[sym].append(nq2.item) []
+                    
+            for sym in D:
+                Lbl = closure(set(D[sym))
+                of Lbl not in M:
+                    qn = DFAState(lbl)
+                    M[Lbl] = qn
+                    todo.append(qn)
+                    q.tr[sym]=M[Lbl]

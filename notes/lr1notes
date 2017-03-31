@@ -1,0 +1,72 @@
+class LR1Item {
+    string lhs
+    vector<string> rhs;
+    int dpos;
+    string lookAhead
+    };
+
+struct DFAState {
+    set <LR1Item> items;
+    map<string, DFAState*> t;
+    }
+
+map<set<LR1Item>, DFAState*> theta
+vector<DFAState*> to_do;
+DFAState* Q = new DFAState();
+Q->items.add(LR1Item("S'", ["S"], 0, $))
+expand(Q)
+to_do.push_back(Q)
+while (! to_do.empty()) {
+    Q = to_do.pop()
+    map<string, LR1item> omega;
+    for (auto I: Q->items) {
+        if(I.dpos is not at end) {
+            Lr1Item n = LR1item(I.lhs, I.rhs, I.dpos, I.lookahead)
+            omega[I.rhs[i.dpos]].add(n)
+        }
+    }
+    for auto k: omega {
+        j = omega[k]
+        if( j not in theta) {
+            w = new DFAState(j)
+            expand(w)
+            theta[j] = w
+            to_do.add(w)
+        }
+    Q.tr[k=theta[j]
+    }
+}
+
+//Expand:
+
+void expand(DFAState *Q) {
+    flag = true
+    while flag:
+        flag = false
+            for(auto I: Q->items) {
+                if thing after dpos = terminal
+                    do nothing!
+                else
+                    let alpha = thing after dpos
+                        for p with lhs of alpha:
+                            for phi in magic(I) {
+                                i2 = item(alpha, p, 0, phi)
+                                if Q->items does not have I2:
+                                    Q->items add I2
+                                    flag = True
+                            }
+        }
+}
+
+
+def magic(I):
+    i = I.dpos+1
+    rv = set(First[I.rhs[i]) //first is a dictionary, give it a symbol and it returns the first for that symbol
+    while I.rhs[i] is nullable:
+        i++
+        rv = rv union First[I.rhs[i]]
+    if we got all the way to the end:
+        rv.add(I.lookahead)
+    return rv
+    
+//magic is giving us the set of all lookaheads.

@@ -1,0 +1,65 @@
+SLR(1) parsing:
+
+LR(0) reducing state occurred when dpos was at end of input
+
+SLR(1) uses follow: compute follow...
+s'  -> s
+s   -> if(e) s 
+    -> if(e) s else s
+    -> id = e
+
+e   -> e+f | f
+f   -> id | (e)
+
+follow:
+
+s'  -> $
+s   -> else, $
+e   -> ), else, +, $
+f   -> ), else, +, $
+
+stack example: (bottom is top)
+
+input: if(x) y = z $
+
+CurrState, NewState
+0, None
+2, 1    "if" consumed
+3, 2    "(" consumed
+4, 3    "x" consumed
+        create new tree node, because reduction occurred here
+        "if(x" matches reduction f->id(dpos)
+        pop 4,3 from the stack and push:
+5, 4    dpos is at end, so, another reduction
+        pop that, and push
+11,5    ")" consumed
+12,6
+16,7
+14,8
+4, 9    "z" consumed, reduce, pop
+5,10    reduce, pop, follow e out of state 14 into state 15, push
+15,11
+
+current stack:
+0, None
+2, 1
+3, 2
+11,5
+12,6
+13,12
+16,7
+14,8
+15,11
+
+after first pop:
+current stack:
+0, None
+2, 1
+3, 2
+11,5
+12,6
+13,12
+
+and next pop:
+0, None
+

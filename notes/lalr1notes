@@ -1,0 +1,151 @@
+e -> e+t | t
+t -> t+f | f
+f -> (e) | id
+
+LALR(1) item
+    lhs string
+    rhs list
+    dpos    int
+    lookahead   set
+
+q1
+{
+e-> # e+f /)
+e-> # e+f/+
+}
+
+when lhs, dpos, are the same, we can condense lookahead values
+q1 becomes
+{
+e-> # e+f / [Lookahead: ) +]
+}
+
+method:
+    1. build LR(0) DFA
+    2. add lookaheads via propagation
+        find item S'->#S call this sigma
+        sigma.lookahead.add("$")
+        ex.
+            first(D) = y, z
+            A->{whatever}#C[DE,x]
+            C->q
+            C->r
+            C->s
+            
+            so...
+            
+            C->#q[y]
+            C->#q[z]
+            C->#r[y]
+            C->#r[z]
+            C->#s[y]
+            C->#s[z]
+            
+            for all DFA nodes N:
+                for J in N.items:   #already added 1 lookahead to start process
+                    if J.dpos not at end:
+                        s = thing of J.rhs right after J.dpos
+                        Q = N.transition[s] #this Q is a DFA state
+                            let J2 be item in Q with:
+                                {   lhs = J.lhs
+                                    rhs = J.rhs
+                                    dpos = J.dpos+1
+                                }
+                                J2.lookahead = J2.lookahead union with J.lookahead
+                                if s is nonterminal: 
+                                    F = First(J.rhs[J.dos:]
+                                    for al items J3 in N:
+                                        if J3.dpos = 0 and J3.sym == "$
+                                            add F to J3.lookahead
+                                            
+            S->f|v=v
+            f->ID()
+            v->f|ID
+            
+            foo()
+            x=y
+            x=foo()
+            foo()=x     if func returns an address this writes to that address
+            foo()=bar()
+            
+            LR(0) grammar:
+            Q0 
+            {
+                production  [lookahead]
+                S'->#S      [$]
+                S->#f       [$]
+                S->#v=v     [$]
+                f->#ID()    [$, =]  
+                v->#f       [=]
+                v->#ID      [=]
+            }
+            Q0 transitions {
+            f->Q2
+            v->Q3
+            ID->Q4
+            S->Q1
+            
+            Q1{
+            S'->S# [$]
+            }
+            
+            Q2{
+            s->f#   [$]
+            v->f#   [$]  
+            }
+            
+            Q3{
+            s->v#=v [$]
+            }
+            Q3 transitions {
+            =->6
+            }
+ 
+            Q4{
+            f->ID#()    [$, =]
+            v->ID#      [$]
+            }
+            Q4 transitions{
+            (->Q5
+            
+            Q5{
+            f->id(#) [$, =]
+            }
+            
+            Q7{ 
+            f-> id()# [$, =] 
+            }
+            
+            Q6{
+            s->v=#v     [$]
+            v->#f       [$]    
+            v->#ID      [$]
+            f->#ID()    [$]
+            }
+            Q6 transitions{
+            ID->Q4
+            f->9
+            v->8
+            }
+            
+            Q9{
+            v->f#   [$]
+            }
+            
+            Q10{
+            v->f#   [$]
+            }
+            
+            parse table
+            
+                    f   v   ID  S   $       =       (   )
+                0   2   3   4   1
+                1                   R,1,S   
+                2                   R,1,S   R,1,v
+                3                           6
+                4                   R,1,v   R,1,v   5      
+                5                                       7
+                6   9   8   4
+                7                   R,3,f   R,3,f
+                8                   R,3,S
+                9                   R,1,v
