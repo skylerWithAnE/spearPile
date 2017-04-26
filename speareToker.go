@@ -9,10 +9,6 @@ import (
 )
 
 var t map[string]*regexp.Regexp
-
-//var nt map[string][]string
-var currState []string
-var terminalCandidates []*regexp.Regexp
 var verbose bool
 
 type token struct {
@@ -95,4 +91,9 @@ func main() {
 		}
 	}
 	writeTokensToFile(tokens)
+	nonterms := ReadNonTerminals("nonterminals.txt")
+	nullables := NullableList(nonterms, t)
+	fmt.Println("Nullable Print******\n")
+	PrintNullableMap(nullables)
+	//MakeTree(TerminalList(t), tokens)
 }

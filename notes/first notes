@@ -1,0 +1,11 @@
+let nullable = {}
+do
+    for each nonterminal N:
+        if N not in nullable:
+            for all productions P with lhs of N:
+                for x in P:
+                    if x not in nullable:
+                        break out of 'for x' loop
+                if we did not break out of loop:
+                    nullable = nullable ∪ {N}
+until nullable stabilizes

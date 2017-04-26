@@ -60,7 +60,6 @@ func ReadTerminals(fname string) map[string]*regexp.Regexp {
 		if err == io.EOF {
 			break
 		}
-
 		entry := strings.Split(string(l), "->")
 
 		if len(entry) == 2 {
@@ -91,4 +90,55 @@ func TerminalList(termMap map[string]*regexp.Regexp) []string {
 		l = append(l, key)
 	}
 	return l
+}
+
+// NullableList generates list of nullables
+func NullableList(nonterms map[string][]string, terms map[string]*regexp.Regexp) map[string]string {
+
+	nullable := make(map[string]string)
+	// using a map because go lacks a set builtin.
+	for k := range terms {
+		// load up all of the terminals into nullable set.
+		nullable[k] = "t"
+	}
+	for {
+		stable := true
+		for k, v := range nonterms {
+			loopBreak := false
+			for i := 0; i < len(v); i++ {
+				p := v[i]
+				// my nonterms are stored in a map[string][]string
+				// each string in the []string slice represents a production.
+				ps := strings.Split(p, " ")
+				// so split that string to get an iterable slice.
+				fmt.Println("checking production", k, "->", p)
+				for j := 0; j < len(ps); j++ {
+					pj := ps[j]
+					// pj is the current symbol of the current production
+					_, present := nullable[pj]
+					if !present {
+						// current symbol not in nullable set.
+						fmt.Println(pj, "is not in nullable, breaking...")
+						loopBreak = true
+						break
+					}
+				}
+				if !loopBreak {
+					fmt.Println("no loop break for", k)
+					_, present := nullable[k]
+					if !present {
+						stable = false
+						nullable[k] = "nt"
+						fmt.Println("Adding", k, "to nullable set")
+					}
+
+				}
+			}
+
+		}
+		if stable {
+			break
+		}
+	}
+	return nullable
 }
