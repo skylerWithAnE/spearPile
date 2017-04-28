@@ -10,7 +10,7 @@ import (
 )
 
 // ReadNonTerminals pass a file name, get a map of nonterminals and their productions.
-// Or statments create new productions for convenience/consistency.
+// Or statements create new productions for convenience/consistency.
 func ReadNonTerminals(fname string) map[string][]string {
 	f, err := os.Open(fname)
 	Check(err)
@@ -67,7 +67,7 @@ func ReadTerminals(fname string) map[string]*regexp.Regexp {
 			token := strings.Trim(entry[0], " ")
 			production := strings.Trim(entry[1], " ")
 
-			if verbose {
+			if Verbose {
 				fmt.Println(token, production)
 			}
 
@@ -97,17 +97,16 @@ func NullableList(nonterms map[string][]string, terms map[string]*regexp.Regexp)
 
 	nullable := make(map[string]string)
 	// using a map because go lacks a set builtin.
-	for k := range terms {
-		// load up all of the terminals into nullable set.
-		nullable[k] = "t"
-	}
+	nullable[lambda] = lambda
+	_, present := nullable[lambda]
+	fmt.Println(present)
 	for {
 		stable := true
 		for k, v := range nonterms {
 			_, present := nullable[k]
 			if !present {
-				loopBreak := false
 				for i := 0; i < len(v); i++ {
+					loopBreak := false
 					p := v[i]
 					// my nonterms are stored in a map[string][]string
 					// each string in the []string slice is a production.
@@ -118,6 +117,7 @@ func NullableList(nonterms map[string][]string, terms map[string]*regexp.Regexp)
 						pj := ps[j]
 						// pj is the current symbol of the current production
 						_, present = nullable[pj]
+						fmt.Println("is", pj, "present?", present)
 						if !present {
 							// current symbol not in nullable set.
 							fmt.Println(pj, "is not in nullable, breaking...")
@@ -144,4 +144,102 @@ func NullableList(nonterms map[string][]string, terms map[string]*regexp.Regexp)
 		}
 	}
 	return nullable
+}
+
+// BuildFirstMap build the first map.
+func BuildFirstMap(nonterms map[string][]string, terms map[string]*regexp.Regexp) map[string][]string {
+	first := make(map[string][]string)
+	for k := range terms {
+		var set []string
+		set = append(set, k)
+		first[k] = set
+	}
+	stable := true
+	for {
+		stable = true
+		for lhs, v := range nonterms {
+			for _, production := range v {
+				pa := strings.Split(production, " ")
+				for _, symbol := range pa {
+					targetFirst := first[symbol]
+					for _, fSymbol := range targetFirst {
+						if !StringInSlice(fSymbol, first[lhs]) {
+							first[lhs] = append(first[lhs], fSymbol)
+							stable = false
+						}
+					}
+					if !IsNullable(symbol) {
+						break
+					}
+				}
+			}
+		}
+		if stable {
+			break
+		}
+	}
+
+	return first
+}
+
+// BuildFollowMap creates the follow map.
+func BuildFollowMap() map[string][]string {
+	follow := make(map[string][]string)
+	follow[StartState] = append(follow[StartState], "$")
+	for {
+		//do-while follow is not stable
+		stable := true
+		for N, v := range NonTerminals {
+			//for all NonTerminals
+			for _, production := range v {
+				// fmt.Println("checking production", production, "in NonTerm", N)
+				symbolArray := strings.Split(production, " ")
+				// var loopBreak bool
+				for i, symbol := range symbolArray {
+					fmt.Println("N:", N, "symbol:", symbol)
+					// for each symbol in the production.
+					if IsNonTerminal(symbol) && i < len(symbolArray)-1 {
+
+						// fmt.Println("symbol,", symbol, ", is nonterminal and the nextSymbol is:", nextSymbol)
+						// fmt.Println(follow[nextSymbol])
+						for j := i + 1; j < len(symbolArray); j++ {
+							nextSymbol := symbolArray[j]
+							for _, s := range FirstMap[nextSymbol] {
+								// union loop.
+								if !StringInSlice(s, follow[symbol]) {
+									// fmt.Println("Add", s, "to follow[", symbol, "]")
+									follow[symbol] = append(follow[symbol], s)
+									stable = false
+								}
+							} // end union loop
+							if !IsNullable(nextSymbol) {
+								fmt.Println("not nullable next symbol..", nextSymbol)
+								// loopBreak = true
+								break
+							}
+
+						}
+
+						// if !loopBreak {
+						// follow[production] union follow[NonTerm]
+						for _, s := range follow[N] {
+							fmt.Println("string s", s, "in follow[", N, "]")
+							if !StringInSlice(s, follow[symbol]) {
+								fmt.Println("add stuff in lower loop...", symbol, "s:", s)
+								follow[symbol] = append(follow[symbol], s)
+								stable = false
+							}
+						} //end union loop.
+						// }
+					}
+				} //end symbol loop
+
+			} //end production loop
+		} //end nonterm loop
+		if stable {
+			break
+		}
+	} //end infinite loop
+
+	return follow
 }

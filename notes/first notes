@@ -9,3 +9,41 @@ do
                 if we did not break out of loop:
                     nullable = nullable ∪ {N}
 until nullable stabilizes
+
+
+
+Now to generate first sets
+Initialization: first[t] = {t} for all terminals t
+
+first=Map<String,Set<String>>()
+for each terminal t:
+    first[t] = {t}
+
+Now use same repeated cycling as with nullable
+
+do
+    for all nonterminals N:
+        for all productions P with lhs of N:
+            for x in P:
+                first[N] = first[N] ∪ first[x]
+                if x not nullable: 
+                    break
+until first stabilizes
+
+SNT -> a | A b BNT | BNT CNT DNT e
+ANT -> x | CNT y
+BNT -> DNT CNT | q
+CNT -> DNT | w | CNT z
+DNT -> b DNT | λ
+
+A : b w x y z
+B : b q w z
+C : b w z
+D : b
+S : a b e q w x y z
+
+SNT -> a | ANT b BNT | BNT CNT DNT e
+ANT -> x | CNT y
+BNT -> DNT CNT | q
+CNT -> DNT | w | CNT z
+DNT -> b DNT | λ

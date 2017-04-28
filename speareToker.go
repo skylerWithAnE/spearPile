@@ -5,11 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"regexp"
+	//"regexp"
 )
-
-var t map[string]*regexp.Regexp
-var verbose bool
 
 type token struct {
 	sym, lex string
@@ -21,7 +18,7 @@ func tokenize(s string) (bool, string, token) {
 	var newtoken token
 	rstr := s
 	pass := false
-	for key, value := range t {
+	for key, value := range TerminalRegexMap {
 		result := value.FindStringIndex(s)
 		if result != nil && result[0] == 0 {
 			lexstr := s[result[0]:result[1]]
@@ -54,10 +51,10 @@ func writeTokensToFile(tokens []token) {
 }
 
 func main() {
-	verbose = false
-	t = ReadTerminals("terminals.txt")
-	if verbose {
-		PrintRegexMap(t)
+	Verbose = false
+	TerminalRegexMap = ReadTerminals("terminals.txt")
+	if Verbose {
+		PrintRegexMap(TerminalRegexMap)
 	}
 	data, err := ioutil.ReadFile("inputs/11-1.txt")
 	Check(err)
@@ -83,7 +80,7 @@ func main() {
 
 		} else {
 			newtoken.linenum = linenum
-			if verbose {
+			if Verbose {
 				fmt.Println("new token:\n\t\tSYM:", newtoken.sym, "\n\t\tLEX:", newtoken.lex, "\n\t\tLINE:", newtoken.linenum)
 			}
 			tokens = append(tokens, newtoken)
@@ -91,9 +88,14 @@ func main() {
 		}
 	}
 	writeTokensToFile(tokens)
-	nonterms := ReadNonTerminals("nonterminals.txt")
-	nullables := NullableList(nonterms, t)
+	NonTerminals = ReadNonTerminals("nonterminals.txt")
+	Nullables = NullableList(NonTerminals, TerminalRegexMap)
 	fmt.Println("Nullable Print******\n")
-	PrintNullableMap(nullables)
+	PrintNullableMap(Nullables)
+	FirstMap = BuildFirstMap(NonTerminals, TerminalRegexMap)
+	PrintFirstMap()
+	FollowMap = BuildFollowMap()
+	PrintFollowMap()
+	fmt.Println("?")
 	//MakeTree(TerminalList(t), tokens)
 }

@@ -1,5 +1,4 @@
-SNT -> a | A b BNT | BNT CNT DNT e
+SNT -> a | ANT b BNT | BNT CNT e
 ANT -> x | CNT y
-BNT -> DNT CNT | q
-CNT -> DNT | w | CNT z
-DNT -> b DNT | b
+BNT -> CNT CNT | q
+CNT -> λ | w

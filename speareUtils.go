@@ -31,6 +31,44 @@ func PrintNullableMap(m map[string]string) {
 	}
 }
 
+// PrintFirstMap util to cleanly print first list
+func PrintFirstMap() {
+	printStringSliceMap(FirstMap, "First")
+	// m := FirstMap
+	// for key, value := range m {
+	// 	fmt.Print("First[", key, "] = {")
+	// 	for i := range value {
+	// 		fmt.Print(value[i])
+	// 		if i != len(value)-1 {
+	// 			fmt.Print(", ")
+	// 		}
+	// 	}
+
+	// 	fmt.Print("}\n")
+	// }
+}
+
+func PrintFollowMap() {
+	printStringSliceMap(FollowMap, "Follow")
+}
+
+func printStringSliceMap(m map[string][]string, sym string) {
+	for key, value := range m {
+		if IsNonTerminal(key) {
+			fmt.Print(sym+"[", key, "] = {")
+			for i := range value {
+
+				fmt.Print(value[i])
+				if i != len(value)-1 {
+					fmt.Print(", ")
+				}
+			}
+
+			fmt.Print("}\n")
+		}
+	}
+}
+
 // PrintRegexMap Util to print the regex map.
 func PrintRegexMap(m map[string]*regexp.Regexp) {
 	for key, value := range m {
@@ -47,7 +85,24 @@ func Check(e error) {
 
 // MyLog used to print if verbose is true
 func MyLog(message string) {
-	if verbose {
+	if Verbose {
 		fmt.Println(message)
 	}
 }
+
+// IsNullable returns true/false for symbol in nullable list.
+func IsNullable(candidate string) bool {
+	_, present := Nullables[candidate]
+	return present
+}
+
+// IsNonTerminal returns true/false for symbol in nonterminal map
+func IsNonTerminal(candidate string) bool {
+	_, present := NonTerminals[candidate]
+	return present
+}
+
+// UnionSlices treats slices as a set and unions two slices.
+// func UnionSlices(src []string, dst []string) []string {
+
+// }
