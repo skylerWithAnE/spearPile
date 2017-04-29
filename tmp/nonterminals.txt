@@ -7,15 +7,11 @@ dramatis-personae' -> dramatis-personae | λ
 actlist -> act actlist'
 actlist' -> act | λ
 
-act -> ACT act'
-act' -> SOME_ROMAN_NUMBERS COLON wordlist peq scenelist
-act' ->  I COLON wordlist peq scenelist
+act -> ACT COLON wordlist peq scenelist
 
 scenelist -> scene scenelist'
 scenelist' -> scenelist | λ
-scene -> SCENE scene'
-scene' -> SOME_ROMAN_NUMBERS COLON wordlist peq statement-list
-scene' -> I COLON wordlist peq statement-list
+scene -> SCENE COLON wordlist peq statement-list
 
 statement-list -> statement statement-list | λ
 statement -> enterexit-stmt | line
@@ -23,7 +19,7 @@ line -> ACTOR COLON optional-addressee sentence-list
 optional-addressee -> ACTOR COMMA | λ
 optional-interjection -> INTERJECTION COMMA | λ
 sentence-list -> optional-interjection sentence sentence-list'
-sentence-list' -> λ  | sentence sentence-list'
+sentence-list' -> λ  | optional-interjection sentence sentence-list'
 sentence -> io PE | assignment PE | goto PE | stackop PE | question QUESTION | conditional
 
 io -> SPEAK_YOUR_MIND | OPEN_YOUR_MIND | OPEN_YOUR_HEART | LISTEN_TO_YOUR_HEART
@@ -35,7 +31,7 @@ enterexit-stmt' -> EXEUNT exeunt'
 exeunt' ->  actorlist RBRACKET | OMNES RBRACKET | RBRACKET
 
 assignment -> YOU assignment'
-assignment' -> ARE assignment'' | value
+assignment' -> ARE assignment'' | value 
 assignment'' -> AS adj AS arithmetic | arithmetic
 assignment -> I AM arithmetic
 
@@ -63,9 +59,7 @@ actorlist2' -> COMMA actorlist2 | AND ACTOR
 
 noun -> POS_NOUN | NEG_NOUN
 adj -> POS_ADJ | NEG_ADJ
-adj-list -> adj adj-list'
-adj-list' -> λ | adj
-
+adj-list -> adj adj-list | λ
 
 let_us -> LET US | WE let_us'
 let_us' -> SHALL | MUST | OUGHT TO
@@ -73,13 +67,10 @@ goto -> let_us goto'
 goto' -> RETURN | PROCEED goto''
 goto'' -> TO goto-target | POSTHASTE TO goto-target
 
-goto-target -> ACT goto-target' | SCENE goto-target''
-goto-target' -> SOME_ROMAN_NUMBERS goto-target''''
-goto-target' ->  I goto-target''''
-goto-target'''' -> COMMA SCENE goto-target''' | λ
-goto-target''' -> SOME_ROMAN_NUMBERS | I
-goto-target'' -> I
-goto-target'' -> SOME_ROMAN_NUMBERS
+goto-target -> ACT goto-target' | goto-target'''
+goto-target' ->  goto-target''
+goto-target'' -> COMMA SCENE goto-target''' | COMMA SCENE | λ
+goto-target''' -> wordlist
 
 stackop -> REMEMBER arithmetic
 stackop -> RECALL wordlist
@@ -101,5 +92,5 @@ conditional -> IF conditional'
 conditional' -> SO COMMA optional-interjection sentence
 conditional' -> NOT COMMA optional-interjection sentence
 
-wordlist -> ARTICLE | AM | I | noun | adj | THE | WE | ACTOR | AND | OF | SUM | IS | LESS | MORE | YOU | IF | IS | POSSESSIVE | TO | OPEN_YOUR_HEART | SPEAK_YOUR_MIND | ANYWORD | wordlist'
-wordlist' -> λ | wordlist
+wordlist -> allwords | allwords wordlist
+allwords -> ANYWORD | ARTICLE | AM | I | noun | adj | THE | WE | ACTOR | AND | IS | LESS | MORE | YOU | IF | IS | POSSESSIVE | TO | OPEN_YOUR_HEART | SPEAK_YOUR_MIND | THE_SUM_OF

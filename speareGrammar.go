@@ -29,6 +29,7 @@ func ReadNonTerminals(fname string) map[string][]string {
 
 		if len(entry) == 2 {
 			token := strings.Trim(entry[0], " ")
+			NonTerminalSymbolList = append(NonTerminalSymbolList, token)
 			production := strings.Trim(entry[1], " ")
 			multiProduction := strings.Split(production, "|")
 			if len(multiProduction) > 0 {
@@ -190,27 +191,38 @@ func BuildFollowMap() map[string][]string {
 	for {
 		//do-while follow is not stable
 		unstable := false
-		for N, v := range NonTerminals {
+		//for N, v := range NonTerminals {
+		for _, N := range NonTerminalSymbolList {
+			v := NonTerminals[N]
 			//for all NonTerminals
 			for _, production := range v {
-				// fmt.Println("checking production", production, "in NonTerm", N)
+				fmt.Println("checking production", production, "in NonTerm", N)
 				symbolArray := strings.Split(production, " ")
 				for i, symbol := range symbolArray {
-					// fmt.Println("N:", N, "symbol:", symbol)
+					fmt.Println("N:", N, "\nsymbol:", symbol)
 					// for each symbol in the production.
 					if IsNonTerminal(symbol) && i < len(symbolArray)-1 {
+						loopBreak := false
 						// fmt.Println("symbol,", symbol, ", is nonterminal and the nextSymbol is:", nextSymbol)
 						// fmt.Println(follow[nextSymbol])
 						for j := i + 1; j < len(symbolArray); j++ {
 							nextSymbol := symbolArray[j]
+							old := follow[symbol]
 							follow[symbol], unstable = UnionSlices(follow[symbol], FirstMap[nextSymbol])
+							if unstable {
+								fmt.Println("union occurred:", "follow[", symbol, "] is now ",
+									follow[symbol], "previously ", old, ".")
+							}
 							if !IsNullable(nextSymbol) {
-								// fmt.Println("not nullable next symbol..", nextSymbol)
+								fmt.Println("not nullable next symbol..", nextSymbol)
+								// loopBreak = true
 								break
 							}
 
 						}
-						follow[symbol], unstable = UnionSlices(follow[symbol], follow[N])
+						if !loopBreak {
+							follow[symbol], unstable = UnionSlices(follow[symbol], follow[N])
+						}
 
 					}
 				} //end symbol loop

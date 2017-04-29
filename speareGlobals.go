@@ -5,6 +5,7 @@ import "regexp"
 var TerminalRegexMap map[string]*regexp.Regexp
 var TerminalSymbolList []string
 var NonTerminals map[string][]string
+var NonTerminalSymbolList []string
 var Nullables map[string]string
 var FirstMap map[string][]string
 var FollowMap map[string][]string

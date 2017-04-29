@@ -89,11 +89,11 @@ scene -> SCENE COLON wordlist peq statement-list
 
 statement-list -> statement statement-list | λ
 statement -> enterexit-stmt | line
-line -> ACTOR COLON optional-addressee sentence-list
+line -> ACTOR COLON ACTOR COMMA sentence-list | 
 optional-addressee -> ACTOR COMMA | λ
 optional-interjection -> INTERJECTION COMMA | λ
 sentence-list -> optional-interjection sentence sentence-list'
-sentence-list' -> λ  | sentence sentence-list'
+sentence-list' -> λ  | optional-interjection sentence sentence-list'
 sentence -> io PE | assignment PE | goto PE | stackop PE | question QUESTION | conditional
 
 io -> SPEAK_YOUR_MIND | OPEN_YOUR_MIND | OPEN_YOUR_HEART | LISTEN_TO_YOUR_HEART
@@ -105,7 +105,7 @@ enterexit-stmt' -> EXEUNT exeunt'
 exeunt' ->  actorlist RBRACKET | OMNES RBRACKET | RBRACKET
 
 assignment -> YOU assignment'
-assignment' -> ARE assignment'' | value
+assignment' -> ARE assignment'' | value 
 assignment'' -> AS adj AS arithmetic | arithmetic
 assignment -> I AM arithmetic
 
@@ -133,9 +133,7 @@ actorlist2' -> COMMA actorlist2 | AND ACTOR
 
 noun -> POS_NOUN | NEG_NOUN
 adj -> POS_ADJ | NEG_ADJ
-adj-list -> adj adj-list'
-adj-list' -> λ | adj
-
+adj-list -> adj adj-list | λ
 
 let_us -> LET US | WE let_us'
 let_us' -> SHALL | MUST | OUGHT TO

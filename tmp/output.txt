@@ -1,0 +1,53 @@
+S -> a | A b B | B C e
+A -> x | C y
+B -> C C | q
+C -> ? | w
+
+output:
+
+Follow[S] = {$}
+
+Follow[A] = {b, $}
+
+Follow[B] = {w, e, $}
+
+Follow[C] = {e, $, y, b, w}
+
+----parse table example grammar---
+
+S -> stmt ; S | ?
+aof -> id aof'
+aof' -> = e | ( e )
+cond -> if ( e ) { stmt } cond'
+cond' -> ? | else { stmt }
+e -> t e'
+e' -> + t e' | ?
+f -> id | num | ( e )
+stmt -> aof | cond
+t -> f t'
+t' -> * f t' | ?
+
+output: 
+
+Follow[f] = {*, )}
+
+Follow[S] = {$}
+
+Follow[stmt] = {$, }}
+
+Follow[e] = {)}
+
+Follow[t] = {)}
+
+expected: 
+S: $
+aof: ; , }
+aof': ; , }
+cond: ; , }
+cond': ; , }
+e: ) , ; , }
+e': ) , ; , }
+f: ) , * , + , ; , }
+stmt: ; , }
+t: ) , + , ; , }
+t': ) , + , ; , }

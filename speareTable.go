@@ -50,16 +50,20 @@ func AllNullable(production []string) bool {
 // BuildTable Build That Table!! MAKE SHAKESPEARE PARSE AGAIN!
 func BuildTable() map[string]map[string][]string {
 	m := make(map[string]map[string][]string)
-	for ntk, pa := range NonTerminals {
+	//for ntk, pa := range NonTerminals {
+	for _, ntk := range NonTerminalSymbolList {
+		pa := NonTerminals[ntk]
 		for _, production := range pa {
 			splitProd := strings.Split(production, " ")
 			m[ntk] = make(map[string][]string)
+			// fmt.Println(pa)
 			for _, symbol := range FindFirst(splitProd, FollowMap[ntk]) {
 				_, present := m[ntk][symbol]
 				if present {
 					fmt.Println("CONFLICT at ParseTable[", ntk, "][", symbol, "]")
 				} else {
-					m[ntk][symbol] = pa
+					m[ntk][symbol] = splitProd
+					// fmt.Println("m[", ntk, "][", symbol, "] = ", pa)
 				}
 
 			}
@@ -89,21 +93,30 @@ func WriteTableToFile() {
 	var tsl []string
 	tsl = append(tsl, " ")
 	tsl, _ = UnionSlices(tsl, TerminalSymbolList)
+	tsl = append(tsl, "$")
 	w.Write(tsl)
+	// fmt.Println(tsl)
 
-	for ntk := range ParseTable {
+	for _, ntk := range NonTerminalSymbolList {
 		var writeSlice []string
 		writeSlice = append(writeSlice, ntk)
 		for _, tk := range TerminalSymbolList {
+			writeString := " "
 			for _, p := range ParseTable[ntk][tk] {
-				writeSlice = append(writeSlice, p)
+				//writeSlice = append(writeSlice, p)
+				if p == lambda {
+					p = "lambda"
+				}
+				writeString = writeString + "  " + p
+				// fmt.Println("appending ", p)
 			}
-		}
-		for i := 0; i < 85-len(writeSlice); i++ {
-			writeSlice = append(writeSlice, " ")
+			writeSlice = append(writeSlice, writeString)
 		}
 		w.Write(writeSlice)
+		// fmt.Println("wrote ", writeSlice)
+		w.Flush()
 	}
+
 }
 
 func TableLookUp() {
@@ -112,16 +125,26 @@ func TableLookUp() {
 		fmt.Print("Row: ")
 		row, err := r.ReadString('\n')
 		Check(err)
+		row = strings.TrimRight(row, "\r\n")
 		if row == "$" {
 			break
 		}
 		fmt.Print("Col: ")
 		col, err := r.ReadString('\n')
 		Check(err)
-
+		col = strings.TrimRight(col, "\r\n")
 		p, present := ParseTable[row][col]
+		// fmt.Println("row:", row, "col:", col, ParseTable[row][col])
 		if present {
 			fmt.Println(p)
+		}
+	}
+}
+
+func PrintTable() {
+	for ntk := range ParseTable {
+		for _, tk := range TerminalSymbolList {
+			fmt.Println("row", ntk, "col", tk, ParseTable[ntk][tk])
 		}
 	}
 }

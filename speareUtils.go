@@ -5,6 +5,7 @@ import (
 	"regexp"
 )
 
+
 // StringInSlice Go has no generics.
 func StringInSlice(s string, l []string) bool {
 	for i := 0; i < len(l); i++ {
