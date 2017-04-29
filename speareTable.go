@@ -24,7 +24,7 @@ func FindFirstMixed(production string, extra []string) []string {
 	return FindFirst(productionA, extra)
 }
 
-// Actual working function.
+// FindFirst Actual working function.
 func FindFirst(production, extra []string) []string {
 	var result []string
 	for _, symbol := range production {
@@ -68,6 +68,7 @@ func BuildTable() map[string]map[string][]string {
 					_, present := m[ntk][symbol]
 					if present {
 						fmt.Println("CONFLICT2 at ParseTable[", ntk, "][", symbol, "]")
+						fmt.Println(m[ntk][symbol], splitProd)
 					} else {
 						m[ntk][symbol] = splitProd
 					}

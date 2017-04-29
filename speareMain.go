@@ -41,7 +41,7 @@ func grammarOut() {
 
 func main() {
 	Verbose = false
-	TerminalRegexMap, TerminalSymbolList = ReadTerminals("terminals.txt")
+	TerminalRegexMap, TerminalSymbolList = ReadTerminals("tmp/terminals.txt")
 	if Verbose {
 		PrintRegexMap(TerminalRegexMap)
 	}
@@ -77,7 +77,7 @@ func main() {
 		}
 	}
 	WriteTokensToFile(tokens)
-	NonTerminals = ReadNonTerminals("nonterminals.txt")
+	NonTerminals = ReadNonTerminals("tmp/nonterminals.txt")
 	Nullables = NullableList()
 	PrintNullableMap()
 	FirstMap = BuildFirstMap()
