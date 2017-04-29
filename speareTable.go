@@ -98,6 +98,9 @@ func WriteTableToFile() {
 				writeSlice = append(writeSlice, p)
 			}
 		}
+		for i := len(writeSlice) - 1; i < len(TerminalSymbolList)-len(writeSlice)-1; i++ {
+			writeSlice = append(writeSlice, " ")
+		}
 		w.Write(writeSlice)
 	}
 }
