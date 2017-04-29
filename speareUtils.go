@@ -23,31 +23,20 @@ func PrintMap(m map[string]string) {
 }
 
 // PrintNullableMap util to cleanly print the nonterms of the nullable set
-func PrintNullableMap(m map[string]string) {
-	for key, value := range m {
+func PrintNullableMap() {
+	for key, value := range Nullables {
 		if value == "nt" {
 			fmt.Println(key)
 		}
 	}
 }
 
-// PrintFirstMap util to cleanly print first list
+// PrintFirstMap util to cleanly print first map.
 func PrintFirstMap() {
 	printStringSliceMap(FirstMap, "First")
-	// m := FirstMap
-	// for key, value := range m {
-	// 	fmt.Print("First[", key, "] = {")
-	// 	for i := range value {
-	// 		fmt.Print(value[i])
-	// 		if i != len(value)-1 {
-	// 			fmt.Print(", ")
-	// 		}
-	// 	}
-
-	// 	fmt.Print("}\n")
-	// }
 }
 
+// PrintFollowMap util to cleanly print follow map.
 func PrintFollowMap() {
 	printStringSliceMap(FollowMap, "Follow")
 }
@@ -103,6 +92,14 @@ func IsNonTerminal(candidate string) bool {
 }
 
 // UnionSlices treats slices as a set and unions two slices.
-// func UnionSlices(src []string, dst []string) []string {
-
-// }
+func UnionSlices(src []string, dst []string) ([]string, bool) {
+	ret := src
+	add := false
+	for _, v := range dst {
+		if StringInSlice(v, ret) == false {
+			ret = append(ret, v)
+			add = true
+		}
+	}
+	return ret, add
+}

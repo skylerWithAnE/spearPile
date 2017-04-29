@@ -17,9 +17,7 @@ func ReadNonTerminals(fname string) map[string][]string {
 	defer f.Close()
 
 	r := bufio.NewReader(f)
-
-	var m map[string][]string
-	m = make(map[string][]string)
+	m := make(map[string][]string)
 
 	for {
 		l, _, err := r.ReadLine()
@@ -47,13 +45,14 @@ func ReadNonTerminals(fname string) map[string][]string {
 }
 
 // ReadTerminals Takes a filename, returns a map of terminals and their regexes.
-func ReadTerminals(fname string) map[string]*regexp.Regexp {
+func ReadTerminals(fname string) (map[string]*regexp.Regexp, []string) {
 	f, err := os.Open(fname)
 	Check(err)
 	defer f.Close()
 
 	r := bufio.NewReader(f)
 	m := make(map[string]*regexp.Regexp)
+	var symbolList []string
 
 	for {
 		l, _, err := r.ReadLine()
@@ -64,23 +63,24 @@ func ReadTerminals(fname string) map[string]*regexp.Regexp {
 
 		if len(entry) == 2 {
 
-			token := strings.Trim(entry[0], " ")
+			symbol := strings.Trim(entry[0], " ")
 			production := strings.Trim(entry[1], " ")
 
 			if Verbose {
-				fmt.Println(token, production)
+				fmt.Println(symbol, production)
 			}
 
 			rex, err := regexp.Compile("(?i)" + production)
 			if err == nil {
-				m[token] = rex
+				m[symbol] = rex
+				symbolList = append(symbolList, symbol)
 			} else {
 				fmt.Println("Internal error! Production failed to compile to regex!")
 			}
 		}
 	}
 
-	return m
+	return m, symbolList
 }
 
 // TerminalList Generate a list of all terminals from the regex map.
@@ -93,7 +93,7 @@ func TerminalList(termMap map[string]*regexp.Regexp) []string {
 }
 
 // NullableList generates list of nullables
-func NullableList(nonterms map[string][]string, terms map[string]*regexp.Regexp) map[string]string {
+func NullableList() map[string]string {
 
 	nullable := make(map[string]string)
 	// using a map because go lacks a set builtin.
@@ -102,7 +102,7 @@ func NullableList(nonterms map[string][]string, terms map[string]*regexp.Regexp)
 	fmt.Println(present)
 	for {
 		stable := true
-		for k, v := range nonterms {
+		for k, v := range NonTerminals {
 			_, present := nullable[k]
 			if !present {
 				for i := 0; i < len(v); i++ {
@@ -112,26 +112,26 @@ func NullableList(nonterms map[string][]string, terms map[string]*regexp.Regexp)
 					// each string in the []string slice is a production.
 					ps := strings.Split(p, " ")
 					// so split that string to get an iterable slice.
-					fmt.Println("checking production", k, "->", p)
+					// fmt.Println("checking production", k, "->", p)
 					for j := 0; j < len(ps); j++ {
 						pj := ps[j]
 						// pj is the current symbol of the current production
 						_, present = nullable[pj]
-						fmt.Println("is", pj, "present?", present)
+						// fmt.Println("is", pj, "present?", present)
 						if !present {
 							// current symbol not in nullable set.
-							fmt.Println(pj, "is not in nullable, breaking...")
+							// fmt.Println(pj, "is not in nullable, breaking...")
 							loopBreak = true
 							break
 						}
 					}
 					if !loopBreak {
-						fmt.Println("no loop break for", k)
+						// fmt.Println("no loop break for", k)
 						_, present = nullable[k]
 						if !present {
 							stable = false
 							nullable[k] = "nt"
-							fmt.Println("Adding", k, "to nullable set")
+							// fmt.Println("Adding", k, "to nullable set")
 						}
 
 					}
@@ -147,9 +147,10 @@ func NullableList(nonterms map[string][]string, terms map[string]*regexp.Regexp)
 }
 
 // BuildFirstMap build the first map.
-func BuildFirstMap(nonterms map[string][]string, terms map[string]*regexp.Regexp) map[string][]string {
+func BuildFirstMap() map[string][]string {
+
 	first := make(map[string][]string)
-	for k := range terms {
+	for k := range TerminalRegexMap {
 		var set []string
 		set = append(set, k)
 		first[k] = set
@@ -157,7 +158,7 @@ func BuildFirstMap(nonterms map[string][]string, terms map[string]*regexp.Regexp
 	stable := true
 	for {
 		stable = true
-		for lhs, v := range nonterms {
+		for lhs, v := range NonTerminals {
 			for _, production := range v {
 				pa := strings.Split(production, " ")
 				for _, symbol := range pa {
@@ -188,55 +189,34 @@ func BuildFollowMap() map[string][]string {
 	follow[StartState] = append(follow[StartState], "$")
 	for {
 		//do-while follow is not stable
-		stable := true
+		unstable := false
 		for N, v := range NonTerminals {
 			//for all NonTerminals
 			for _, production := range v {
 				// fmt.Println("checking production", production, "in NonTerm", N)
 				symbolArray := strings.Split(production, " ")
-				// var loopBreak bool
 				for i, symbol := range symbolArray {
-					fmt.Println("N:", N, "symbol:", symbol)
+					// fmt.Println("N:", N, "symbol:", symbol)
 					// for each symbol in the production.
 					if IsNonTerminal(symbol) && i < len(symbolArray)-1 {
-
 						// fmt.Println("symbol,", symbol, ", is nonterminal and the nextSymbol is:", nextSymbol)
 						// fmt.Println(follow[nextSymbol])
 						for j := i + 1; j < len(symbolArray); j++ {
 							nextSymbol := symbolArray[j]
-							for _, s := range FirstMap[nextSymbol] {
-								// union loop.
-								if !StringInSlice(s, follow[symbol]) {
-									// fmt.Println("Add", s, "to follow[", symbol, "]")
-									follow[symbol] = append(follow[symbol], s)
-									stable = false
-								}
-							} // end union loop
+							follow[symbol], unstable = UnionSlices(follow[symbol], FirstMap[nextSymbol])
 							if !IsNullable(nextSymbol) {
-								fmt.Println("not nullable next symbol..", nextSymbol)
-								// loopBreak = true
+								// fmt.Println("not nullable next symbol..", nextSymbol)
 								break
 							}
 
 						}
+						follow[symbol], unstable = UnionSlices(follow[symbol], follow[N])
 
-						// if !loopBreak {
-						// follow[production] union follow[NonTerm]
-						for _, s := range follow[N] {
-							fmt.Println("string s", s, "in follow[", N, "]")
-							if !StringInSlice(s, follow[symbol]) {
-								fmt.Println("add stuff in lower loop...", symbol, "s:", s)
-								follow[symbol] = append(follow[symbol], s)
-								stable = false
-							}
-						} //end union loop.
-						// }
 					}
 				} //end symbol loop
-
 			} //end production loop
 		} //end nonterm loop
-		if stable {
+		if unstable == false {
 			break
 		}
 	} //end infinite loop

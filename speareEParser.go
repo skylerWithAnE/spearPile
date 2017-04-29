@@ -46,7 +46,7 @@ var inputLength int
 // End Globals
 
 // MakeTree Shut up linter.
-func MakeTree(terms []string, tokens []token) {
+func MakeTree(terms []string, tokens []Token) {
 	terminals = terms
 	inputLength = len(tokens)
 

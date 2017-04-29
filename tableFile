@@ -1,0 +1,28 @@
+ACTOR,COMMA,PERIOD,QUESTION,EXCLAMATION,SPEAK_YOUR_MIND,OPEN_YOUR_MIND,OPEN_YOUR_HEART,LISTEN_TO_YOUR_HEART,COLON,YOU,ARE,ARTICLE,THE,POS_NOUN,NEG_NOUN,POS_ADJ,NEG_ADJ,LBRACKET,RBRACKET,REMEMBER,RECALL,ENTER,EXIT,EXEUNT,OMNES,AND,I,ACT,SCENE,RETURN,AM,AS,POSSESSIVE,MYSELF,YOURSELF,NOTHING,SUM,DIFFERENCE,PRODUCT,QUOTIENT,REMAINDER,ROOT,SQUARE,CUBE,TWICE,THRICE,BOTH,EITHER,OR,OF,BETWEEN,HALF,OPPOSITE,PROCEED,POSTHASTE,LET,US,WE,SHALL,MUST,OUGHT,TO,NAY,YEA,VERILY,FORSOOTH,PERADVENTURE,PERCHANCE,IS,BETTER,WORSE,THAN,MORE,LESS,AT,LEAST,MOST,DIFFERENT,FROM,IF,SO,NOT,WORDS
+optional-interjection,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ
+dramatis-personae,ACTOR COMMA wordlist peq dramatis-personae,ACTOR COMMA wordlist peq
+optional-addressee,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ,λ
+goto,let_us PROCEED TO goto-target,let_us PROCEED POSTHASTE TO goto-target,let_us RETURN,let_us PROCEED TO goto-target,let_us PROCEED POSTHASTE TO goto-target,let_us RETURN
+sentence,io pe,assignment pe,goto pe,stackop pe,question QUESTION,conditional
+value,adj-list noun,noun,adj-list noun,noun
+adj,POS_ADJ,NEG_ADJ
+pe,PERIOD,EXCLAMATION
+actlist,act actlist,act
+allwords,WORDS,ARTICLE,AM,I,noun,adj,THE,WE,ACTOR,AND,OF,SUM,IS,LESS,MORE,YOU,IF,IS,POSSESSIVE,TO,OPEN_YOUR_HEART,SPEAK_YOUR_MIND
+statement,enter-stmt,exit-stmt,line
+scene,SCENE  COLON wordlist peq statement-list,SCENE I COLON wordlist peq statement-list
+statement-list
+noun,POS_NOUN,NEG_NOUN
+act,ACT  COLON wordlist peq scenelist,ACT I COLON wordlist peq scenelist
+conditional,IF SO COMMA optional-interjection sentence,IF NOT COMMA optional-interjection sentence
+enter-stmt,LBRACKET ENTER ACTOR RBRACKET,LBRACKET ENTER actorlist RBRACKET
+actorlist,ACTOR COMMA actorlist,ACTOR AND ACTOR
+arithmetic,ARTICLE value,THE value,POSSESSIVE value,YOU,MYSELF,YOURSELF,ACTOR,NOTHING,THE SUM OF arithmetic AND arithmetic,THE DIFFERENCE BETWEEN arithmetic AND arithmetic,THE PRODUCT OF arithmetic AND arithmetic,THE QUOTIENT OF arithmetic AND arithmetic,THE QUOTIENT BETWEEN arithmetic AND arithmetic,THE REMAINDER OF arithmetic AND arithmetic,THE REMAINDER BETWEEN arithmetic AND arithmetic,THE SQUARE OF arithmetic,THE CUBE OF arithmetic,THE SQUARE ROOT OF arithmetic,TWICE arithmetic,THRICE arithmetic,HALF arithmetic,BOTH arithmetic AND arithmetic,EITHER arithmetic OR arithmetic,THE OPPOSITE OF arithmetic
+io,SPEAK_YOUR_MIND,OPEN_YOUR_MIND,OPEN_YOUR_HEART,LISTEN_TO_YOUR_HEART
+question,AM I comparison,IS arithmetic comparison,ARE YOU comparison
+line,ACTOR COLON optional-addressee sentence-list
+wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist,allwords,allwords wordlist
+adj-list,λ,λ
+exit-stmt,LBRACKET EXIT ACTOR RBRACKET,LBRACKET EXEUNT actorlist RBRACKET,LBRACKET EXEUNT OMNES RBRACKET,LBRACKET EXEUNT RBRACKET
+comparison,BETTER THAN arithmetic,MORE adj THAN arithmetic,AS adj AS arithmetic,WORSE THAN arithmetic,LESS adj THAN arithmetic,AT LEAST AS adj AS arithmetic,AT MOST AS adj AS arithmetic,DIFFERENT FROM arithmetic
+sentence-list,optional-interjection sentence sentence-list,optional-interjection sentence,optional-interjection sentence sentence-list,optional-interjection sentence,optional-interjection sentence sentence-list,optional-interjection sentence,optional-interjection sentence sentence-list,optional-interjection sentence,optional-interjection sentence sentence-list,optional-interjection sentence,optional-interjection sentence sentence-list,optional-interjection sentence,optional-interjection sentence sentence-list,optional-interjection sentence,optional-i
