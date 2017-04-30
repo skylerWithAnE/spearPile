@@ -1,0 +1,22 @@
+Are the correct/incorrect tests based on semantics? Shouldn't this be impossible for a transducer?
+
+When performing goto, can we use wordlist in place of scene description?
+..."let us proceed posthast to Act II The Second part."
+
+What is incorrect in this input:
+
+"
+A minimal program.
+
+Romeo, a variable with delusions of grandeur.
+
+Act I: The Play Opens.
+
+Scene I: We Begin.
+
+[Enter Romeo]
+
+Romeo: I am a king.
+
+[Exit Romeo]
+"

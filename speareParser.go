@@ -8,6 +8,9 @@ type stack struct {
 
 func peekStack(s stack) string {
 	if len(s.items) >= 1 {
+		// if s.items[0] == lambda {
+		// 	return "lambda"
+		// }
 		return s.items[0]
 	}
 	return "empty_stack"
@@ -77,7 +80,7 @@ func ParseInput(input []Token) bool {
 			//Pop s from stack.
 			popSym := peekStack(parseStack)
 			parseStack = popStack(parseStack)
-			//For each x in table[s][t]: push x (push in reverse)
+			// For each x in table[s][t]: push x (push in reverse)
 			tableEntry := ParseTable[popSym][currToken]
 			for i := len(tableEntry) - 1; i >= 0; i-- {
 				parseStack = pushStack(parseStack, tableEntry[i])

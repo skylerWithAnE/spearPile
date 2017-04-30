@@ -50,16 +50,18 @@ arithmetic -> BOTH arithmetic AND arithmetic
 arithmetic -> EITHER arithmetic OR arithmetic
 arithmetic -> THE_OPPOSITE_OF arithmetic
 
-value -> adj-list noun | noun
-
 actorlist -> ACTOR actorlist'
 actorlist' -> λ | COMMA actorlist2 |  AND ACTOR
 actorlist2 -> ACTOR actorlist2'
 actorlist2' -> COMMA actorlist2 | AND ACTOR
 
+value -> adj-list noun | noun
+noun -> POS_NOUN | NEG_NOUN
+
 noun -> POS_NOUN | NEG_NOUN
 adj -> POS_ADJ | NEG_ADJ
-adj-list -> adj adj-list | λ
+adj-list -> adj adj-list'
+adj-list' -> λ | adj-list
 
 let_us -> LET US | WE let_us'
 let_us' -> SHALL | MUST | OUGHT TO
@@ -68,9 +70,9 @@ goto' -> RETURN | PROCEED goto''
 goto'' -> TO goto-target | POSTHASTE TO goto-target
 
 goto-target -> ACT goto-target' | goto-target'''
-goto-target' ->  goto-target''
-goto-target'' -> COMMA SCENE goto-target''' | COMMA SCENE | λ
-goto-target''' -> wordlist
+goto-target' -> λ | COMMA SCENE goto-target''
+goto-target'' -> wordlist
+goto-target''' -> COMMA SCENE 
 
 stackop -> REMEMBER arithmetic
 stackop -> RECALL wordlist
@@ -94,24 +96,24 @@ conditional' -> NOT COMMA optional-interjection sentence
 
 wordlist -> allwords wordlist | λ
 allwords -> ANYWORD | keyword
-keyword -> keyword'
-keyword' -> ARTICLE | keyword''
-keyword'' -> AM  | keyword'''
-keyword''' -> IS  | keyword''''
-keyword'''' -> noun |  keyword'''''
-keyword''''' -> THE |  keyword''''''
-keyword'''''' -> WE |  keyword'''''''
-keyword''''''' -> POSSESSIVE | keyword''''''''
-keyword'''''''' -> ACTOR | keyword'''''''''
-keyword''''''''' -> TO | keyword''''''''''
-keyword'''''''''' -> OPEN_YOUR_HEART | keyword'''''''''''
+keyword ->                              keyword'
+keyword' -> ARTICLE |                   keyword''
+keyword'' -> AM  |                      keyword'''
+keyword''' -> IS  |                     keyword''''
+keyword'''' -> POS_NOUN |               keyword'''''
+keyword''''' -> THE |                   keyword''''''
+keyword'''''' -> WE |                   keyword'''''''
+keyword''''''' -> POSSESSIVE |          keyword''''''''
+keyword'''''''' -> ACTOR |              keyword'''''''''
+keyword''''''''' -> TO |                keyword''''''''''
+keyword'''''''''' -> OPEN_YOUR_HEART |  keyword'''''''''''
 keyword''''''''''' -> SPEAK_YOUR_MIND | keyword''''''''''''
-keyword'''''''''''' -> adj | keyword'''''''''''''
-keyword''''''''''''' -> noun | keyword''''''''''''''
-keyword'''''''''''''' -> AND | keyword'''''''''''''''
-keyword''''''''''''''' -> THE_SUM_OF | keyword''''''''''''''''
-keyword'''''''''''''''' -> LESS | keyword'''''''''''''''''
-keyword''''''''''''''''' -> MORE | keyword''''''''''''''''''
-keyword'''''''''''''''''' -> YOU | keyword'''''''''''''''''''
-keyword''''''''''''''''''' -> IF
+keyword'''''''''''' -> adj |            keyword'''''''''''''
+keyword''''''''''''' -> AND |           keyword''''''''''''''
+keyword'''''''''''''' -> THE_SUM_OF |   keyword'''''''''''''''
+keyword''''''''''''''' -> LESS |        keyword''''''''''''''''
+keyword'''''''''''''''' -> MORE |       keyword'''''''''''''''''
+keyword''''''''''''''''' -> YOU |       keyword''''''''''''''''''
+keyword'''''''''''''''''' -> IF |       keyword'''''''''''''''''''
+keyword''''''''''''''''''' -> NEG_NOUN
 

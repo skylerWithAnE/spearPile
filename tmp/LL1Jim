@@ -141,7 +141,6 @@ adj -> POS_ADJ | NEG_ADJ
 adj-list -> adj adj-list'
 adj-list' -> λ | adj
 
-
 let_us -> LET US | WE let_us'
 let_us' -> SHALL | MUST | OUGHT TO
 goto -> let_us goto'

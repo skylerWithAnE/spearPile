@@ -1,571 +1,567 @@
-./t1.txt
+.\t1.txt
 
 
--1
+Parsed.
 
 
-./t12.txt
 
+.\t4.txt
 
--4
 
+Parsed.
 
-./t15.txt
 
 
--4
+.\t6.txt
 
 
-./t16.txt
+Parsed.
 
 
-8
 
+.\t8.txt
 
-./t17.txt
 
+Parsed.
 
--2
 
 
-./t19.txt
+.\t9.txt
 
 
-0-1
+Parsed.
 
 
-./t26.txt
 
+.\t10.txt
 
--1-1
 
+Parsed.
 
-./t29.txt
 
 
--3
+.\t12.txt
 
 
-./t30.txt
+Parsed.
 
 
--1
 
+.\t13.txt
 
-./t33.txt
 
+Parsed.
 
-1
 
 
-./t34.txt
+.\t15.txt
 
 
+Parsed.
 
 
 
-./t36.txt
+.\t16.txt
 
 
-1
+Parsed.
 
 
-./t37.txt
 
+.\t17.txt
 
-2
 
+Parsed.
 
-./t38.txt
 
 
--10
+.\t19.txt
 
 
-./t39.txt
+Parsed.
 
 
-070
 
+.\t20.txt
 
-./t41.txt
 
+Parsed.
 
-24
 
 
-./t42.txt
+.\t21.txt
 
 
-1
+Parsed.
 
 
-./t48.txt
 
+.\t26.txt
 
-Enter a number --> Enter a number --> 5
 
+Parsed.
 
-./t49.txt
 
 
-Enter a number --> Enter a number --> Sum
-5
-Difference
--1
-Product
-6
-Quotient
-0
-Remainder
-2
-Square
-4
-Square ROOT
-2
-Twice
-4
-Thrice
-6
-Half
-1
-Both
-1
-Either
-1
-Opposite
-0
+.\t29.txt
 
 
+Parsed.
 
 
-./t50.txt
 
+.\t30.txt
 
-Y
 
+Parsed.
 
 
-./t51.txt
 
+.\t31.txt
 
-Y
 
+Parsed.
 
 
-./t52.txt
 
+.\t32.txt
 
-N
 
+Parsed.
 
 
-./t53.txt
 
+.\t34.txt
 
-Y
 
+Parsed.
 
 
-./t54.txt
 
+.\t35.txt
 
-Y
 
+Parsed.
 
 
-./t55.txt
 
+.\t36.txt
 
-N
 
+Parsed.
 
 
-./t56.txt
 
+.\t37.txt
 
-N
 
+Parsed.
 
 
-./t57.txt
 
+.\t38.txt
 
-Y
 
+Parsed.
 
 
-./t58.txt
 
+.\t39.txt
 
-Y
 
+Parsed.
 
 
-./t59.txt
 
+.\t40.txt
 
-N
 
+Parsed.
 
 
-./t60.txt
 
+.\t41.txt
 
-Y
 
+Parsed.
 
 
-./t61.txt
 
+.\t50.txt
 
-N
 
+Parsed.
 
 
-./t62.txt
 
+.\t51.txt
 
-Y
 
+Parsed.
 
 
-./t63.txt
 
+.\t52.txt
 
-N
 
+Parsed.
 
 
-./t64.txt
 
+.\t68.txt
 
-Y
 
+Parsed.
 
 
-./t65.txt
 
+.\t69.txt
 
-N
 
+Parsed.
 
 
-./t71.txt
 
+.\t74.txt
 
-1
 
+Parsed.
 
-./t72.txt
 
 
-10
-9
-8
-7
-6
-5
-4
-3
-2
-1
+.\t75.txt
 
 
+Parsed.
 
-./t73.txt
 
 
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+.\t76.txt
 
 
+Parsed.
 
-./t78.txt
 
 
-020
+.\t77.txt
 
 
-./t80.txt
+Parsed.
 
 
-0
 
+.\t78.txt
 
-./t81.txt
 
+Parsed.
 
-1
 
 
-./t82.txt
+.\t79.txt
 
 
-11
+Parsed.
 
 
-./t83.txt
 
+.\t85.txt
 
-1
 
+Parsed.
 
-./t84.txt
 
 
-1
+.\t87.txt
 
 
-./t85.txt
+Parsed.
 
 
--10
 
+.\t88.txt
 
-./t86.txt
 
+Parsed.
 
--1-1
 
 
-./t87.txt
+.\t89.txt
 
 
-Enter a character --> 3
+Parsed.
 
 
-./t89.txt
 
+.\t90.txt
 
 
+Parsed.
 
 
-./t90.txt
 
+.\t91.txt
 
 
+Parsed.
 
 
-./t91.txt
 
+.\t93.txt
 
 
+Parsed.
 
 
-./t95.txt
 
+.\t95.txt
 
 
+Parsed.
 
 
-./t97.txt
 
+.\t97.txt
 
 
+Parsed.
 
 
-./t98.txt
 
+.\t98.txt
 
 
+Parsed.
 
 
-./t101.txt
 
+.\t101.txt
 
-8420
 
+Parsed.
 
-./t102.txt
 
 
+.\t106.txt
 
 
+Parsed.
 
-./t108.txt
 
 
+.\t108.txt
 
 
+Parsed.
 
-./t109.txt
 
 
+.\t109.txt
 
 
+Parsed.
 
-./t110.txt
 
 
+.\t110.txt
 
 
+Parsed.
 
-./t111.txt
 
 
+.\t111.txt
 
 
+Parsed.
 
-./t112.txt
 
 
+.\t112.txt
 
 
+Parsed.
 
-./t117.txt
 
 
+.\t116.txt
 
 
+Parsed.
 
-./t118.txt
 
 
+.\t117.txt
 
 
+Parsed.
 
-./t119.txt
 
 
+.\t118.txt
 
 
+Parsed.
 
-./t120.txt
 
 
+.\t119.txt
 
 
+Parsed.
 
-./t121.txt
 
 
+.\t120.txt
 
 
+Parsed.
 
-./t122.txt
 
 
+.\t121.txt
 
 
+Parsed.
 
-./t126.txt
 
 
-25081512001221255186
+.\t122.txt
 
 
-./t127.txt
+Parsed.
 
 
 
+.\t124.txt
 
 
-./t128.txt
+Parsed.
 
 
 
+.\t127.txt
 
 
-./t130.txt
+Parsed.
 
 
 
+.\t128.txt
 
 
-./t131.txt
+Parsed.
 
 
-Hello
 
+.\t130.txt
 
-./t132.txt
 
+Parsed.
 
 
 
+.\t131.txt
 
-./t137.txt
 
+Parsed.
 
 
 
+.\t132.txt
 
-./t138.txt
 
+Parsed.
 
 
 
+.\t137.txt
 
-./t140.txt
 
+Parsed.
 
 
 
+.\t138.txt
 
-./t141.txt
 
+Parsed.
 
 
 
+.\t140.txt
 
-./t142.txt
 
+Parsed.
 
-A
-Enter a character --> 3
-Enter a number --> 4
 
 
+.\t141.txt
 
-./t147.txt
 
+Parsed.
 
 
 
+.\t142.txt
 
-./t148.txt
 
+Parsed.
 
 
 
+.\t143.txt
 
-./t150.txt
 
+Parsed.
 
 
 
+.\t147.txt
 
-./t151.txt
 
+Parsed.
 
 
 
+.\t148.txt
 
-./t152.txt
 
+Parsed.
 
 
 
+.\t150.txt
 
-./t157.txt
 
+Parsed.
 
 
 
+.\t151.txt
 
-./t158.txt
 
+Parsed.
 
+
+
+.\t157.txt
+
+
+Parsed.
+
+
+
+.\t158.txt
+
+
+Parsed.
+
+
+
+.\t159.txt
+
+
+Parsed.
 
 
 

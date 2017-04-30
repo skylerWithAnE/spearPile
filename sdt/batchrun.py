@@ -57,7 +57,7 @@ def main():
         
             #replace this with the command to compile your code
             #"sh","compile.sh",f
-            "run.bat "+f
+            "spearePile.exe", f
             
             
             ],
@@ -87,7 +87,7 @@ def main():
                 rv = subprocess.call([
                 
                     #replace this with the command to run your code
-                    "./"+f+".elf"
+                    "spearePile.exe", f
                     
                     
                     ], stdin=stdin, stdout=stdout,stderr=stderr
