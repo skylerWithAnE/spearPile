@@ -1,0 +1,132 @@
+ParseTable[S][;] :
+ParseTable[S][=] :
+ParseTable[S][*] :
+ParseTable[S][+] :
+ParseTable[S][(] :
+ParseTable[S][)] :
+ParseTable[S][if] :
+ParseTable[S][else] :
+ParseTable[S][num] :
+ParseTable[S][id] :
+ParseTable[S][{] :
+ParseTable[S][}] :
+ParseTable[aof][;] :
+ParseTable[aof][=] :
+ParseTable[aof][*] :
+ParseTable[aof][+] :
+ParseTable[aof][(] :
+ParseTable[aof][)] :
+ParseTable[aof][if] :
+ParseTable[aof][else] :
+ParseTable[aof][num] :
+ParseTable[aof][id] : id aof'
+ParseTable[aof][{] :
+ParseTable[aof][}] :
+ParseTable[aof'][;] :
+ParseTable[aof'][=] :
+ParseTable[aof'][*] :
+ParseTable[aof'][+] :
+ParseTable[aof'][(] : ( e )
+ParseTable[aof'][)] :
+ParseTable[aof'][if] :
+ParseTable[aof'][else] :
+ParseTable[aof'][num] :
+ParseTable[aof'][id] :
+ParseTable[aof'][{] :
+ParseTable[aof'][}] :
+ParseTable[cond][;] :
+ParseTable[cond][=] :
+ParseTable[cond][*] :
+ParseTable[cond][+] :
+ParseTable[cond][(] :
+ParseTable[cond][)] :
+ParseTable[cond][if] : if ( e ) { stmt } cond'
+ParseTable[cond][else] :
+ParseTable[cond][num] :
+ParseTable[cond][id] :
+ParseTable[cond][{] :
+ParseTable[cond][}] :
+ParseTable[cond'][;] :
+ParseTable[cond'][=] :
+ParseTable[cond'][*] :
+ParseTable[cond'][+] :
+ParseTable[cond'][(] :
+ParseTable[cond'][)] :
+ParseTable[cond'][if] :
+ParseTable[cond'][else] : else { stmt }
+ParseTable[cond'][num] :
+ParseTable[cond'][id] :
+ParseTable[cond'][{] :
+ParseTable[cond'][}] :
+ParseTable[e][;] :
+ParseTable[e][=] :
+ParseTable[e][*] :
+ParseTable[e][+] :
+ParseTable[e][(] : t e'
+ParseTable[e][)] :
+ParseTable[e][if] :
+ParseTable[e][else] :
+ParseTable[e][num] : t e'
+ParseTable[e][id] : t e'
+ParseTable[e][{] :
+ParseTable[e][}] :
+ParseTable[e'][;] : λ
+ParseTable[e'][=] :
+ParseTable[e'][*] :
+ParseTable[e'][+] :
+ParseTable[e'][(] :
+ParseTable[e'][)] : λ
+ParseTable[e'][if] :
+ParseTable[e'][else] :
+ParseTable[e'][num] :
+ParseTable[e'][id] :
+ParseTable[e'][{] :
+ParseTable[e'][}] : λ
+ParseTable[f][;] :
+ParseTable[f][=] :
+ParseTable[f][*] :
+ParseTable[f][+] :
+ParseTable[f][(] : ( e )
+ParseTable[f][)] :
+ParseTable[f][if] :
+ParseTable[f][else] :
+ParseTable[f][num] :
+ParseTable[f][id] :
+ParseTable[f][{] :
+ParseTable[f][}] :
+ParseTable[stmt][;] :
+ParseTable[stmt][=] :
+ParseTable[stmt][*] :
+ParseTable[stmt][+] :
+ParseTable[stmt][(] :
+ParseTable[stmt][)] :
+ParseTable[stmt][if] : cond
+ParseTable[stmt][else] :
+ParseTable[stmt][num] :
+ParseTable[stmt][id] :
+ParseTable[stmt][{] :
+ParseTable[stmt][}] :
+ParseTable[t][;] :
+ParseTable[t][=] :
+ParseTable[t][*] :
+ParseTable[t][+] :
+ParseTable[t][(] : f t'
+ParseTable[t][)] :
+ParseTable[t][if] :
+ParseTable[t][else] :
+ParseTable[t][num] : f t'
+ParseTable[t][id] : f t'
+ParseTable[t][{] :
+ParseTable[t][}] :
+ParseTable[t'][;] : λ
+ParseTable[t'][=] :
+ParseTable[t'][*] :
+ParseTable[t'][+] : λ
+ParseTable[t'][(] :
+ParseTable[t'][)] : λ
+ParseTable[t'][if] :
+ParseTable[t'][else] :
+ParseTable[t'][num] :
+ParseTable[t'][id] :
+ParseTable[t'][{] :
+ParseTable[t'][}] : λ

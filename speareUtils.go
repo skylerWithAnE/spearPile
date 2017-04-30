@@ -5,7 +5,6 @@ import (
 	"regexp"
 )
 
-
 // StringInSlice Go has no generics.
 func StringInSlice(s string, l []string) bool {
 	for i := 0; i < len(l); i++ {
@@ -27,7 +26,7 @@ func PrintMap(m map[string]string) {
 func PrintNullableMap() {
 	for key, value := range Nullables {
 		if value == "nt" {
-			fmt.Println(key)
+			fmt.Println("Nullable: ", key)
 		}
 	}
 }

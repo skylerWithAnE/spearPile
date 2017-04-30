@@ -99,8 +99,6 @@ func NullableList() map[string]string {
 	nullable := make(map[string]string)
 	// using a map because go lacks a set builtin.
 	nullable[lambda] = lambda
-	_, present := nullable[lambda]
-	fmt.Println(present)
 	for {
 		stable := true
 		for k, v := range NonTerminals {
@@ -188,50 +186,76 @@ func BuildFirstMap() map[string][]string {
 func BuildFollowMap() map[string][]string {
 	follow := make(map[string][]string)
 	follow[StartState] = append(follow[StartState], "$")
+	f, err := os.Create("tmp/followLog")
+	Check(err)
+	w := bufio.NewWriter(f)
 	for {
-		//do-while follow is not stable
 		unstable := false
+		w.WriteString("\n***NEW LOOP***\n")
+		//do-while follow is not stable
+
 		//for N, v := range NonTerminals {
 		for _, N := range NonTerminalSymbolList {
+			unionSuccess := false
+			w.WriteString("\nNew NonTerm loop\n")
+			if unstable {
+				w.WriteString("unstable\n")
+			}
 			v := NonTerminals[N]
 			//for all NonTerminals
 			for _, production := range v {
-				fmt.Println("checking production", production, "in NonTerm", N)
+				w.WriteString("checking production \"" + production + "\" in NonTerm " + N + "\n")
 				symbolArray := strings.Split(production, " ")
 				for i, symbol := range symbolArray {
-					fmt.Println("N:", N, "\nsymbol:", symbol)
+					loopBreak := false
+					w.WriteString("N: " + N + "\nsymbol: " + symbol + "\n")
 					// for each symbol in the production.
-					if IsNonTerminal(symbol) && i < len(symbolArray)-1 {
-						loopBreak := false
-						// fmt.Println("symbol,", symbol, ", is nonterminal and the nextSymbol is:", nextSymbol)
-						// fmt.Println(follow[nextSymbol])
+					if IsNonTerminal(symbol) {
+						w.WriteString(symbol + " is non terminal, iterate over remaining production\n")
 						for j := i + 1; j < len(symbolArray); j++ {
 							nextSymbol := symbolArray[j]
-							old := follow[symbol]
-							follow[symbol], unstable = UnionSlices(follow[symbol], FirstMap[nextSymbol])
-							if unstable {
-								fmt.Println("union occurred:", "follow[", symbol, "] is now ",
-									follow[symbol], "previously ", old, ".")
-							}
+							follow[symbol], unionSuccess = UnionSlices(follow[symbol], FirstMap[nextSymbol])
+							w.WriteString("perform union on follow[symbol] U first[nextSymbol]\n")
 							if !IsNullable(nextSymbol) {
-								fmt.Println("not nullable next symbol..", nextSymbol)
-								// loopBreak = true
+								w.WriteString("not nullable next symbol.." + nextSymbol + "\n")
+								loopBreak = true
 								break
 							}
 
 						}
 						if !loopBreak {
-							follow[symbol], unstable = UnionSlices(follow[symbol], follow[N])
+							w.WriteString("no loop break occurred, do follow[" + symbol + "]Ufollow[" + N + "]..\n")
+							old := follow[symbol]
+							follow[symbol], unionSuccess = UnionSlices(follow[symbol], follow[N])
+							if unstable {
+								fmt.Println("union occurred:", "follow[", symbol, "] is now ",
+									follow[symbol], "previously ", old, ".")
+							}
 						}
 
+					} else {
+						w.WriteString("symbol is terminal... continue\n")
 					}
-				} //end symbol loop
-			} //end production loop
+				} //end production loop
+			} //end productions with lhs N loop
+			if unionSuccess {
+				unstable = true
+			}
 		} //end nonterm loop
 		if unstable == false {
 			break
 		}
+		w.Flush()
 	} //end infinite loop
 
+	for _, ntk := range NonTerminalSymbolList {
+		w.WriteString(ntk + " -> ")
+		for _, v := range follow[ntk] {
+			w.WriteString(v + ", ")
+		}
+		w.WriteString("\n")
+	}
+	w.Flush()
+	f.Close()
 	return follow
 }

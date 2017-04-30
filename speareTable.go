@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 )
 
 func addTableEntry(x, y string, production []string) {
@@ -48,45 +49,66 @@ func AllNullable(production []string) bool {
 }
 
 // BuildTable Build That Table!! MAKE SHAKESPEARE PARSE AGAIN!
-func BuildTable() map[string]map[string][]string {
-	m := make(map[string]map[string][]string)
+func BuildTable() /*map[string]map[string][]string*/ {
+	// m := make(map[string]map[string][]string)
 	//for ntk, pa := range NonTerminals {
 	for _, ntk := range NonTerminalSymbolList {
 		pa := NonTerminals[ntk]
 		for _, production := range pa {
 			splitProd := strings.Split(production, " ")
-			m[ntk] = make(map[string][]string)
+			ParseTable[ntk] = make(map[string][]string)
 			// fmt.Println(pa)
 			for _, symbol := range FindFirst(splitProd, FollowMap[ntk]) {
-				_, present := m[ntk][symbol]
+				_, present := ParseTable[ntk][symbol]
 				if present {
 					fmt.Println("CONFLICT at ParseTable[", ntk, "][", symbol, "]")
 				} else {
-					m[ntk][symbol] = splitProd
-					// fmt.Println("m[", ntk, "][", symbol, "] = ", pa)
+					ParseTable[ntk][symbol] = splitProd
+					fmt.Println("m[", ntk, "][", symbol, "] = ", pa)
+					// fmt.Println("actual: ", ParseTable[ntk][symbol])
 				}
 
 			}
 			if AllNullable(splitProd) {
 				for _, symbol := range FollowMap[ntk] {
-					_, present := m[ntk][symbol]
+					_, present := ParseTable[ntk][symbol]
 					if present {
 						fmt.Println("CONFLICT2 at ParseTable[", ntk, "][", symbol, "]")
-						fmt.Println(m[ntk][symbol], splitProd)
+						fmt.Println(ParseTable[ntk][symbol], splitProd)
 					} else {
-						m[ntk][symbol] = splitProd
+						ParseTable[ntk][symbol] = splitProd
 					}
 				}
 			}
 		}
 
 	}
-	return m
+	f, err := os.Create("parseTableInterior")
+	Check(err)
+
+	w := bufio.NewWriter(f)
+	for _, ntk := range NonTerminalSymbolList {
+		for _, tk := range TerminalSymbolList {
+			out := "ParseTable[" + ntk + "][" + tk + "] :"
+			for _, v := range ParseTable[ntk][tk] {
+				out = out + " " + v
+			}
+			out = out + "\n"
+			w.WriteString(out)
+		}
+	}
+	w.Flush()
+	f.Close()
+	// return m
 }
 
 // WriteTableToFile create a csv of the parse table.
 func WriteTableToFile() {
-	f, err := os.Create("tableFile3.csv")
+	fileTime := strings.Split(time.Now().String(), " ")[1]
+	fileTime = strings.Split(fileTime, ".")[0]
+	hms := strings.Split(fileTime, ":")
+	fileTime = hms[0] + hms[1] + hms[2]
+	f, err := os.Create("tables/tableFile" + fileTime + ".csv")
 	Check(err)
 	defer f.Close()
 	w := csv.NewWriter(f)
@@ -119,7 +141,29 @@ func WriteTableToFile() {
 
 }
 
-func TableLookUp() {
+func TableLookUp(stackSymbol, tokenSymbol string) int {
+	//Option 1: s is terminal, and s==t
+	if !IsNonTerminal(stackSymbol) && stackSymbol == tokenSymbol {
+		return 0
+	}
+	//Option 2: s is terminal and s!=t
+	if !IsNonTerminal(stackSymbol) && stackSymbol != tokenSymbol {
+		return 1
+	}
+	//Option 3: s is non terminal, but table[s][t] is empty.
+	if IsNonTerminal(stackSymbol) && len(ParseTable[stackSymbol][tokenSymbol]) == 0 {
+		return 2
+	}
+	//Option 4: s is non terminal and table[s][t] is nonempty
+	if IsNonTerminal(stackSymbol) && len(ParseTable[stackSymbol][tokenSymbol]) > 0 {
+		return 3
+	}
+
+	//Option 5: something terrible and wacky has occurred.
+	return 4
+}
+
+func KBTableLookUp() {
 	r := bufio.NewReader(os.Stdin)
 	for {
 		fmt.Print("Row: ")

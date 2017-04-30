@@ -41,11 +41,11 @@ func grammarOut() {
 
 func main() {
 	Verbose = false
-	TerminalRegexMap, TerminalSymbolList = ReadTerminals("tmp/toy2terminals.txt")
+	TerminalRegexMap, TerminalSymbolList = ReadTerminals("tmp/toyterminals.txt")
 	if Verbose {
 		PrintRegexMap(TerminalRegexMap)
 	}
-	data, err := ioutil.ReadFile("tests/t5.txt")
+	data, err := ioutil.ReadFile("tests/t1.txt")
 	Check(err)
 	input := string(data) + "$"
 	linenum := 1
@@ -77,7 +77,7 @@ func main() {
 		}
 	}
 	WriteTokensToFile(tokens)
-	NonTerminals = ReadNonTerminals("tmp/toy2nonterminals.txt")
+	NonTerminals = ReadNonTerminals("tmp/toynonterminals.txt")
 	Nullables = NullableList()
 	PrintNullableMap()
 	FirstMap = BuildFirstMap()
@@ -85,9 +85,30 @@ func main() {
 	FollowMap = BuildFollowMap()
 	PrintFollowMap()
 	//	grammarOut()
-	ParseTable = BuildTable()
+	ParseTable = make(map[string]map[string][]string)
+	for _, ntk := range NonTerminalSymbolList {
+		ParseTable[ntk] = make(map[string][]string)
+	}
+	BuildTable()
 	// TableLookUp()
+	f, err := os.Create("parseTableExterior")
+	Check(err)
+
+	w := bufio.NewWriter(f)
+	for _, ntk := range NonTerminalSymbolList {
+		for _, tk := range TerminalSymbolList {
+			out := "ParseTable[" + ntk + "][" + tk + "] :"
+			for _, v := range ParseTable[ntk][tk] {
+				out = out + " " + v
+			}
+			out = out + "\n"
+			w.WriteString(out)
+		}
+	}
+	w.Flush()
+	f.Close()
 	WriteTableToFile()
 	// PrintTable()
-	//ParseInput(tokens)
+	fmt.Println(":(", FollowMap["aof'"])
+	ParseInput(tokens)
 }
