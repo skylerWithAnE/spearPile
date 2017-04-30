@@ -1,0 +1,28 @@
+A minimal program This is correct number eleven four.
+
+Romeo, should be three.
+Juliet, a container for one.
+
+Act I: The actors open your heart.
+
+Scene I: We might speak your mind.
+
+[Enter Romeo and Juliet]
+
+Juliet: I am a queen.
+
+Romeo: I am a king. Let us proceed posthaste to scene II.
+
+Romeo: Thou art a fancy fancy queen.
+
+[Exeunt]
+
+Scene II: The Second part.
+
+[Enter Romeo]
+
+Romeo: I am the sum of Juliet and the sum of Juliet and a king.
+
+[Exit Romeo]
+
+

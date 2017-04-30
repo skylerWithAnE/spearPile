@@ -1,0 +1,5 @@
+CONFLICT at ParseTable[value][POS_NOUN]=adj-list noun ..incoming: noun 
+CONFLICT at ParseTable[value][NEG_NOUN]=adj-list noun ..incoming: noun 
+CONFLICT at ParseTable[goto-target''][COMMA]=COMMA SCENE goto-target''' ..incoming: COMMA SCENE 
+CONFLICT at ParseTable[keyword''''][POS_NOUN]=noun ..incoming: keyword''''' 
+CONFLICT at ParseTable[keyword''''][NEG_NOUN]=noun ..incoming: keyword''''' 

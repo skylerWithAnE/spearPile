@@ -48,24 +48,50 @@ func AllNullable(production []string) bool {
 	return true
 }
 
+func compareConflict(a, b []string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for i, s := range a {
+		if b[i] != s {
+			return false
+		}
+	}
+	return true
+}
+
 // BuildTable Build That Table!! MAKE SHAKESPEARE PARSE AGAIN!
 func BuildTable() /*map[string]map[string][]string*/ {
-	// m := make(map[string]map[string][]string)
-	//for ntk, pa := range NonTerminals {
+	f, err := os.Create("tmp/parseTableInterior")
+	Check(err)
+	w := bufio.NewWriter(f)
+
 	for _, ntk := range NonTerminalSymbolList {
-		pa := NonTerminals[ntk]
-		for _, production := range pa {
+		//iterate over the ntks in order
+		productionArray := NonTerminals[ntk]
+		//an array of string productions with lhs N
+		for _, production := range productionArray {
 			splitProd := strings.Split(production, " ")
-			ParseTable[ntk] = make(map[string][]string)
+			//split productions into a slice
+			// ParseTable[ntk] = make(map[string][]string)
 			// fmt.Println(pa)
 			for _, symbol := range FindFirst(splitProd, FollowMap[ntk]) {
 				_, present := ParseTable[ntk][symbol]
 				if present {
-					fmt.Println("CONFLICT at ParseTable[", ntk, "][", symbol, "]")
+					// fmt.Println("CONFLICT at ParseTable[", ntk, "][", symbol, "]")
+					if !compareConflict(ParseTable[ntk][symbol], splitProd) {
+						w.WriteString("CONFLICT at ParseTable[" + ntk + "][" + symbol + "]=")
+						for _, s := range ParseTable[ntk][symbol] {
+							w.WriteString(s + " ")
+						}
+						w.WriteString("..incoming: ")
+						for _, s := range splitProd {
+							w.WriteString(s + " ")
+						}
+						w.WriteRune('\n')
+					}
 				} else {
 					ParseTable[ntk][symbol] = splitProd
-					fmt.Println("m[", ntk, "][", symbol, "] = ", pa)
-					// fmt.Println("actual: ", ParseTable[ntk][symbol])
 				}
 
 			}
@@ -73,8 +99,17 @@ func BuildTable() /*map[string]map[string][]string*/ {
 				for _, symbol := range FollowMap[ntk] {
 					_, present := ParseTable[ntk][symbol]
 					if present {
-						fmt.Println("CONFLICT2 at ParseTable[", ntk, "][", symbol, "]")
-						fmt.Println(ParseTable[ntk][symbol], splitProd)
+						if !compareConflict(ParseTable[ntk][symbol], splitProd) {
+							w.WriteString("CONFLICT(2) at ParseTable[" + ntk + "][" + symbol + "]=")
+							for _, s := range ParseTable[ntk][symbol] {
+								w.WriteString(s + " ")
+							}
+							w.WriteString("..incoming: ")
+							for _, s := range splitProd {
+								w.WriteString(s + " ")
+							}
+							w.WriteRune('\n')
+						}
 					} else {
 						ParseTable[ntk][symbol] = splitProd
 					}
@@ -83,20 +118,17 @@ func BuildTable() /*map[string]map[string][]string*/ {
 		}
 
 	}
-	f, err := os.Create("parseTableInterior")
-	Check(err)
 
-	w := bufio.NewWriter(f)
-	for _, ntk := range NonTerminalSymbolList {
-		for _, tk := range TerminalSymbolList {
-			out := "ParseTable[" + ntk + "][" + tk + "] :"
-			for _, v := range ParseTable[ntk][tk] {
-				out = out + " " + v
-			}
-			out = out + "\n"
-			w.WriteString(out)
-		}
-	}
+	// for _, ntk := range NonTerminalSymbolList {
+	// 	for _, tk := range TerminalSymbolList {
+	// 		out := "ParseTable[" + ntk + "][" + tk + "] :"
+	// 		for _, v := range ParseTable[ntk][tk] {
+	// 			out = out + " " + v
+	// 		}
+	// 		out = out + "\n"
+	// 		w.WriteString(out)
+	// 	}
+	// }
 	w.Flush()
 	f.Close()
 	// return m

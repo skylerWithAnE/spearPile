@@ -1,0 +1,15 @@
+This program is correct.
+
+Romeo, our first variable.
+Juliet, our second variable.
+Soldier, the sum.
+
+Act I: The reception.
+
+Scene I: Get the values.
+
+[Enter Romeo and Juliet]
+
+Romeo: Open your mind. You are as good as the sum of yourself and a king. Speak your mind.
+
+[Exeunt]

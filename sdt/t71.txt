@@ -1,0 +1,15 @@
+This is correct even though it seems like it should not be.
+
+Romeo, a variable.
+Juliet, another variable.
+Tybalt, the adversary.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo and Juliet]
+
+Romeo: I am a king. If not, remember me.
+Juliet: Open your heart.
+
+[Exeunt omnes]

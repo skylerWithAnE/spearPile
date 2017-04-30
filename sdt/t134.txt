@@ -1,0 +1,18 @@
+A minimal program This is incorrect number eleven twenty.
+
+Romeo, a self effacing variable.
+Juliet, another variable.
+Tybalt, a third variable.
+
+Act I: The Play Opens.
+
+Scene I: We Begin.
+
+[Enter Romeo, Juliet and Tybalt]
+
+Romeo: I am the difference between a toad and a dishonest hag.
+Juliet: You am the difference between a toad and the difference between a king and a fancy fancy lad.
+Tybalt: I am the difference between the difference between a toad and a king and a fancy fancy lad.
+
+
+[Exit Romeo]

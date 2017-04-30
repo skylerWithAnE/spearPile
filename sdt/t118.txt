@@ -1,0 +1,18 @@
+seven nine This is correct number eight two.
+
+Romeo, eight zero.
+Juliet, eight one.
+Tybalt, eight two.
+Benvolio, eight three.
+
+Act I: eight four.
+
+Scene I: eight five.
+
+[Enter Romeo and Juliet]
+Romeo: Is an embroidered lad less vile than a vile toad?
+Juliet: Is Romeo at least as vile as an embroidered toad?
+Romeo: Are you at most as handsome as a furry peach?
+Juliet: Are you at least as handsome as a furry fancy peach?
+Romeo: Am I different from a handsome peach?
+[Exeunt]

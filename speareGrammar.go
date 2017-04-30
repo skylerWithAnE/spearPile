@@ -29,7 +29,9 @@ func ReadNonTerminals(fname string) map[string][]string {
 
 		if len(entry) == 2 {
 			token := strings.Trim(entry[0], " ")
-			NonTerminalSymbolList = append(NonTerminalSymbolList, token)
+			if StringInSlice(token, NonTerminalSymbolList) == false {
+				NonTerminalSymbolList = append(NonTerminalSymbolList, token)
+			}
 			production := strings.Trim(entry[1], " ")
 			multiProduction := strings.Split(production, "|")
 			if len(multiProduction) > 0 {
@@ -74,7 +76,9 @@ func ReadTerminals(fname string) (map[string]*regexp.Regexp, []string) {
 			rex, err := regexp.Compile("(?i)" + production)
 			if err == nil {
 				m[symbol] = rex
-				symbolList = append(symbolList, symbol)
+				if StringInSlice(symbol, symbolList) == false {
+					symbolList = append(symbolList, symbol)
+				}
 			} else {
 				fmt.Println("Internal error! Production failed to compile to regex!")
 			}
@@ -186,55 +190,55 @@ func BuildFirstMap() map[string][]string {
 func BuildFollowMap() map[string][]string {
 	follow := make(map[string][]string)
 	follow[StartState] = append(follow[StartState], "$")
-	f, err := os.Create("tmp/followLog")
-	Check(err)
-	w := bufio.NewWriter(f)
+	// f, err := os.Create("tmp/followLog")
+	// Check(err)
+	// w := bufio.NewWriter(f)
 	for {
 		unstable := false
-		w.WriteString("\n***NEW LOOP***\n")
+		// w.WriteString("\n***NEW LOOP***\n")
 		//do-while follow is not stable
 
 		//for N, v := range NonTerminals {
 		for _, N := range NonTerminalSymbolList {
 			unionSuccess := false
-			w.WriteString("\nNew NonTerm loop\n")
+			// w.WriteString("\nNew NonTerm loop\n")
 			if unstable {
-				w.WriteString("unstable\n")
+				// w.WriteString("unstable\n")
 			}
 			v := NonTerminals[N]
 			//for all NonTerminals
 			for _, production := range v {
-				w.WriteString("checking production \"" + production + "\" in NonTerm " + N + "\n")
+				// w.WriteString("checking production \"" + production + "\" in NonTerm " + N + "\n")
 				symbolArray := strings.Split(production, " ")
 				for i, symbol := range symbolArray {
 					loopBreak := false
-					w.WriteString("N: " + N + "\nsymbol: " + symbol + "\n")
+					// w.WriteString("N: " + N + "\nsymbol: " + symbol + "\n")
 					// for each symbol in the production.
 					if IsNonTerminal(symbol) {
-						w.WriteString(symbol + " is non terminal, iterate over remaining production\n")
+						// w.WriteString(symbol + " is non terminal, iterate over remaining production\n")
 						for j := i + 1; j < len(symbolArray); j++ {
 							nextSymbol := symbolArray[j]
 							follow[symbol], unionSuccess = UnionSlices(follow[symbol], FirstMap[nextSymbol])
-							w.WriteString("perform union on follow[symbol] U first[nextSymbol]\n")
+							// w.WriteString("perform union on follow[symbol] U first[nextSymbol]\n")
 							if !IsNullable(nextSymbol) {
-								w.WriteString("not nullable next symbol.." + nextSymbol + "\n")
+								// w.WriteString("not nullable next symbol.." + nextSymbol + "\n")
 								loopBreak = true
 								break
 							}
 
 						}
 						if !loopBreak {
-							w.WriteString("no loop break occurred, do follow[" + symbol + "]Ufollow[" + N + "]..\n")
-							old := follow[symbol]
+							// w.WriteString("no loop break occurred, do follow[" + symbol + "]Ufollow[" + N + "]..\n")
+							// old := follow[symbol]
 							follow[symbol], unionSuccess = UnionSlices(follow[symbol], follow[N])
 							if unstable {
-								fmt.Println("union occurred:", "follow[", symbol, "] is now ",
-									follow[symbol], "previously ", old, ".")
+								// fmt.Println("union occurred:", "follow[", symbol, "] is now ",
+								// follow[symbol], "previously ", old, ".")
 							}
 						}
 
 					} else {
-						w.WriteString("symbol is terminal... continue\n")
+						// w.WriteString("symbol is terminal... continue\n")
 					}
 				} //end production loop
 			} //end productions with lhs N loop
@@ -245,17 +249,17 @@ func BuildFollowMap() map[string][]string {
 		if unstable == false {
 			break
 		}
-		w.Flush()
+		// w.Flush()
 	} //end infinite loop
 
-	for _, ntk := range NonTerminalSymbolList {
-		w.WriteString(ntk + " -> ")
-		for _, v := range follow[ntk] {
-			w.WriteString(v + ", ")
-		}
-		w.WriteString("\n")
-	}
-	w.Flush()
-	f.Close()
+	// for _, ntk := range NonTerminalSymbolList {
+	// 	// w.WriteString(ntk + " -> ")
+	// 	for _, v := range follow[ntk] {
+	// 		// w.WriteString(v + ", ")
+	// 	}
+	// 	w.WriteString("\n")
+	//}
+	// w.Flush()
+	// f.Close()
 	return follow
 }

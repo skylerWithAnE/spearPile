@@ -1,0 +1,83 @@
+This is incorrect.
+
+Juliet, her first instance.
+Romeo, a variable.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo and Juliet]
+
+Romeo: You are a toad. Open your heart.
+
+[Exeunt]
+
+Scene II: The second scene.
+
+[Enter Romeo]
+
+Romeo: I am a king. Open your heart.
+
+[Exit Romeo]
+
+Scene III: The third scene.
+
+[Enter Romeo]
+
+Romeo: I am a mighty toad. Open your heart.
+
+[Exit Romeo]
+
+
+Act II: The next act.
+Scene I: Scene one.
+
+[Enter Romeo and Juliet]
+
+Romeo: You are a toad. Open your heart.
+
+[Exeunt]
+
+Scene II: Scene two.
+
+[Enter Romeo]
+
+Romeo: I am a toad.
+
+[Exit Romeo]
+
+Scene III: Scene three.
+
+[Enter Romeo]
+
+Romeo: I am a mighty toad.
+
+[Exit Romeo]
+
+
+Act III: The last act.
+Scene I: Scene xone.
+
+[Enter Romeo and Juliet]
+
+Romeo: You are a toad.
+
+[Exeunt]
+
+Scene II: Scene xtwo.
+
+[Enter Romeo]
+
+Romeo: I am a toad.
+
+[Exit Romeo]
+
+Scene III: Scene xthree.
+
+[Enter Romeo]
+
+Romeo: I am a mighty toad. Open your heart.
+
+[Exit Romeo]
+
+

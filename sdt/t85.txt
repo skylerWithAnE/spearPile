@@ -1,0 +1,23 @@
+This is a correct program.
+
+Lady
+    Macbeth
+        , 
+            a 
+                variable.
+Simon   Shadow, another variable.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Lady
+    Macbeth and Simon                Shadow]
+
+Simon          
+Shadow: You are a toad. Open your heart.
+Lady
+Macbeth
+:
+Open your heart.
+
+[Exeunt]

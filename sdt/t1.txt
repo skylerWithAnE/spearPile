@@ -1,0 +1,13 @@
+This is a correct program.
+
+Romeo, a variable.
+Juliet, another variable.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo and Juliet]
+
+Romeo: You are a toad. Open your heart.
+
+[Exeunt]

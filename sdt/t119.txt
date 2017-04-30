@@ -1,0 +1,18 @@
+eight six This is correct number eight nine.
+
+Romeo, eight seven.
+Juliet, eight eight.
+Tybalt, eight nine.
+Benvolio, nine zero.
+
+Act I: nine one.
+
+Scene I: nine two.
+
+[Enter Romeo and Juliet]
+Romeo: Is a fancy lad at most as embroidered as a fancy lad?
+Juliet: Is a fancy lad different from Romeo?
+Romeo: Is a vile furry peach better than the product of Tybalt and a toad?
+Juliet: Is a vile furry peach more fancy than a fancy lad?
+Romeo: Is a vile furry peach as vile as a fancy lad?
+[Exeunt]

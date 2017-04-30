@@ -1,0 +1,26 @@
+This program is incorrect due to the lack of an addressee.
+
+Romeo, our first variable.
+Juliet, our second variable.
+Soldier, the sum.
+
+Act I: The reception.
+
+Scene I: Get the values.
+
+[Enter Romeo and Juliet]
+
+Romeo: Listen to your heart.
+Juliet: Listen to your heart.
+
+[Exeunt]
+
+Scene II: Let us do some addition.
+
+[Enter Soldier]
+
+Soldier: I am the sum of Romeo and Juliet. Open your heart!
+
+[Exit Soldier]
+
+

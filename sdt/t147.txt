@@ -1,0 +1,18 @@
+two two three This is correct number eight thirteen.
+
+Romeo, two two four.
+Juliet, two two five.
+Tybalt, two two six.
+Benvolio, two two seven.
+
+Act I: two two eight.
+
+Scene I: two two nine.
+
+[Enter Romeo and Juliet]
+Romeo: Is the sum of a fancy lad and the difference between a furry peach and a toad as embroidered as the product of Tybalt and a toad?
+Juliet: Is the sum of a fancy lad and the difference between a furry peach and a toad worse than a fancy lad?
+Romeo: Is the sum of a fancy lad and the difference between a furry peach and a toad less furry than the product of a fancy lad and a vile peach?
+Juliet: Is the sum of a fancy lad and the difference between a furry peach and a toad at least as vile as the product of a fancy lad and a vile peach?
+Romeo: Is the sum of a fancy lad and the difference between a furry peach and a toad at most as furry as a fancy lad?
+[Exeunt]

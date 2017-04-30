@@ -92,5 +92,26 @@ conditional -> IF conditional'
 conditional' -> SO COMMA optional-interjection sentence
 conditional' -> NOT COMMA optional-interjection sentence
 
-wordlist -> allwords | allwords wordlist
-allwords -> ANYWORD | ARTICLE | AM | I | noun | adj | THE | WE | ACTOR | AND | IS | LESS | MORE | YOU | IF | IS | POSSESSIVE | TO | OPEN_YOUR_HEART | SPEAK_YOUR_MIND | THE_SUM_OF
+wordlist -> allwords wordlist | λ
+allwords -> ANYWORD | keyword
+keyword -> keyword'
+keyword' -> ARTICLE | keyword''
+keyword'' -> AM  | keyword'''
+keyword''' -> IS  | keyword''''
+keyword'''' -> noun |  keyword'''''
+keyword''''' -> THE |  keyword''''''
+keyword'''''' -> WE |  keyword'''''''
+keyword''''''' -> POSSESSIVE | keyword''''''''
+keyword'''''''' -> ACTOR | keyword'''''''''
+keyword''''''''' -> TO | keyword''''''''''
+keyword'''''''''' -> OPEN_YOUR_HEART | keyword'''''''''''
+keyword''''''''''' -> SPEAK_YOUR_MIND | keyword''''''''''''
+keyword'''''''''''' -> adj | keyword'''''''''''''
+keyword''''''''''''' -> noun | keyword''''''''''''''
+keyword'''''''''''''' -> AND | keyword'''''''''''''''
+keyword''''''''''''''' -> THE_SUM_OF | keyword''''''''''''''''
+keyword'''''''''''''''' -> LESS | keyword'''''''''''''''''
+keyword''''''''''''''''' -> MORE | keyword''''''''''''''''''
+keyword'''''''''''''''''' -> YOU | keyword'''''''''''''''''''
+keyword''''''''''''''''''' -> IF
+

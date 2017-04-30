@@ -1,0 +1,22 @@
+This is incorrect due to the bad proceed.
+
+Juliet, her first instance.
+Romeo, a variable.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo and Juliet]
+
+Romeo: You are a toad. Are you as good as a toad? If so,
+    let us proceed to Act II, Scene I.
+
+[Exeunt]
+
+Scene II: The second scene.
+
+[Enter Romeo]
+
+Romeo: I am a toad.
+
+[Exit Romeo]

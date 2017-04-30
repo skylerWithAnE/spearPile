@@ -1,0 +1,34 @@
+A minimal program This is incorrect number eleven ten.
+
+Romeo, a variable which eventually is sixty five.
+Juliet, a new line.
+Ophelia, a temporary variable.
+
+Act I: The Play Opens.
+
+Scene I: We Begin.
+
+[Enter Romeo]
+
+Romeo: Romeo, you are a fancy fancy fancy fancy fancy fancy king. You are
+    the sum of yourself and a king. Speak your mind.
+    
+[Enter Juliet and Ophelia]
+
+Romeo: Juliet, You are a fancy fancy fancy queen. You are as good as the sum of 
+    yourself and a fancy queen. Speak your mind. 
+    
+Romeo: Ophelia, open your mind. You are as good as the
+    sum of yourself and a queen. Speak your mind.
+    
+Romeo: Juliet, speak your mind. Are you as good as a lad!
+
+Romeo: Ophelia, Listen to your heart. 
+    You are as good as the sum of yourself and a king.
+    Open your heart.
+
+Romeo: Juliet, Speak your mind.
+
+
+    
+[Exeunt]

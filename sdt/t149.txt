@@ -1,0 +1,14 @@
+two three seven This is incorrect number eight three.
+
+Romeo, two three eight.
+Juliet, two three nine.
+Tybalt, two four zero.
+Benvolio, two four one.
+
+Act I: two four two.
+
+Scene I: two four three.
+
+[Enter Romeo and Juliet]
+Romeo: Am Romeo as fancy as a toad?
+[Exeunt]

@@ -46,6 +46,11 @@ func ParseInput(input []Token) bool {
 	for _, t := range input {
 		tokens = append(tokens, t.sym)
 	}
+
+	// f, err := os.Create("parseLog")
+	// Check(err)
+	// w := bufio.NewWriter(f)
+
 	for {
 		currToken := tokens[0]
 		lookupCode := TableLookUp(peekStack(parseStack), currToken)
@@ -60,9 +65,13 @@ func ParseInput(input []Token) bool {
 			}
 		} else if lookupCode == 1 {
 			//input not in language.
-			return false
+			if peekStack(parseStack) == lambda {
+				parseStack = popStack(parseStack)
+			} else {
+				return false
+			}
 		} else if lookupCode == 2 {
-			fmt.Println(ParseTable[peekStack(parseStack)][currToken])
+			fmt.Println("parse failed.", ParseTable[peekStack(parseStack)][currToken])
 			return false
 		} else if lookupCode == 3 {
 			//Pop s from stack.
@@ -80,5 +89,7 @@ func ParseInput(input []Token) bool {
 		fmt.Println("end loop " + peekStack(parseStack))
 	}
 
+	// w.Flush()
+	// f.Close()
 	return true
 }

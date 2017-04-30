@@ -1,0 +1,23 @@
+A minimal program This is correct number eleven two.
+
+Romeo, The counter.
+Juliet, accumulates the value.
+Ophelia, another value.
+
+Act I: The Play Opens.
+
+Scene I: We Begin.
+
+[Enter Romeo and Juliet]
+
+Romeo: 
+    I am a fancy fancy king.
+    Am I at most as good as a fancy  king?
+    If so, you are a queen.
+
+[Exit Juliet]
+[Enter Ophelia]
+
+Romeo: If not, you are a fair queen.
+
+[Exeunt]

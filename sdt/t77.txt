@@ -1,0 +1,13 @@
+This is an incorrect program.
+
+Romeo, a variable.
+Juliet, another variable.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo]
+
+Romeo: Recall toads.
+
+[Exeunt]

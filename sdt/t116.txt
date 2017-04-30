@@ -1,0 +1,49 @@
+six three This is correct number seven three but it crashes.
+
+Romeo, six four.
+Juliet, six five.
+
+Act I: six six.
+
+Scene I: six seven.
+
+[Enter Romeo and Juliet]
+
+Romeo: You are a fancy peach.
+Juliet: Let us proceed to act I, scene II.
+
+[Exeunt]
+
+Scene II: six eight.
+[Enter Romeo]
+
+Romeo: I am a king!
+
+
+[Exit Romeo]
+
+Act II: six nine.
+
+Scene I: seven zero.
+
+[Enter Juliet]
+
+Juliet: We shall proceed to act I, scene I.
+
+[Exit Juliet]
+
+Scene II: seven one.
+
+[Enter Romeo and Juliet]
+
+Juliet: We must proceed to act I, scene I.
+Romeo: We ought to proceed to act I, scene II.
+Juliet: We must proceed posthaste to act I, scene I.
+Romeo: We ought to proceed posthaste to act I, scene II.
+Juliet: Let us proceed posthaste to act I, scene II.
+Romeo: We shall return.
+Juliet: We must return.
+Romeo: We ought to return.
+Juliet: Let us return.
+
+[Exeunt]

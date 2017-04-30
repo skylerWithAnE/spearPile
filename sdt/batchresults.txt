@@ -1,0 +1,456 @@
+~~~~~~~~~~t1.txt [C]~~~~~~~~~~
+-1
+~~~~~~~~~~t2.txt [I]~~~~~~~~~~
+Error: Double declaration of actor JULIET
+
+~~~~~~~~~~t3.txt [I]~~~~~~~~~~
+Error: Undeclared actor JULIET
+
+~~~~~~~~~~t4.txt [I]~~~~~~~~~~
+Error: Acts: Out of order
+
+~~~~~~~~~~t5.txt [I]~~~~~~~~~~
+Error: Acts: Out of order
+
+~~~~~~~~~~t6.txt [I]~~~~~~~~~~
+Error: Scenes: Out of order
+
+~~~~~~~~~~t7.txt [I]~~~~~~~~~~
+Error: Acts: Out of order
+
+~~~~~~~~~~t8.txt [I]~~~~~~~~~~
+Error: First act must be I
+
+~~~~~~~~~~t9.txt [I]~~~~~~~~~~
+Error: Scenes: Out of order
+
+~~~~~~~~~~t10.txt [I]~~~~~~~~~~
+Error: First scene must be I
+
+~~~~~~~~~~t11.txt [I]~~~~~~~~~~
+Error: First scene must be I
+
+~~~~~~~~~~t12.txt [C]~~~~~~~~~~
+-4
+~~~~~~~~~~t13.txt [I]~~~~~~~~~~
+Error: No clear addressee
+
+~~~~~~~~~~t14.txt [I]~~~~~~~~~~
+Error: No clear addressee
+
+~~~~~~~~~~t15.txt [C]~~~~~~~~~~
+-4
+~~~~~~~~~~t16.txt [C]~~~~~~~~~~
+8
+~~~~~~~~~~t17.txt [C]~~~~~~~~~~
+-2
+~~~~~~~~~~t18.txt [I]~~~~~~~~~~
+Error: Addressee JULIET is not onstage
+
+~~~~~~~~~~t19.txt [C]~~~~~~~~~~
+0-1
+~~~~~~~~~~t20.txt [I]~~~~~~~~~~
+Error: Putting ROMEO onstage, but already there
+
+~~~~~~~~~~t21.txt [I]~~~~~~~~~~
+Error: Putting ROMEO onstage, but already there
+
+~~~~~~~~~~t22.txt [I]~~~~~~~~~~
+Error: Cannot exit TYBALT: Not onstage
+
+~~~~~~~~~~t23.txt [I]~~~~~~~~~~
+Error: Cannot exit TYBALT: Not onstage
+
+~~~~~~~~~~t24.txt [I]~~~~~~~~~~
+Error: Cannot exit BENVOLIO: Not onstage
+
+~~~~~~~~~~t25.txt [I]~~~~~~~~~~
+Error: Cannot exit BENVOLIO: Not onstage
+
+~~~~~~~~~~t26.txt [C]~~~~~~~~~~
+-1-1
+~~~~~~~~~~t27.txt [I]~~~~~~~~~~
+Error: Cannot exit ROMEO: Not onstage
+
+~~~~~~~~~~t28.txt [I]~~~~~~~~~~
+Error: Cannot exit ROMEO: Not onstage
+
+~~~~~~~~~~t29.txt [C]~~~~~~~~~~
+-3
+~~~~~~~~~~t30.txt [C]~~~~~~~~~~
+-1
+~~~~~~~~~~t31.txt [I]~~~~~~~~~~
+Error: Use of undeclared actor BENVOLIO
+
+~~~~~~~~~~t32.txt [I]~~~~~~~~~~
+Error: Branch to nonexistant act/scene (act 2, scene 1)
+
+~~~~~~~~~~t33.txt [C]~~~~~~~~~~
+1
+~~~~~~~~~~t34.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t35.txt [I]~~~~~~~~~~
+Error: Branch to nonexistant act/scene (act 1, scene 2)
+
+~~~~~~~~~~t36.txt [C]~~~~~~~~~~
+1
+~~~~~~~~~~t37.txt [C]~~~~~~~~~~
+2
+~~~~~~~~~~t38.txt [C]~~~~~~~~~~
+-10
+~~~~~~~~~~t39.txt [C]~~~~~~~~~~
+070
+~~~~~~~~~~t40.txt [X]~~~~~~~~~~
+(Crashed: 1)
+~~~~~~~~~~t41.txt [C]~~~~~~~~~~
+24
+~~~~~~~~~~t42.txt [C]~~~~~~~~~~
+1
+~~~~~~~~~~t43.txt [I]~~~~~~~~~~
+Error: BENVOLIO : not onstage: Line 12
+
+~~~~~~~~~~t44.txt [I]~~~~~~~~~~
+Error: No addressee for I/O
+
+~~~~~~~~~~t45.txt [I]~~~~~~~~~~
+Error: Branch to nonexistant act/scene (act 1, scene 3)
+
+~~~~~~~~~~t46.txt [I]~~~~~~~~~~
+Error: Branch to nonexistant act/scene (act 2, scene 1)
+
+~~~~~~~~~~t47.txt [I]~~~~~~~~~~
+Error: No addressee for I/O
+
+~~~~~~~~~~t48.txt [C]~~~~~~~~~~
+Enter a number --> Enter a number --> 5
+~~~~~~~~~~t49.txt [C]~~~~~~~~~~
+Enter a number --> Enter a number --> Sum
+5
+Difference
+-1
+Product
+6
+Quotient
+0
+Remainder
+2
+Square
+4
+Square ROOT
+2
+Twice
+4
+Thrice
+6
+Half
+1
+Both
+1
+Either
+1
+Opposite
+0
+
+
+~~~~~~~~~~t50.txt [C]~~~~~~~~~~
+Y
+
+~~~~~~~~~~t51.txt [C]~~~~~~~~~~
+Y
+
+~~~~~~~~~~t52.txt [C]~~~~~~~~~~
+N
+
+~~~~~~~~~~t53.txt [C]~~~~~~~~~~
+Y
+
+~~~~~~~~~~t54.txt [C]~~~~~~~~~~
+Y
+
+~~~~~~~~~~t55.txt [C]~~~~~~~~~~
+N
+
+~~~~~~~~~~t56.txt [C]~~~~~~~~~~
+N
+
+~~~~~~~~~~t57.txt [C]~~~~~~~~~~
+Y
+
+~~~~~~~~~~t58.txt [C]~~~~~~~~~~
+Y
+
+~~~~~~~~~~t59.txt [C]~~~~~~~~~~
+N
+
+~~~~~~~~~~t60.txt [C]~~~~~~~~~~
+Y
+
+~~~~~~~~~~t61.txt [C]~~~~~~~~~~
+N
+
+~~~~~~~~~~t62.txt [C]~~~~~~~~~~
+Y
+
+~~~~~~~~~~t63.txt [C]~~~~~~~~~~
+N
+
+~~~~~~~~~~t64.txt [C]~~~~~~~~~~
+Y
+
+~~~~~~~~~~t65.txt [C]~~~~~~~~~~
+N
+
+~~~~~~~~~~t66.txt [I]~~~~~~~~~~
+Error: Syntax error at [ANYWORD (Why) line 2]
+
+~~~~~~~~~~t67.txt [I]~~~~~~~~~~
+Error: Syntax error at [ANYWORD (Because) line 2]
+
+~~~~~~~~~~t68.txt [I]~~~~~~~~~~
+Error: Undeclared actor TYBALT
+
+~~~~~~~~~~t69.txt [I]~~~~~~~~~~
+Error: Cannot exit TYBALT: Not onstage
+
+~~~~~~~~~~t70.txt [I]~~~~~~~~~~
+Error: Branch to nonexistant act/scene (act 1, scene 3)
+
+~~~~~~~~~~t71.txt [C]~~~~~~~~~~
+1
+~~~~~~~~~~t72.txt [C]~~~~~~~~~~
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+~~~~~~~~~~t73.txt [C]~~~~~~~~~~
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+~~~~~~~~~~t74.txt [I]~~~~~~~~~~
+Error: No addressee for I/O
+
+~~~~~~~~~~t75.txt [I]~~~~~~~~~~
+Error: No clear addressee
+
+~~~~~~~~~~t76.txt [I]~~~~~~~~~~
+Error: No addressee for stack op
+
+~~~~~~~~~~t77.txt [I]~~~~~~~~~~
+Error: No addressee for stack op
+
+~~~~~~~~~~t78.txt [C]~~~~~~~~~~
+020
+~~~~~~~~~~t79.txt [I]~~~~~~~~~~
+Error: No addressee for stack op
+
+~~~~~~~~~~t80.txt [C]~~~~~~~~~~
+0
+~~~~~~~~~~t81.txt [C]~~~~~~~~~~
+1
+~~~~~~~~~~t82.txt [C]~~~~~~~~~~
+11
+~~~~~~~~~~t83.txt [C]~~~~~~~~~~
+1
+~~~~~~~~~~t84.txt [C]~~~~~~~~~~
+1
+~~~~~~~~~~t85.txt [C]~~~~~~~~~~
+-10
+~~~~~~~~~~t86.txt [C]~~~~~~~~~~
+-1-1
+~~~~~~~~~~t87.txt [C]~~~~~~~~~~
+Enter a character --> 3
+~~~~~~~~~~t88.txt [I]~~~~~~~~~~
+Error: Addressee JULIET is not onstage
+
+~~~~~~~~~~t89.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t90.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t91.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t92.txt [I]~~~~~~~~~~
+Error: Syntax error at [PE (!) line 24]
+
+~~~~~~~~~~t93.txt [I]~~~~~~~~~~
+Error: Syntax error at [RBRACKET (]) line 17]
+
+~~~~~~~~~~t94.txt [I]~~~~~~~~~~
+Error: Syntax error at [SCENE (scene) line 14]
+
+~~~~~~~~~~t95.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t96.txt [I]~~~~~~~~~~
+Error: Syntax error at [COMMA (,) line 1]
+
+~~~~~~~~~~t97.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t98.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t99.txt [I]~~~~~~~~~~
+Error: Syntax error at [PE (.) line 10]
+
+~~~~~~~~~~t100.txt [I]~~~~~~~~~~
+Error: Unknown token at line 1:
+'t
+
+~~~~~~~~~~t101.txt [C]~~~~~~~~~~
+8420
+~~~~~~~~~~t102.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t103.txt [I]~~~~~~~~~~
+Error: Syntax error at [POS_NOUN (king) line 21]
+
+~~~~~~~~~~t104.txt [I]~~~~~~~~~~
+Error: Syntax error at [COMMA (,) line 8]
+
+~~~~~~~~~~t105.txt [I]~~~~~~~~~~
+Error: Syntax error at [ANYWORD (Yes) line 9]
+
+~~~~~~~~~~t106.txt [X]~~~~~~~~~~
+(Crashed: -11)
+~~~~~~~~~~t107.txt [I]~~~~~~~~~~
+Error: Syntax error at [COMMA (,) line 1]
+
+~~~~~~~~~~t108.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t109.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t110.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t111.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t112.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t113.txt [I]~~~~~~~~~~
+Error: Syntax error at [PE (.) line 8]
+
+~~~~~~~~~~t114.txt [I]~~~~~~~~~~
+Error: Syntax error at [PE (.) line 12]
+
+~~~~~~~~~~t115.txt [I]~~~~~~~~~~
+Error: Syntax error at [ARTICLE (a) line 21]
+
+~~~~~~~~~~t116.txt [X]~~~~~~~~~~
+(Crashed: -11)
+~~~~~~~~~~t117.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t118.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t119.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t120.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t121.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t122.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t123.txt [I]~~~~~~~~~~
+Error: Syntax error at [THE (The) line 5]
+
+~~~~~~~~~~t124.txt [I]~~~~~~~~~~
+Error: Syntax error at [$ line 2]
+
+~~~~~~~~~~t125.txt [I]~~~~~~~~~~
+Error: Syntax error at [THE (The) line 14]
+
+~~~~~~~~~~t126.txt [C]~~~~~~~~~~
+25081512001221255186
+~~~~~~~~~~t127.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t128.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t129.txt [I]~~~~~~~~~~
+Error: Syntax error at [PE (.) line 13]
+
+~~~~~~~~~~t130.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t131.txt [C]~~~~~~~~~~
+Hello
+~~~~~~~~~~t132.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t133.txt [I]~~~~~~~~~~
+Error: Syntax error at [COMMA (,) line 1]
+
+~~~~~~~~~~t134.txt [I]~~~~~~~~~~
+Error: Syntax error at [AM (am) line 14]
+
+~~~~~~~~~~t135.txt [I]~~~~~~~~~~
+Error: Syntax error at [SCENE (scene) line 14]
+
+~~~~~~~~~~t136.txt [X]~~~~~~~~~~
+(Crashed: -11)
+~~~~~~~~~~t137.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t138.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t139.txt [I]~~~~~~~~~~
+Error: Syntax error at [I line 13]
+
+~~~~~~~~~~t140.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t141.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t142.txt [C]~~~~~~~~~~
+A
+Enter a character --> 3
+Enter a number --> 4
+
+~~~~~~~~~~t143.txt [I]~~~~~~~~~~
+Error: Syntax error at [$ line 6]
+
+~~~~~~~~~~t144.txt [I]~~~~~~~~~~
+Error: Syntax error at [ACTOR (Juliet) line 18]
+
+~~~~~~~~~~t145.txt [I]~~~~~~~~~~
+Error: Syntax error at [ANYWORD (Thee) line 29]
+
+~~~~~~~~~~t146.txt [I]~~~~~~~~~~
+Error: Syntax error at [LBRACKET ([) line 7]
+
+~~~~~~~~~~t147.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t148.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t149.txt [I]~~~~~~~~~~
+Error: Syntax error at [ACTOR (Romeo) line 13]
+
+~~~~~~~~~~t150.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t151.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t152.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t153.txt [I]~~~~~~~~~~
+Error: Syntax error at [ACTOR (Philip the Bastard) line 16]
+
+~~~~~~~~~~t154.txt [I]~~~~~~~~~~
+Error: Syntax error at [ANYWORD (Romxeo) line 3]
+
+~~~~~~~~~~t155.txt [I]~~~~~~~~~~
+Error: Syntax error at [POS_NOUN (lad) line 11]
+
+~~~~~~~~~~t156.txt [I]~~~~~~~~~~
+Error: Syntax error at [COMMA (,) line 1]
+
+~~~~~~~~~~t157.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t158.txt [C]~~~~~~~~~~
+
+~~~~~~~~~~t159.txt [X]~~~~~~~~~~
+(Crashed: 1)

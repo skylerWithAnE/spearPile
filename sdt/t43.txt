@@ -1,0 +1,14 @@
+This is incorrect since the speaker is not onstage.
+
+Romeo, a variable.
+Juliet, another variable.
+Tybalt, the adversary.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo and Juliet]
+
+Benvolio: You are a toad.
+
+[Exeunt omnes]

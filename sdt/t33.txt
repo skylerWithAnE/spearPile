@@ -1,0 +1,29 @@
+This is correct.
+
+Romeo, a variable.
+Juliet, another variable.
+Tybalt, the adversary.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter Romeo  and Juliet]
+
+Romeo: Let us proceed to Act III.
+
+[Exeunt omnes]
+
+Act II: The second act.
+Scene I: No one cares.
+
+[Enter Romeo and Juliet]
+Romeo: Open your heart.
+[Exit Romeo]
+
+Act III: The last act.
+Scene I: Here we go.
+
+[Enter Romeo and Juliet]
+Romeo: You are a queen. Open your heart.
+[Exeunt]
+

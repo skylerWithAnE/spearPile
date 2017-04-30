@@ -1,0 +1,18 @@
+one five two This is correct number eight three.
+
+Romeo, one five three.
+Juliet, one five four.
+Tybalt, one five five.
+Benvolio, one five six.
+
+Act I: one five seven.
+
+Scene I: one five eight.
+
+[Enter Romeo and Juliet]
+Romeo: Am I better than the product of Tybalt and a toad?
+Juliet: Am I more vile than a fancy lad?
+Romeo: Am I as vile as the product of a fancy lad and a vile peach?
+Juliet: Am I worse than the product of Tybalt and a toad?
+Romeo: Am I less vile than the product of a fancy lad and a vile peach?
+[Exeunt]
