@@ -56,10 +56,12 @@ def main():
         
         
             #replace this with the command to compile your code
-            "sh","compile.sh",f
+            #"sh","compile.sh",f
+            "run.bat "+f
             
             
             ],
+            shell=True,
             stderr=stderr
         )
         

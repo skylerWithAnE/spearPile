@@ -41,11 +41,17 @@ func grammarOut() {
 
 func main() {
 	Verbose = false
-	TerminalRegexMap, TerminalSymbolList = ReadTerminals("terminals.txt")
+	TerminalRegexMap, TerminalSymbolList = ReadTerminals("_terminals.txt")
 	if Verbose {
 		PrintRegexMap(TerminalRegexMap)
 	}
-	data, err := ioutil.ReadFile("t20.txt")
+	var fname string
+	if len(os.Args) > 1 {
+		fname = os.Args[1]
+	} else {
+		fname = "sdt/t20.txt"
+	}
+	data, err := ioutil.ReadFile(fname)
 	Check(err)
 	input := string(data) + "$"
 	linenum := 1
@@ -77,7 +83,7 @@ func main() {
 		}
 	}
 	// WriteTokensToFile(tokens)
-	NonTerminals = ReadNonTerminals("nonterminals.txt")
+	NonTerminals = ReadNonTerminals("_nonterminals.txt")
 	Nullables = NullableList()
 	// PrintNullableMap()
 	FirstMap = BuildFirstMap()
@@ -95,8 +101,10 @@ func main() {
 	success := ParseInput(tokens)
 	if success {
 		fmt.Println("Parsed.")
+		os.Exit(0)
 	} else {
 		fmt.Println("Failed.")
+		os.Exit(1)
 	}
 	// KBTableLookUp()
 }
