@@ -67,11 +67,17 @@ func ParseInput(input []Token, fname string) bool {
 	nodeID := 1
 	tokenIndex := 0
 	for {
+		// fmt.Print("stack: ")
+		for _, itm := range parseStack.items {
+			fmt.Print(itm.sym, ", ")
+		}
+		fmt.Println()
 		currToken := tokens[0]
 		lookupCode := TableLookUp(peekStack(parseStack), currToken)
 
 		if Verbose {
 			fmt.Println("currSymbol:", peekStack(parseStack), "currToken:", currToken, "got lookupCode", lookupCode)
+			// fmt.Println()
 		}
 		// w.WriteString("currSymbol:" + peekStack(parseStack) + "currToken:" + currToken + "got lookupCode" + string(lookupCode))
 		if lookupCode == 0 {
@@ -105,7 +111,7 @@ func ParseInput(input []Token, fname string) bool {
 				Check(err)
 				ftitle := rex.FindString(fname)
 
-				f, err := os.Create("graphs/graph" + ftitle + ".gv")
+				f, err := os.Create("graphs/failed_graph" + ftitle + ".gv")
 				Check(err)
 				w := bufio.NewWriter(f)
 				w.WriteString("strict graph {\n")

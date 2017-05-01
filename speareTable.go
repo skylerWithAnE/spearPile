@@ -79,7 +79,7 @@ func BuildTable() /*map[string]map[string][]string*/ {
 				_, present := ParseTable[ntk][symbol]
 				if present {
 					// fmt.Println("CONFLICT at ParseTable[", ntk, "][", symbol, "]")
-					if !compareConflict(ParseTable[ntk][symbol], splitProd) {
+					// if !compareConflict(ParseTable[ntk][symbol], splitProd) {
 						w.WriteString("CONFLICT at ParseTable[" + ntk + "][" + symbol + "]=")
 						for _, s := range ParseTable[ntk][symbol] {
 							w.WriteString(s + " ")
@@ -89,7 +89,7 @@ func BuildTable() /*map[string]map[string][]string*/ {
 							w.WriteString(s + " ")
 						}
 						w.WriteRune('\n')
-					}
+					// }
 				} else {
 					ParseTable[ntk][symbol] = splitProd
 				}
@@ -99,7 +99,7 @@ func BuildTable() /*map[string]map[string][]string*/ {
 				for _, symbol := range FollowMap[ntk] {
 					_, present := ParseTable[ntk][symbol]
 					if present {
-						if !compareConflict(ParseTable[ntk][symbol], splitProd) {
+						// if !compareConflict(ParseTable[ntk][symbol], splitProd) {
 							w.WriteString("CONFLICT(2) at ParseTable[" + ntk + "][" + symbol + "]=")
 							for _, s := range ParseTable[ntk][symbol] {
 								w.WriteString(s + " ")
@@ -109,7 +109,7 @@ func BuildTable() /*map[string]map[string][]string*/ {
 								w.WriteString(s + " ")
 							}
 							w.WriteRune('\n')
-						}
+						// }
 					} else {
 						ParseTable[ntk][symbol] = splitProd
 					}

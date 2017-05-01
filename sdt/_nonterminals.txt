@@ -5,7 +5,7 @@ dramatis_personae -> ACTOR COMMA wordlist peq dramatis_personae_
 dramatis_personae_ -> dramatis_personae | λ
 
 actlist -> act actlist_
-actlist_ -> act | λ
+actlist_ -> actlist | λ
 
 act -> ACT COLON wordlist peq scenelist
 
@@ -125,5 +125,8 @@ keyword_________________________ -> ARE |   keyword__________________________
 keyword__________________________ -> NOT |  keyword___________________________
 keyword___________________________ -> EXIT          | keyword____________________________ 
 keyword____________________________ -> PROCEED      | keyword_____________________________
-keyword_____________________________ -> THAN
+keyword_____________________________ -> THAN        | keyword______________________________
+keyword______________________________ -> OR         | keyword_______________________________
+keyword_______________________________ -> FROM      | keyword________________________________
+keyword________________________________ -> I
 

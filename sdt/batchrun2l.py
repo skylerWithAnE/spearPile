@@ -69,8 +69,10 @@ goto -> let_us goto_
 goto_ -> RETURN | PROCEED goto__
 goto__ -> TO goto_target | POSTHASTE TO goto_target
 
-goto_target -> ACT goto_target_ | SCENE
-goto_target_ -> COMMA SCENE 
+goto_target -> ACT goto_target_ | goto_target___
+goto_target_ -> λ | COMMA SCENE goto_target__
+goto_target__ -> wordlist
+goto_target___ -> COMMA SCENE 
 
 stackop -> REMEMBER arithmetic
 stackop -> RECALL wordlist
@@ -123,9 +125,5 @@ keyword_________________________ -> ARE |   keyword__________________________
 keyword__________________________ -> NOT |  keyword___________________________
 keyword___________________________ -> EXIT          | keyword____________________________ 
 keyword____________________________ -> PROCEED      | keyword_____________________________
-keyword_____________________________ -> THAN        | keyword______________________________
-keyword______________________________ -> OR         | keyword_______________________________
-keyword_______________________________ -> FROM      | keyword________________________________
-keyword________________________________ -> I        | keyword_________________________________
-keyword_________________________________ -> NOTHING
+keyword_____________________________ -> THAN
 

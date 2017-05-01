@@ -1,0 +1,405 @@
+strict graph {
+	S0 -- actlist1
+	S0 -- dramatis_personae2
+	S0 -- title3
+
+	title3 -- peq4
+	title3 -- wordlist5
+
+	wordlist5 -- wordlist6
+	wordlist5 -- allwords7
+
+	allwords7 -- ANYWORD8
+
+
+	wordlist6 -- wordlist9
+	wordlist6 -- allwords10
+
+	allwords10 -- ANYWORD11
+
+
+	wordlist9 -- wordlist12
+	wordlist9 -- allwords13
+
+	allwords13 -- ANYWORD14
+
+
+	wordlist12 -- wordlist15
+	wordlist12 -- allwords16
+
+	allwords16 -- keyword17
+
+	keyword17 -- keyword_18
+
+	keyword_18 -- keyword__19
+
+	keyword__19 -- keyword___20
+
+	keyword___20 -- IS21
+
+
+	wordlist15 -- wordlist22
+	wordlist15 -- allwords23
+
+	allwords23 -- ANYWORD24
+
+
+	wordlist22 -- wordlist25
+	wordlist22 -- allwords26
+
+	allwords26 -- ANYWORD27
+
+
+	wordlist25 -- wordlist28
+	wordlist25 -- allwords29
+
+	allwords29 -- ANYWORD30
+
+
+	wordlist28 -- wordlist31
+	wordlist28 -- allwords32
+
+	allwords32 -- ANYWORD33
+
+
+	wordlist31 -- λ34
+
+	peq4 -- PE35
+
+
+	dramatis_personae2 -- dramatis_personae_36
+	dramatis_personae2 -- peq37
+	dramatis_personae2 -- wordlist38
+	dramatis_personae2 -- COMMA39
+	dramatis_personae2 -- ACTOR40
+
+
+
+	wordlist38 -- wordlist41
+	wordlist38 -- allwords42
+
+	allwords42 -- ANYWORD43
+
+
+	wordlist41 -- wordlist44
+	wordlist41 -- allwords45
+
+	allwords45 -- ANYWORD46
+
+
+	wordlist44 -- λ47
+
+	peq37 -- PE48
+
+
+	dramatis_personae_36 -- dramatis_personae49
+
+	dramatis_personae49 -- dramatis_personae_50
+	dramatis_personae49 -- peq51
+	dramatis_personae49 -- wordlist52
+	dramatis_personae49 -- COMMA53
+	dramatis_personae49 -- ACTOR54
+
+
+
+	wordlist52 -- wordlist55
+	wordlist52 -- allwords56
+
+	allwords56 -- ANYWORD57
+
+
+	wordlist55 -- wordlist58
+	wordlist55 -- allwords59
+
+	allwords59 -- ANYWORD60
+
+
+	wordlist58 -- λ61
+
+	peq51 -- PE62
+
+
+	dramatis_personae_50 -- dramatis_personae63
+
+	dramatis_personae63 -- dramatis_personae_64
+	dramatis_personae63 -- peq65
+	dramatis_personae63 -- wordlist66
+	dramatis_personae63 -- COMMA67
+	dramatis_personae63 -- ACTOR68
+
+
+
+	wordlist66 -- wordlist69
+	wordlist66 -- allwords70
+
+	allwords70 -- ANYWORD71
+
+
+	wordlist69 -- wordlist72
+	wordlist69 -- allwords73
+
+	allwords73 -- ANYWORD74
+
+
+	wordlist72 -- λ75
+
+	peq65 -- PE76
+
+
+	dramatis_personae_64 -- dramatis_personae77
+
+	dramatis_personae77 -- dramatis_personae_78
+	dramatis_personae77 -- peq79
+	dramatis_personae77 -- wordlist80
+	dramatis_personae77 -- COMMA81
+	dramatis_personae77 -- ACTOR82
+
+
+
+	wordlist80 -- wordlist83
+	wordlist80 -- allwords84
+
+	allwords84 -- ANYWORD85
+
+
+	wordlist83 -- wordlist86
+	wordlist83 -- allwords87
+
+	allwords87 -- ANYWORD88
+
+
+	wordlist86 -- λ89
+
+	peq79 -- PE90
+
+
+	dramatis_personae_78 -- dramatis_personae91
+
+	dramatis_personae91 -- dramatis_personae_92
+	dramatis_personae91 -- peq93
+	dramatis_personae91 -- wordlist94
+	dramatis_personae91 -- COMMA95
+	dramatis_personae91 -- ACTOR96
+
+
+
+	wordlist94 -- wordlist97
+	wordlist94 -- allwords98
+
+	allwords98 -- ANYWORD99
+
+
+	wordlist97 -- wordlist100
+	wordlist97 -- allwords101
+
+	allwords101 -- ANYWORD102
+
+
+	wordlist100 -- λ103
+
+	peq93 -- PE104
+
+
+	dramatis_personae_92 -- dramatis_personae105
+
+	dramatis_personae105 -- dramatis_personae_106
+	dramatis_personae105 -- peq107
+	dramatis_personae105 -- wordlist108
+	dramatis_personae105 -- COMMA109
+	dramatis_personae105 -- ACTOR110
+
+
+
+	wordlist108 -- wordlist111
+	wordlist108 -- allwords112
+
+	allwords112 -- ANYWORD113
+
+
+	wordlist111 -- wordlist114
+	wordlist111 -- allwords115
+
+	allwords115 -- ANYWORD116
+
+
+	wordlist114 -- λ117
+
+	peq107 -- PE118
+
+
+	dramatis_personae_106 -- dramatis_personae119
+
+	dramatis_personae119 -- dramatis_personae_120
+	dramatis_personae119 -- peq121
+	dramatis_personae119 -- wordlist122
+	dramatis_personae119 -- COMMA123
+	dramatis_personae119 -- ACTOR124
+
+
+
+	wordlist122 -- wordlist125
+	wordlist122 -- allwords126
+
+	allwords126 -- ANYWORD127
+
+
+	wordlist125 -- wordlist128
+	wordlist125 -- allwords129
+
+	allwords129 -- ANYWORD130
+
+
+	wordlist128 -- wordlist131
+	wordlist128 -- allwords132
+
+	allwords132 -- ANYWORD133
+
+
+	wordlist131 -- λ134
+
+	peq121 -- PE135
+
+
+	dramatis_personae_120 -- dramatis_personae136
+
+	dramatis_personae136 -- dramatis_personae_137
+	dramatis_personae136 -- peq138
+	dramatis_personae136 -- wordlist139
+	dramatis_personae136 -- COMMA140
+	dramatis_personae136 -- ACTOR141
+
+
+
+	wordlist139 -- wordlist142
+	wordlist139 -- allwords143
+
+	allwords143 -- ANYWORD144
+
+
+	wordlist142 -- wordlist145
+	wordlist142 -- allwords146
+
+	allwords146 -- ANYWORD147
+
+
+	wordlist145 -- wordlist148
+	wordlist145 -- allwords149
+
+	allwords149 -- ANYWORD150
+
+
+	wordlist148 -- λ151
+
+	peq138 -- PE152
+
+
+	dramatis_personae_137 -- dramatis_personae153
+
+	dramatis_personae153 -- dramatis_personae_154
+	dramatis_personae153 -- peq155
+	dramatis_personae153 -- wordlist156
+	dramatis_personae153 -- COMMA157
+	dramatis_personae153 -- ACTOR158
+
+
+
+	wordlist156 -- wordlist159
+	wordlist156 -- allwords160
+
+	allwords160 -- ANYWORD161
+
+
+	wordlist159 -- wordlist162
+	wordlist159 -- allwords163
+
+	allwords163 -- ANYWORD164
+
+
+	wordlist162 -- wordlist165
+	wordlist162 -- allwords166
+
+	allwords166 -- ANYWORD167
+
+
+	wordlist165 -- λ168
+
+	peq155 -- PE169
+
+
+	dramatis_personae_154 -- dramatis_personae170
+
+	dramatis_personae170 -- dramatis_personae_171
+	dramatis_personae170 -- peq172
+	dramatis_personae170 -- wordlist173
+	dramatis_personae170 -- COMMA174
+	dramatis_personae170 -- ACTOR175
+
+
+
+	wordlist173 -- wordlist176
+	wordlist173 -- allwords177
+
+	allwords177 -- ANYWORD178
+
+
+	wordlist176 -- wordlist179
+	wordlist176 -- allwords180
+
+	allwords180 -- ANYWORD181
+
+
+	wordlist179 -- wordlist182
+	wordlist179 -- allwords183
+
+	allwords183 -- ANYWORD184
+
+
+	wordlist182 -- λ185
+
+	peq172 -- PE186
+
+
+	dramatis_personae_171 -- dramatis_personae187
+
+	dramatis_personae187 -- dramatis_personae_188
+	dramatis_personae187 -- peq189
+	dramatis_personae187 -- wordlist190
+	dramatis_personae187 -- COMMA191
+	dramatis_personae187 -- ACTOR192
+
+
+
+	wordlist190 -- wordlist193
+	wordlist190 -- allwords194
+
+	allwords194 -- ANYWORD195
+
+
+	wordlist193 -- wordlist196
+	wordlist193 -- allwords197
+
+	allwords197 -- ANYWORD198
+
+
+	wordlist196 -- wordlist199
+	wordlist196 -- allwords200
+
+	allwords200 -- ANYWORD201
+
+
+	wordlist199 -- λ202
+
+	peq189 -- PE203
+
+
+	dramatis_personae_188 -- dramatis_personae204
+
+	dramatis_personae204 -- dramatis_personae_205
+	dramatis_personae204 -- peq206
+	dramatis_personae204 -- wordlist207
+	dramatis_personae204 -- COMMA208
+	dramatis_personae204 -- ACTOR209
+
+
+
+}

@@ -518,164 +518,169 @@ strict graph {
 
 	scenelist_211 -- λ271
 
-	actlist_100 -- act272
+	actlist_100 -- actlist272
 
-	act272 -- scenelist273
-	act272 -- peq274
-	act272 -- wordlist275
-	act272 -- COLON276
-	act272 -- ACT277
+	actlist272 -- actlist_273
+	actlist272 -- act274
 
+	act274 -- scenelist275
+	act274 -- peq276
+	act274 -- wordlist277
+	act274 -- COLON278
+	act274 -- ACT279
 
 
-	wordlist275 -- wordlist278
-	wordlist275 -- allwords279
 
-	allwords279 -- ANYWORD280
+	wordlist277 -- wordlist280
+	wordlist277 -- allwords281
 
+	allwords281 -- ANYWORD282
 
-	wordlist278 -- wordlist281
-	wordlist278 -- allwords282
 
-	allwords282 -- ANYWORD283
+	wordlist280 -- wordlist283
+	wordlist280 -- allwords284
 
+	allwords284 -- ANYWORD285
 
-	wordlist281 -- λ284
 
-	peq274 -- PE285
+	wordlist283 -- λ286
 
+	peq276 -- PE287
 
-	scenelist273 -- scenelist_286
-	scenelist273 -- scene287
 
-	scene287 -- statement_list288
-	scene287 -- peq289
-	scene287 -- wordlist290
-	scene287 -- COLON291
-	scene287 -- SCENE292
+	scenelist275 -- scenelist_288
+	scenelist275 -- scene289
 
+	scene289 -- statement_list290
+	scene289 -- peq291
+	scene289 -- wordlist292
+	scene289 -- COLON293
+	scene289 -- SCENE294
 
 
-	wordlist290 -- wordlist293
-	wordlist290 -- allwords294
 
-	allwords294 -- ANYWORD295
+	wordlist292 -- wordlist295
+	wordlist292 -- allwords296
 
+	allwords296 -- ANYWORD297
 
-	wordlist293 -- wordlist296
-	wordlist293 -- allwords297
 
-	allwords297 -- ANYWORD298
+	wordlist295 -- wordlist298
+	wordlist295 -- allwords299
 
+	allwords299 -- ANYWORD300
 
-	wordlist296 -- λ299
 
-	peq289 -- PE300
+	wordlist298 -- λ301
 
+	peq291 -- PE302
 
-	statement_list288 -- statement_list301
-	statement_list288 -- statement302
 
-	statement302 -- enterexit_stmt303
+	statement_list290 -- statement_list303
+	statement_list290 -- statement304
 
-	enterexit_stmt303 -- enterexit_stmt_304
-	enterexit_stmt303 -- LBRACKET305
+	statement304 -- enterexit_stmt305
 
+	enterexit_stmt305 -- enterexit_stmt_306
+	enterexit_stmt305 -- LBRACKET307
 
-	enterexit_stmt_304 -- RBRACKET306
-	enterexit_stmt_304 -- actorlist307
-	enterexit_stmt_304 -- ENTER308
 
+	enterexit_stmt_306 -- RBRACKET308
+	enterexit_stmt_306 -- actorlist309
+	enterexit_stmt_306 -- ENTER310
 
-	actorlist307 -- actorlist_309
-	actorlist307 -- ACTOR310
 
+	actorlist309 -- actorlist_311
+	actorlist309 -- ACTOR312
 
-	actorlist_309 -- λ311
 
+	actorlist_311 -- λ313
 
-	statement_list301 -- statement_list312
-	statement_list301 -- statement313
 
-	statement313 -- line314
+	statement_list303 -- statement_list314
+	statement_list303 -- statement315
 
-	line314 -- sentence_list315
-	line314 -- optional_addressee316
-	line314 -- COLON317
-	line314 -- ACTOR318
+	statement315 -- line316
 
+	line316 -- sentence_list317
+	line316 -- optional_addressee318
+	line316 -- COLON319
+	line316 -- ACTOR320
 
 
-	optional_addressee316 -- λ319
 
-	sentence_list315 -- sentence_list_320
-	sentence_list315 -- sentence321
-	sentence_list315 -- optional_interjection322
+	optional_addressee318 -- λ321
 
-	optional_interjection322 -- λ323
+	sentence_list317 -- sentence_list_322
+	sentence_list317 -- sentence323
+	sentence_list317 -- optional_interjection324
 
-	sentence321 -- PE324
-	sentence321 -- goto325
+	optional_interjection324 -- λ325
 
-	goto325 -- goto_326
-	goto325 -- let_us327
+	sentence323 -- PE326
+	sentence323 -- goto327
 
-	let_us327 -- let_us_328
-	let_us327 -- WE329
+	goto327 -- goto_328
+	goto327 -- let_us329
 
+	let_us329 -- let_us_330
+	let_us329 -- WE331
 
-	let_us_328 -- SHALL330
 
+	let_us_330 -- SHALL332
 
-	goto_326 -- goto__331
-	goto_326 -- PROCEED332
 
+	goto_328 -- goto__333
+	goto_328 -- PROCEED334
 
-	goto__331 -- goto_target333
-	goto__331 -- TO334
 
+	goto__333 -- goto_target335
+	goto__333 -- TO336
 
-	goto_target333 -- goto_target_335
-	goto_target333 -- ACT336
 
+	goto_target335 -- goto_target_337
+	goto_target335 -- ACT338
 
-	goto_target_335 -- goto_target__337
-	goto_target_335 -- SCENE338
-	goto_target_335 -- COMMA339
 
+	goto_target_337 -- goto_target__339
+	goto_target_337 -- SCENE340
+	goto_target_337 -- COMMA341
 
 
-	goto_target__337 -- wordlist340
 
-	wordlist340 -- λ341
+	goto_target__339 -- wordlist342
 
+	wordlist342 -- λ343
 
-	sentence_list_320 -- λ342
 
-	statement_list312 -- statement_list343
-	statement_list312 -- statement344
+	sentence_list_322 -- λ344
 
-	statement344 -- enterexit_stmt345
+	statement_list314 -- statement_list345
+	statement_list314 -- statement346
 
-	enterexit_stmt345 -- enterexit_stmt_346
-	enterexit_stmt345 -- LBRACKET347
+	statement346 -- enterexit_stmt347
 
+	enterexit_stmt347 -- enterexit_stmt_348
+	enterexit_stmt347 -- LBRACKET349
 
-	enterexit_stmt_346 -- RBRACKET348
-	enterexit_stmt_346 -- actorlist349
-	enterexit_stmt_346 -- EXIT350
 
+	enterexit_stmt_348 -- RBRACKET350
+	enterexit_stmt_348 -- actorlist351
+	enterexit_stmt_348 -- EXIT352
 
-	actorlist349 -- actorlist_351
-	actorlist349 -- ACTOR352
 
+	actorlist351 -- actorlist_353
+	actorlist351 -- ACTOR354
 
-	actorlist_351 -- λ353
 
+	actorlist_353 -- λ355
 
-	statement_list343 -- λ354
 
-	scenelist_286 -- λ355
+	statement_list345 -- λ356
+
+	scenelist_288 -- λ357
+
+	actlist_273 -- λ358
 
 
 }
