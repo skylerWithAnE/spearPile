@@ -3,7 +3,7 @@ Are the correct/incorrect tests based on semantics? Shouldn't this be impossible
 When performing goto, can we use wordlist in place of scene description?
 ..."let us proceed posthast to Act II The Second part."
 
-How should I handle lambda when parsing?
+When outputting my graphs, can I expect regex t[/d]+ to always succeed?
 
 What is incorrect in this input:
 

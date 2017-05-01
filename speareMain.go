@@ -42,14 +42,19 @@ func grammarOut() {
 func main() {
 	Verbose = false
 	TerminalRegexMap, TerminalSymbolList = ReadTerminals("_terminals.txt")
-	if Verbose {
-		PrintRegexMap(TerminalRegexMap)
-	}
+	// if Verbose {
+	// 	PrintRegexMap(TerminalRegexMap)
+	// }
 	var fname string
 	if len(os.Args) > 1 {
 		fname = os.Args[1]
 	} else {
 		fname = "sdt/t20.txt"
+	}
+	for _, a := range os.Args[2:] {
+		if a == "v" {
+			Verbose = true
+		}
 	}
 	// data, err := ioutil.ReadFile("tokenFile49")
 	// Check(err)
@@ -86,9 +91,9 @@ func main() {
 
 		} else {
 			newtoken.linenum = linenum
-			if Verbose {
-				fmt.Println("new token:\n\t\tSYM:", newtoken.sym, "\n\t\tLEX:", newtoken.lex, "\n\t\tLINE:", newtoken.linenum)
-			}
+			// if Verbose {
+			// 	fmt.Println("new token:\n\t\tSYM:", newtoken.sym, "\n\t\tLEX:", newtoken.lex, "\n\t\tLINE:", newtoken.linenum)
+			// }
 			tokens = append(tokens, newtoken)
 			input = leftover
 		}
@@ -109,7 +114,7 @@ func main() {
 	BuildTable()
 	// WriteTableToFile()
 	// PrintTable()
-	success := ParseInput(tokens)
+	success := ParseInput(tokens, fname)
 	if success {
 		fmt.Println("Parsed.")
 		os.Exit(0)

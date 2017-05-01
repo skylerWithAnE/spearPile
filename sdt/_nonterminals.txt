@@ -1,38 +1,38 @@
-S -> title dramatis-personae actlist
+S -> title dramatis_personae actlist
 title -> wordlist peq
 peq -> PE | QUESTION
-dramatis-personae -> ACTOR COMMA wordlist peq dramatis-personae'
-dramatis-personae' -> dramatis-personae | λ
+dramatis_personae -> ACTOR COMMA wordlist peq dramatis_personae_
+dramatis_personae_ -> dramatis_personae | λ
 
-actlist -> act actlist'
-actlist' -> act | λ
+actlist -> act actlist_
+actlist_ -> act | λ
 
 act -> ACT COLON wordlist peq scenelist
 
-scenelist -> scene scenelist'
-scenelist' -> scenelist | λ
-scene -> SCENE COLON wordlist peq statement-list
+scenelist -> scene scenelist_
+scenelist_ -> scenelist | λ
+scene -> SCENE COLON wordlist peq statement_list
 
-statement-list -> statement statement-list | λ
-statement -> enterexit-stmt | line
-line -> ACTOR COLON optional-addressee sentence-list
-optional-addressee -> ACTOR COMMA | λ
-optional-interjection -> INTERJECTION COMMA | λ
-sentence-list -> optional-interjection sentence sentence-list'
-sentence-list' -> λ  | optional-interjection sentence sentence-list'
+statement_list -> statement statement_list | λ
+statement -> enterexit_stmt | line
+line -> ACTOR COLON optional_addressee sentence_list
+optional_addressee -> ACTOR COMMA | λ
+optional_interjection -> INTERJECTION COMMA | λ
+sentence_list -> optional_interjection sentence sentence_list_
+sentence_list_ -> λ  | optional_interjection sentence sentence_list_
 sentence -> io PE | assignment PE | goto PE | stackop PE | question QUESTION | conditional
 
 io -> SPEAK_YOUR_MIND | OPEN_YOUR_MIND | OPEN_YOUR_HEART | LISTEN_TO_YOUR_HEART
 
-enterexit-stmt  -> LBRACKET enterexit-stmt'
-enterexit-stmt' -> ENTER actorlist RBRACKET
-enterexit-stmt' -> EXIT actorlist RBRACKET
-enterexit-stmt' -> EXEUNT exeunt'
-exeunt' ->  actorlist RBRACKET | OMNES RBRACKET | RBRACKET
+enterexit_stmt  -> LBRACKET enterexit_stmt_
+enterexit_stmt_ -> ENTER actorlist RBRACKET
+enterexit_stmt_ -> EXIT actorlist RBRACKET
+enterexit_stmt_ -> EXEUNT exeunt_
+exeunt_ ->  actorlist RBRACKET | OMNES RBRACKET | RBRACKET
 
-assignment -> YOU assignment'
-assignment' -> ARE assignment'' | value 
-assignment'' -> AS adj AS arithmetic | arithmetic
+assignment -> YOU assignment_
+assignment_ -> ARE assignment__ | value 
+assignment__ -> AS adj AS arithmetic | arithmetic
 assignment -> I AM arithmetic
 
 arithmetic -> ARTICLE value | THE value | POSSESSIVE value | YOU | MYSELF | YOURSELF | ACTOR
@@ -50,29 +50,29 @@ arithmetic -> BOTH arithmetic AND arithmetic
 arithmetic -> EITHER arithmetic OR arithmetic
 arithmetic -> THE_OPPOSITE_OF arithmetic
 
-actorlist -> ACTOR actorlist'
-actorlist' -> λ | COMMA actorlist2 |  AND ACTOR
-actorlist2 -> ACTOR actorlist2'
-actorlist2' -> COMMA actorlist2 | AND ACTOR
+actorlist -> ACTOR actorlist_
+actorlist_ -> λ | COMMA actorlist2 |  AND ACTOR
+actorlist2 -> ACTOR actorlist2_
+actorlist2_ -> COMMA actorlist2 | AND ACTOR
 
-value -> adj-list noun | noun
+value -> adj_list noun | noun
 noun -> POS_NOUN | NEG_NOUN
 
 noun -> POS_NOUN | NEG_NOUN
 adj -> POS_ADJ | NEG_ADJ
-adj-list -> adj adj-list'
-adj-list' -> λ | adj-list
+adj_list -> adj adj_list_
+adj_list_ -> λ | adj_list
 
-let_us -> LET US | WE let_us'
-let_us' -> SHALL | MUST | OUGHT TO
-goto -> let_us goto'
-goto' -> RETURN | PROCEED goto''
-goto'' -> TO goto-target | POSTHASTE TO goto-target
+let_us -> LET US | WE let_us_
+let_us_ -> SHALL | MUST | OUGHT TO
+goto -> let_us goto_
+goto_ -> RETURN | PROCEED goto__
+goto__ -> TO goto_target | POSTHASTE TO goto_target
 
-goto-target -> ACT goto-target' | goto-target'''
-goto-target' -> λ | COMMA SCENE goto-target''
-goto-target'' -> wordlist
-goto-target''' -> COMMA SCENE 
+goto_target -> ACT goto_target_ | goto_target___
+goto_target_ -> λ | COMMA SCENE goto_target__
+goto_target__ -> wordlist
+goto_target___ -> COMMA SCENE 
 
 stackop -> REMEMBER arithmetic
 stackop -> RECALL wordlist
@@ -90,36 +90,40 @@ comparison -> AT_LEAST_AS adj AS arithmetic
 comparison -> AT_MOST_AS adj AS arithmetic
 comparison -> DIFFERENT FROM arithmetic
 
-conditional -> IF conditional'
-conditional' -> SO COMMA optional-interjection sentence
-conditional' -> NOT COMMA optional-interjection sentence
+conditional -> IF conditional_
+conditional_ -> SO COMMA optional_interjection sentence
+conditional_ -> NOT COMMA optional_interjection sentence
 
 wordlist -> allwords wordlist | λ
 allwords -> ANYWORD | keyword
-keyword ->                                  keyword'
-keyword' -> ARTICLE |                       keyword''
-keyword'' -> AM  |                          keyword'''
-keyword''' -> IS  |                         keyword''''
-keyword'''' -> POS_NOUN |                   keyword'''''
-keyword''''' -> TWICE_THRICE_HALF |         keyword''''''
-keyword'''''' -> WE |                       keyword'''''''
-keyword''''''' -> POSSESSIVE |              keyword''''''''
-keyword'''''''' -> ACTOR |                  keyword'''''''''
-keyword''''''''' -> TO |                    keyword''''''''''
-keyword'''''''''' -> OPEN_YOUR_HEART |      keyword'''''''''''
-keyword''''''''''' -> SPEAK_YOUR_MIND |     keyword''''''''''''
-keyword'''''''''''' -> adj |                keyword'''''''''''''
-keyword''''''''''''' -> AND |               keyword''''''''''''''
-keyword'''''''''''''' -> THE_SUM_OF |       keyword'''''''''''''''
-keyword''''''''''''''' -> LESS |            keyword''''''''''''''''
-keyword'''''''''''''''' -> MORE |           keyword'''''''''''''''''
-keyword''''''''''''''''' -> YOU |           keyword''''''''''''''''''
-keyword'''''''''''''''''' -> IF |           keyword'''''''''''''''''''
-keyword''''''''''''''''''' -> NEG_NOUN |    keyword''''''''''''''''''''
-keyword'''''''''''''''''''' -> THE |        keyword'''''''''''''''''''''
-keyword''''''''''''''''''''' -> LET |       keyword''''''''''''''''''''''
-keyword'''''''''''''''''''''' -> US |       keyword'''''''''''''''''''''''
-keyword''''''''''''''''''''''' -> BOTH |    keyword''''''''''''''''''''''''
-keyword'''''''''''''''''''''''' -> EITHER | keyword'''''''''''''''''''''''''
-keyword''''''''''''''''''''''''' -> ARE
+keyword ->                                  keyword_
+keyword_ -> ARTICLE |                       keyword__
+keyword__ -> AM  |                          keyword___
+keyword___ -> IS  |                         keyword____
+keyword____ -> POS_NOUN |                   keyword_____
+keyword_____ -> TWICE_THRICE_HALF |         keyword______
+keyword______ -> WE |                       keyword_______
+keyword_______ -> POSSESSIVE |              keyword________
+keyword________ -> ACTOR |                  keyword_________
+keyword_________ -> TO |                    keyword__________
+keyword__________ -> OPEN_YOUR_HEART |      keyword___________
+keyword___________ -> SPEAK_YOUR_MIND |     keyword____________
+keyword____________ -> adj |                keyword_____________
+keyword_____________ -> AND |               keyword______________
+keyword______________ -> THE_SUM_OF |       keyword_______________
+keyword_______________ -> LESS |            keyword________________
+keyword________________ -> MORE |           keyword_________________
+keyword_________________ -> YOU |           keyword__________________
+keyword__________________ -> IF |           keyword___________________
+keyword___________________ -> NEG_NOUN |    keyword____________________
+keyword____________________ -> THE |        keyword_____________________
+keyword_____________________ -> LET |       keyword______________________
+keyword______________________ -> US |       keyword_______________________
+keyword_______________________ -> BOTH |    keyword________________________
+keyword________________________ -> EITHER | keyword_________________________
+keyword_________________________ -> ARE |   keyword__________________________
+keyword__________________________ -> NOT |  keyword___________________________
+keyword___________________________ -> EXIT          | keyword____________________________ 
+keyword____________________________ -> PROCEED      | keyword_____________________________
+keyword_____________________________ -> THAN
 
