@@ -1,3 +1,10 @@
+.\old\tests\t1.txt
+
+
+Parsed.
+
+
+
 .\sdt\t1.txt
 
 
@@ -5,7 +12,21 @@ Parsed.
 
 
 
-.\tests\t1.txt
+.\old\tests\t2.txt
+
+
+Parsed.
+
+
+
+.\sdt\t2.txt
+
+
+Parsed.
+
+
+
+.\old\tests\t4.txt
 
 
 Parsed.
@@ -19,7 +40,7 @@ Parsed.
 
 
 
-.\tests\t4.txt
+.\old\tests\t6.txt
 
 
 Parsed.
@@ -33,7 +54,7 @@ Parsed.
 
 
 
-.\tests\t6.txt
+.\old\tests\t8.txt
 
 
 Parsed.
@@ -47,7 +68,7 @@ Parsed.
 
 
 
-.\tests\t8.txt
+.\old\tests\t9.txt
 
 
 Parsed.
@@ -61,7 +82,7 @@ Parsed.
 
 
 
-.\tests\t9.txt
+.\old\tests\t10.txt
 
 
 Parsed.
@@ -75,7 +96,21 @@ Parsed.
 
 
 
-.\tests\t10.txt
+.\old\tests\t11.txt
+
+
+Parsed.
+
+
+
+.\sdt\t11.txt
+
+
+Parsed.
+
+
+
+.\old\tests\t12.txt
 
 
 Parsed.
@@ -89,7 +124,7 @@ Parsed.
 
 
 
-.\tests\t12.txt
+.\old\tests\t13.txt
 
 
 Parsed.
@@ -103,7 +138,7 @@ Parsed.
 
 
 
-.\tests\t13.txt
+.\sdt\t14.txt
 
 
 Parsed.
@@ -124,6 +159,13 @@ Parsed.
 
 
 
+.\old\tests\t17.txt
+
+
+Parsed.
+
+
+
 .\sdt\t17.txt
 
 
@@ -131,7 +173,7 @@ Parsed.
 
 
 
-.\tests\t17.txt
+.\old\tests\t19.txt
 
 
 Parsed.
@@ -145,7 +187,7 @@ Parsed.
 
 
 
-.\tests\t19.txt
+.\old\tests\t20.txt
 
 
 Parsed.
@@ -159,7 +201,7 @@ Parsed.
 
 
 
-.\tests\t20.txt
+.\old\tests\t21.txt
 
 
 Parsed.
@@ -173,7 +215,7 @@ Parsed.
 
 
 
-.\tests\t21.txt
+.\old\tests\t26.txt
 
 
 Parsed.
@@ -187,7 +229,7 @@ Parsed.
 
 
 
-.\tests\t26.txt
+.\old\tests\t29.txt
 
 
 Parsed.
@@ -201,7 +243,7 @@ Parsed.
 
 
 
-.\tests\t29.txt
+.\old\tests\t30.txt
 
 
 Parsed.
@@ -215,7 +257,7 @@ Parsed.
 
 
 
-.\tests\t30.txt
+.\old\tests\t31.txt
 
 
 Parsed.
@@ -229,7 +271,28 @@ Parsed.
 
 
 
-.\tests\t31.txt
+.\old\tests\t32.txt
+
+
+Parsed.
+
+
+
+.\sdt\t32.txt
+
+
+Parsed.
+
+
+
+.\old\tests\t33.txt
+
+
+Parsed.
+
+
+
+.\old\tests\t34.txt
 
 
 Parsed.
@@ -243,7 +306,7 @@ Parsed.
 
 
 
-.\tests\t34.txt
+.\old\tests\t35.txt
 
 
 Parsed.
@@ -257,7 +320,7 @@ Parsed.
 
 
 
-.\tests\t35.txt
+.\old\tests\t36.txt
 
 
 Parsed.
@@ -271,7 +334,7 @@ Parsed.
 
 
 
-.\tests\t36.txt
+.\old\tests\t37.txt
 
 
 Parsed.
@@ -285,7 +348,7 @@ Parsed.
 
 
 
-.\tests\t37.txt
+.\old\tests\t38.txt
 
 
 Parsed.
@@ -299,7 +362,7 @@ Parsed.
 
 
 
-.\tests\t38.txt
+.\old\tests\t39.txt
 
 
 Parsed.
@@ -313,7 +376,7 @@ Parsed.
 
 
 
-.\tests\t39.txt
+.\old\tests\t40.txt
 
 
 Parsed.
@@ -327,7 +390,7 @@ Parsed.
 
 
 
-.\tests\t40.txt
+.\old\tests\t41.txt
 
 
 Parsed.
@@ -341,7 +404,14 @@ Parsed.
 
 
 
-.\tests\t41.txt
+.\sdt\t47.txt
+
+
+Parsed.
+
+
+
+.\sdt\t48.txt
 
 
 Parsed.

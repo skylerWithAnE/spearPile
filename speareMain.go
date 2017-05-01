@@ -51,6 +51,17 @@ func main() {
 	} else {
 		fname = "sdt/t20.txt"
 	}
+	// data, err := ioutil.ReadFile("tokenFile49")
+	// Check(err)
+	// input := string(data)
+	// inputA := strings.Split(input, " ")
+	// var tokens []Token
+	// fmt.Println(len(inputA))
+	// for _, t := range inputA {
+	// 	var newToken Token
+	// 	newToken.sym = t
+	// 	tokens = append(tokens, newToken)
+	// }
 	data, err := ioutil.ReadFile(fname)
 	Check(err)
 	input := string(data) + "$"
@@ -82,7 +93,7 @@ func main() {
 			input = leftover
 		}
 	}
-	// WriteTokensToFile(tokens)
+	WriteTokensToFile(tokens)
 	NonTerminals = ReadNonTerminals("_nonterminals.txt")
 	Nullables = NullableList()
 	// PrintNullableMap()

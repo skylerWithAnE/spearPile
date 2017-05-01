@@ -154,7 +154,7 @@ func WriteTableToFile() {
 	for _, ntk := range NonTerminalSymbolList {
 		var writeSlice []string
 		writeSlice = append(writeSlice, ntk)
-		for _, tk := range TerminalSymbolList {
+		for _, tk := range append(TerminalSymbolList, "$") {
 			writeString := " "
 			for _, p := range ParseTable[ntk][tk] {
 				//writeSlice = append(writeSlice, p)

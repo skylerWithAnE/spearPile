@@ -14,3 +14,4 @@ var ParseTable map[string]map[string][]string
 var Verbose bool
 
 const StartState string = "S"
+const lambda string = "λ"

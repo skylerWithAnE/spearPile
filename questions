@@ -3,6 +3,8 @@ Are the correct/incorrect tests based on semantics? Shouldn't this be impossible
 When performing goto, can we use wordlist in place of scene description?
 ..."let us proceed posthast to Act II The Second part."
 
+How should I handle lambda when parsing?
+
 What is incorrect in this input:
 
 "
@@ -19,4 +21,23 @@ Scene I: We Begin.
 Romeo: I am a king.
 
 [Exit Romeo]
+"
+"
+A minimal program.
+
+Romeo, stacks it up.
+Juliet, stacking too.
+
+Act I: The Play Opens.
+
+Scene I: We Begin.
+
+[Enter Romeo and Juliet]
+
+Romeo: I am a mighty king. Remember me. I am a fancy fancy lad. Remember me. 
+    I am a fancy fancy fancy lad. Remember me.
+    Remember a friendly king.
+    
+
+[Exeunt Romeo]
 "
