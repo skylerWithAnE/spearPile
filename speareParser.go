@@ -116,6 +116,8 @@ func ParseInput(input []Token, fname string) bool {
 					w.WriteRune('\n')
 				}
 				w.WriteString("\n}")
+				w.Flush()
+				f.Close()
 				return false
 			}
 		} else if lookupCode == 2 {

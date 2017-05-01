@@ -668,3 +668,49 @@ strict graph {
 	optional_interjection342 -- λ343
 
 	sentence341 -- PE344
+	sentence341 -- assignment345
+
+	assignment345 -- assignment_346
+	assignment345 -- YOU347
+
+
+	assignment_346 -- assignment__348
+	assignment_346 -- ARE349
+
+
+	assignment__348 -- arithmetic350
+
+	arithmetic350 -- value351
+	arithmetic350 -- ARTICLE352
+
+
+	value351 -- noun353
+
+	noun353 -- NEG_NOUN354
+
+
+
+	sentence_list_340 -- λ355
+
+	statement_list332 -- statement_list356
+	statement_list332 -- statement357
+
+	statement357 -- enterexit_stmt358
+
+	enterexit_stmt358 -- enterexit_stmt_359
+	enterexit_stmt358 -- LBRACKET360
+
+
+	enterexit_stmt_359 -- exeunt_361
+	enterexit_stmt_359 -- EXEUNT362
+
+
+	exeunt_361 -- RBRACKET363
+
+
+	statement_list356 -- λ364
+
+	scenelist_281 -- λ365
+
+
+}

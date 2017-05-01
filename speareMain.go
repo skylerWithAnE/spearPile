@@ -46,6 +46,8 @@ func main() {
 	// 	PrintRegexMap(TerminalRegexMap)
 	// }
 	var fname string
+	printTable := false
+	printToken := false
 	if len(os.Args) > 1 {
 		fname = os.Args[1]
 	} else {
@@ -54,7 +56,12 @@ func main() {
 	for _, a := range os.Args[2:] {
 		if a == "v" {
 			Verbose = true
+		} else if a == "tbl" {
+			printTable = true
+		} else if a == "tok" {
+			printToken = true
 		}
+
 	}
 	// data, err := ioutil.ReadFile("tokenFile49")
 	// Check(err)
@@ -98,7 +105,9 @@ func main() {
 			input = leftover
 		}
 	}
-	WriteTokensToFile(tokens)
+	if printToken {
+		WriteTokensToFile(tokens)
+	}
 	NonTerminals = ReadNonTerminals("_nonterminals.txt")
 	Nullables = NullableList()
 	// PrintNullableMap()
@@ -112,7 +121,10 @@ func main() {
 		ParseTable[ntk] = make(map[string][]string)
 	}
 	BuildTable()
-	// WriteTableToFile()
+
+	if printTable {
+		WriteTableToFile()
+	}
 	// PrintTable()
 	success := ParseInput(tokens, fname)
 	if success {
