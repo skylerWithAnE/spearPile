@@ -62,7 +62,7 @@ func compareConflict(a, b []string) bool {
 
 // BuildTable Build That Table!! MAKE SHAKESPEARE PARSE AGAIN!
 func BuildTable() /*map[string]map[string][]string*/ {
-	f, err := os.Create("tmp/parseTableInterior")
+	f, err := os.Create("parseTableLog")
 	Check(err)
 	w := bufio.NewWriter(f)
 
@@ -118,17 +118,6 @@ func BuildTable() /*map[string]map[string][]string*/ {
 		}
 
 	}
-
-	// for _, ntk := range NonTerminalSymbolList {
-	// 	for _, tk := range TerminalSymbolList {
-	// 		out := "ParseTable[" + ntk + "][" + tk + "] :"
-	// 		for _, v := range ParseTable[ntk][tk] {
-	// 			out = out + " " + v
-	// 		}
-	// 		out = out + "\n"
-	// 		w.WriteString(out)
-	// 	}
-	// }
 	w.Flush()
 	f.Close()
 	// return m
@@ -141,7 +130,10 @@ func WriteTableToFile() {
 	hms := strings.Split(fileTime, ":")
 	fileTime = hms[0] + hms[1] + hms[2]
 	f, err := os.Create("tables/tableFile" + fileTime + ".csv")
-	Check(err)
+	if err != nil {
+		fmt.Println("couldn't write table for some reason..")
+		return
+	}
 	defer f.Close()
 	w := csv.NewWriter(f)
 	var tsl []string

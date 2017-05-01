@@ -46,8 +46,8 @@ func main() {
 	// 	PrintRegexMap(TerminalRegexMap)
 	// }
 	var fname string
-	printTable := false
-	printToken := false
+	writeTable := false
+	writeToken := false
 	if len(os.Args) > 1 {
 		fname = os.Args[1]
 	} else {
@@ -57,9 +57,9 @@ func main() {
 		if a == "v" {
 			Verbose = true
 		} else if a == "tbl" {
-			printTable = true
+			writeTable = true
 		} else if a == "tok" {
-			printToken = true
+			writeToken = true
 		}
 
 	}
@@ -105,7 +105,7 @@ func main() {
 			input = leftover
 		}
 	}
-	if printToken {
+	if writeToken {
 		WriteTokensToFile(tokens)
 	}
 	NonTerminals = ReadNonTerminals("_nonterminals.txt")
@@ -122,7 +122,7 @@ func main() {
 	}
 	BuildTable()
 
-	if printTable {
+	if writeTable {
 		WriteTableToFile()
 	}
 	// PrintTable()
