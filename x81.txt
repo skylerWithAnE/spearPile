@@ -1,0 +1,47 @@
+Fourscore and seven years ago.
+
+All The Goths, the counter.
+Soothsayer, the newline.
+
+Act I: Acting.
+
+Scene I: Main.
+
+[Enter All The Goths]
+
+All The Goths: All The Goths, you are a toad. Remember thyself.
+    I am an amazing attractive beautiful lad. I am the sum of myself and
+    a noble roman.
+    
+[Exit All The Goths]
+
+Scene II: Setting up the newline.
+
+[Enter Soothsayer]
+
+Soothsayer: I am All The Goths.
+
+[Exit Soothsayer]
+
+
+Scene III: The Loop.
+
+[Enter All The Goths and Soothsayer]
+
+Soothsayer: Remember thyself. You are the sum of yourself and a toad.
+    Are you as good as nothing? If not, let us proceed posthaste
+    to Act I, Scene III.
+    
+[Exeunt]
+
+Scene IV: The big finish.
+
+[Enter All The Goths and Soothsayer]
+
+Soothsayer: Open your heart.
+All The Goths: Speak your mind. 
+Soothsayer: Recall that it is nobler to have loved and lost than
+    to never have loved at all. Are you worse than nothing?
+    If not, let us proceed posthaste to Act I, Scene IV.
+    
+[Exeunt]

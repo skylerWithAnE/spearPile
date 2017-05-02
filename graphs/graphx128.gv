@@ -1,0 +1,369 @@
+strict graph {
+	S0 -- actlist1
+	S0 -- dramatis_personae2
+	S0 -- title3
+
+	title3 -- peq4
+	title3 -- wordlist5
+
+	wordlist5 -- wordlist6
+	wordlist5 -- allwords7
+
+	allwords7 -- ANYWORD8
+
+
+	wordlist6 -- wordlist9
+	wordlist6 -- allwords10
+
+	allwords10 -- keyword11
+
+	keyword11 -- keyword_12
+
+	keyword_12 -- keyword__13
+
+	keyword__13 -- keyword___14
+
+	keyword___14 -- keyword____15
+
+	keyword____15 -- keyword_____16
+
+	keyword_____16 -- keyword______17
+
+	keyword______17 -- keyword_______18
+
+	keyword_______18 -- keyword________19
+
+	keyword________19 -- keyword_________20
+
+	keyword_________20 -- keyword__________21
+
+	keyword__________21 -- keyword___________22
+
+	keyword___________22 -- keyword____________23
+
+	keyword____________23 -- keyword_____________24
+
+	keyword_____________24 -- AND25
+
+
+	wordlist9 -- wordlist26
+	wordlist9 -- allwords27
+
+	allwords27 -- ANYWORD28
+
+
+	wordlist26 -- wordlist29
+	wordlist26 -- allwords30
+
+	allwords30 -- ANYWORD31
+
+
+	wordlist29 -- wordlist32
+	wordlist29 -- allwords33
+
+	allwords33 -- ANYWORD34
+
+
+	wordlist32 -- λ35
+
+	peq4 -- PE36
+
+
+	dramatis_personae2 -- dramatis_personae_37
+	dramatis_personae2 -- peq38
+	dramatis_personae2 -- wordlist39
+	dramatis_personae2 -- COMMA40
+	dramatis_personae2 -- ACTOR41
+
+
+
+	wordlist39 -- wordlist42
+	wordlist39 -- allwords43
+
+	allwords43 -- ANYWORD44
+
+
+	wordlist42 -- λ45
+
+	peq38 -- PE46
+
+
+	dramatis_personae_37 -- dramatis_personae47
+
+	dramatis_personae47 -- dramatis_personae_48
+	dramatis_personae47 -- peq49
+	dramatis_personae47 -- wordlist50
+	dramatis_personae47 -- COMMA51
+	dramatis_personae47 -- ACTOR52
+
+
+
+	wordlist50 -- wordlist53
+	wordlist50 -- allwords54
+
+	allwords54 -- ANYWORD55
+
+
+	wordlist53 -- λ56
+
+	peq49 -- PE57
+
+
+	dramatis_personae_48 -- λ58
+
+	actlist1 -- actlist_59
+	actlist1 -- act60
+
+	act60 -- scenelist61
+	act60 -- peq62
+	act60 -- wordlist63
+	act60 -- COLON64
+	act60 -- ACT65
+
+
+
+	wordlist63 -- wordlist66
+	wordlist63 -- allwords67
+
+	allwords67 -- ANYWORD68
+
+
+	wordlist66 -- λ69
+
+	peq62 -- PE70
+
+
+	scenelist61 -- scenelist_71
+	scenelist61 -- scene72
+
+	scene72 -- statement_list73
+	scene72 -- peq74
+	scene72 -- wordlist75
+	scene72 -- COLON76
+	scene72 -- SCENE77
+
+
+
+	wordlist75 -- wordlist78
+	wordlist75 -- allwords79
+
+	allwords79 -- ANYWORD80
+
+
+	wordlist78 -- λ81
+
+	peq74 -- PE82
+
+
+	statement_list73 -- statement_list83
+	statement_list73 -- statement84
+
+	statement84 -- enterexit_stmt85
+
+	enterexit_stmt85 -- enterexit_stmt_86
+	enterexit_stmt85 -- LBRACKET87
+
+
+	enterexit_stmt_86 -- RBRACKET88
+	enterexit_stmt_86 -- actorlist89
+	enterexit_stmt_86 -- ENTER90
+
+
+	actorlist89 -- actorlist_91
+	actorlist89 -- ACTOR92
+
+
+	actorlist_91 -- ACTOR93
+	actorlist_91 -- AND94
+
+
+
+
+	statement_list83 -- statement_list95
+	statement_list83 -- statement96
+
+	statement96 -- line97
+
+	line97 -- sentence_list98
+	line97 -- optional_addressee99
+	line97 -- COLON100
+	line97 -- ACTOR101
+
+
+
+	optional_addressee99 -- λ102
+
+	sentence_list98 -- sentence_list_103
+	sentence_list98 -- sentence104
+	sentence_list98 -- optional_interjection105
+
+	optional_interjection105 -- λ106
+
+	sentence104 -- PE107
+	sentence104 -- assignment108
+
+	assignment108 -- assignment_109
+	assignment108 -- YOU110
+
+
+	assignment_109 -- assignment__111
+	assignment_109 -- ARE112
+
+
+	assignment__111 -- arithmetic113
+
+	arithmetic113 -- value114
+	arithmetic113 -- ARTICLE115
+
+
+	value114 -- noun116
+
+	noun116 -- POS_NOUN117
+
+
+
+	sentence_list_103 -- λ118
+
+	statement_list95 -- statement_list119
+	statement_list95 -- statement120
+
+	statement120 -- enterexit_stmt121
+
+	enterexit_stmt121 -- enterexit_stmt_122
+	enterexit_stmt121 -- LBRACKET123
+
+
+	enterexit_stmt_122 -- RBRACKET124
+	enterexit_stmt_122 -- actorlist125
+	enterexit_stmt_122 -- EXIT126
+
+
+	actorlist125 -- actorlist_127
+	actorlist125 -- ACTOR128
+
+
+	actorlist_127 -- λ129
+
+
+	statement_list119 -- λ130
+
+	scenelist_71 -- scenelist131
+
+	scenelist131 -- scenelist_132
+	scenelist131 -- scene133
+
+	scene133 -- statement_list134
+	scene133 -- peq135
+	scene133 -- wordlist136
+	scene133 -- COLON137
+	scene133 -- SCENE138
+
+
+
+	wordlist136 -- wordlist139
+	wordlist136 -- allwords140
+
+	allwords140 -- ANYWORD141
+
+
+	wordlist139 -- wordlist142
+	wordlist139 -- allwords143
+
+	allwords143 -- ANYWORD144
+
+
+	wordlist142 -- λ145
+
+	peq135 -- PE146
+
+
+	statement_list134 -- statement_list147
+	statement_list134 -- statement148
+
+	statement148 -- enterexit_stmt149
+
+	enterexit_stmt149 -- enterexit_stmt_150
+	enterexit_stmt149 -- LBRACKET151
+
+
+	enterexit_stmt_150 -- RBRACKET152
+	enterexit_stmt_150 -- actorlist153
+	enterexit_stmt_150 -- ENTER154
+
+
+	actorlist153 -- actorlist_155
+	actorlist153 -- ACTOR156
+
+
+	actorlist_155 -- λ157
+
+
+	statement_list147 -- statement_list158
+	statement_list147 -- statement159
+
+	statement159 -- line160
+
+	line160 -- sentence_list161
+	line160 -- optional_addressee162
+	line160 -- COLON163
+	line160 -- ACTOR164
+
+
+
+	optional_addressee162 -- COMMA165
+	optional_addressee162 -- ACTOR166
+
+
+
+	sentence_list161 -- sentence_list_167
+	sentence_list161 -- sentence168
+	sentence_list161 -- optional_interjection169
+
+	optional_interjection169 -- λ170
+
+	sentence168 -- PE171
+	sentence168 -- assignment172
+
+	assignment172 -- assignment_173
+	assignment172 -- YOU174
+
+
+	assignment_173 -- assignment__175
+	assignment_173 -- ARE176
+
+
+	assignment__175 -- arithmetic177
+
+	arithmetic177 -- value178
+	arithmetic177 -- ARTICLE179
+
+
+	value178 -- noun180
+
+	noun180 -- POS_NOUN181
+
+
+
+	sentence_list_167 -- sentence_list_182
+	sentence_list_167 -- sentence183
+	sentence_list_167 -- optional_interjection184
+
+	optional_interjection184 -- λ185
+
+	sentence183 -- PE186
+	sentence183 -- io187
+
+	io187 -- OPEN_YOUR_HEART188
+
+
+
+	sentence_list_182 -- λ189
+
+	statement_list158 -- λ190
+
+	scenelist_132 -- λ191
+
+	actlist_59 -- λ192
+
+
+}

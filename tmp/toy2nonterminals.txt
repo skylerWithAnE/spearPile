@@ -1,4 +1,0 @@
-S -> a | A b B | B C e
-A -> x | C y
-B -> C C | q
-C -> λ | w

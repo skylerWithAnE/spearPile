@@ -1,0 +1,15 @@
+Fourscore and seven years ago.
+
+All The Goths, a variable.
+Shylock, another variable.
+Soothsayer, the adversary.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter All The Goths]
+[Enter Soothsayer, Shylock and All The Goths]
+
+All The Goths: Shylock, I am a toad.
+
+[Exeunt]

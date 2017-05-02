@@ -1,417 +1,1775 @@
-.\old\tests\t1.txt
+.\permuted\x1.txt
 
 
 Parsed.
 
 
 
-.\sdt\t1.txt
+.\x1.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t2.txt
+.\permuted\x2.txt
 
 
 Parsed.
 
 
 
-.\sdt\t2.txt
+.\x2.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t4.txt
+.\permuted\x3.txt
 
 
 Parsed.
 
 
 
-.\sdt\t4.txt
+.\x3.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t6.txt
+.\permuted\x4.txt
 
 
 Parsed.
 
 
 
-.\sdt\t6.txt
+.\x4.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t8.txt
+.\permuted\x5.txt
 
 
 Parsed.
 
 
 
-.\sdt\t8.txt
+.\x5.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t9.txt
+.\permuted\x6.txt
 
 
 Parsed.
 
 
 
-.\sdt\t9.txt
+.\x6.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t10.txt
+.\permuted\x8.txt
 
 
 Parsed.
 
 
 
-.\sdt\t10.txt
+.\x8.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t11.txt
+.\permuted\x10.txt
 
 
 Parsed.
 
 
 
-.\sdt\t11.txt
+.\x10.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t12.txt
+.\permuted\x11.txt
 
 
 Parsed.
 
 
 
-.\sdt\t12.txt
+.\x11.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t13.txt
+.\permuted\x12.txt
 
 
 Parsed.
 
 
 
-.\sdt\t13.txt
+.\x12.txt
 
 
 Parsed.
 
 
 
-.\sdt\t14.txt
+.\permuted\x14.txt
 
 
 Parsed.
 
 
 
-.\sdt\t15.txt
+.\x14.txt
 
 
 Parsed.
 
 
 
-.\sdt\t16.txt
+.\permuted\x15.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t17.txt
+.\x15.txt
 
 
 Parsed.
 
 
 
-.\sdt\t17.txt
+.\permuted\x16.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t19.txt
+.\x16.txt
 
 
 Parsed.
 
 
 
-.\sdt\t19.txt
+.\permuted\x19.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t20.txt
+.\x19.txt
 
 
 Parsed.
 
 
 
-.\sdt\t20.txt
+.\permuted\x20.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t21.txt
+.\x20.txt
 
 
 Parsed.
 
 
 
-.\sdt\t21.txt
+.\permuted\x21.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t26.txt
+.\x21.txt
 
 
 Parsed.
 
 
 
-.\sdt\t26.txt
+.\permuted\x22.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t29.txt
+.\x22.txt
 
 
 Parsed.
 
 
 
-.\sdt\t29.txt
+.\permuted\x26.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t30.txt
+.\x26.txt
 
 
 Parsed.
 
 
 
-.\sdt\t30.txt
+.\permuted\x28.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t31.txt
+.\x28.txt
 
 
 Parsed.
 
 
 
-.\sdt\t31.txt
+.\permuted\x29.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t32.txt
+.\x29.txt
 
 
 Parsed.
 
 
 
-.\sdt\t32.txt
+.\permuted\x30.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t33.txt
+.\x30.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t34.txt
+.\permuted\x31.txt
 
 
 Parsed.
 
 
 
-.\sdt\t34.txt
+.\x31.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t35.txt
+.\permuted\x34.txt
 
 
 Parsed.
 
 
 
-.\sdt\t35.txt
+.\x34.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t36.txt
+.\permuted\x35.txt
 
 
 Parsed.
 
 
 
-.\sdt\t36.txt
+.\x35.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t37.txt
+.\permuted\x36.txt
 
 
 Parsed.
 
 
 
-.\sdt\t37.txt
+.\x36.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t38.txt
+.\permuted\x37.txt
 
 
 Parsed.
 
 
 
-.\sdt\t38.txt
+.\x37.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t39.txt
+.\permuted\x38.txt
 
 
 Parsed.
 
 
 
-.\sdt\t39.txt
+.\x38.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t40.txt
+.\permuted\x39.txt
 
 
 Parsed.
 
 
 
-.\sdt\t40.txt
+.\x39.txt
 
 
 Parsed.
 
 
 
-.\old\tests\t41.txt
+.\permuted\x40.txt
 
 
 Parsed.
 
 
 
-.\sdt\t41.txt
+.\x40.txt
 
 
 Parsed.
 
 
 
-.\sdt\t47.txt
+.\permuted\x41.txt
 
 
 Parsed.
 
 
 
-.\sdt\t48.txt
+.\x41.txt
+
+
+Parsed.
+
+
+
+.\permuted\x42.txt
+
+
+Parsed.
+
+
+
+.\x42.txt
+
+
+Parsed.
+
+
+
+.\permuted\x43.txt
+
+
+Parsed.
+
+
+
+.\x43.txt
+
+
+Parsed.
+
+
+
+.\permuted\x44.txt
+
+
+Parsed.
+
+
+
+.\x44.txt
+
+
+Parsed.
+
+
+
+.\permuted\x45.txt
+
+
+Parsed.
+
+
+
+.\x45.txt
+
+
+Parsed.
+
+
+
+.\permuted\x46.txt
+
+
+Parsed.
+
+
+
+.\x46.txt
+
+
+Parsed.
+
+
+
+.\permuted\x47.txt
+
+
+Parsed.
+
+
+
+.\x47.txt
+
+
+Parsed.
+
+
+
+.\permuted\x48.txt
+
+
+Parsed.
+
+
+
+.\x48.txt
+
+
+Parsed.
+
+
+
+.\permuted\x49.txt
+
+
+Parsed.
+
+
+
+.\x49.txt
+
+
+Parsed.
+
+
+
+.\permuted\x51.txt
+
+
+Parsed.
+
+
+
+.\x51.txt
+
+
+Parsed.
+
+
+
+.\permuted\x52.txt
+
+
+Parsed.
+
+
+
+.\x52.txt
+
+
+Parsed.
+
+
+
+.\permuted\x55.txt
+
+
+Parsed.
+
+
+
+.\x55.txt
+
+
+Parsed.
+
+
+
+.\permuted\x57.txt
+
+
+Parsed.
+
+
+
+.\x57.txt
+
+
+Parsed.
+
+
+
+.\permuted\x58.txt
+
+
+Parsed.
+
+
+
+.\x58.txt
+
+
+Parsed.
+
+
+
+.\permuted\x59.txt
+
+
+Parsed.
+
+
+
+.\x59.txt
+
+
+Parsed.
+
+
+
+.\permuted\x60.txt
+
+
+Parsed.
+
+
+
+.\x60.txt
+
+
+Parsed.
+
+
+
+.\permuted\x61.txt
+
+
+Parsed.
+
+
+
+.\x61.txt
+
+
+Parsed.
+
+
+
+.\permuted\x62.txt
+
+
+Parsed.
+
+
+
+.\x62.txt
+
+
+Parsed.
+
+
+
+.\permuted\x63.txt
+
+
+Parsed.
+
+
+
+.\x63.txt
+
+
+Parsed.
+
+
+
+.\permuted\x64.txt
+
+
+Parsed.
+
+
+
+.\x64.txt
+
+
+Parsed.
+
+
+
+.\permuted\x65.txt
+
+
+Parsed.
+
+
+
+.\x65.txt
+
+
+Parsed.
+
+
+
+.\permuted\x67.txt
+
+
+Parsed.
+
+
+
+.\x67.txt
+
+
+Parsed.
+
+
+
+.\permuted\x68.txt
+
+
+Parsed.
+
+
+
+.\x68.txt
+
+
+Parsed.
+
+
+
+.\permuted\x69.txt
+
+
+Parsed.
+
+
+
+.\x69.txt
+
+
+Parsed.
+
+
+
+.\permuted\x71.txt
+
+
+Parsed.
+
+
+
+.\x71.txt
+
+
+Parsed.
+
+
+
+.\permuted\x72.txt
+
+
+Parsed.
+
+
+
+.\x72.txt
+
+
+Parsed.
+
+
+
+.\permuted\x73.txt
+
+
+Parsed.
+
+
+
+.\x73.txt
+
+
+Parsed.
+
+
+
+.\permuted\x75.txt
+
+
+Parsed.
+
+
+
+.\x75.txt
+
+
+Parsed.
+
+
+
+.\permuted\x76.txt
+
+
+Parsed.
+
+
+
+.\x76.txt
+
+
+Parsed.
+
+
+
+.\permuted\x77.txt
+
+
+Parsed.
+
+
+
+.\x77.txt
+
+
+Parsed.
+
+
+
+.\permuted\x78.txt
+
+
+Parsed.
+
+
+
+.\x78.txt
+
+
+Parsed.
+
+
+
+.\permuted\x79.txt
+
+
+Parsed.
+
+
+
+.\x79.txt
+
+
+Parsed.
+
+
+
+.\permuted\x80.txt
+
+
+Parsed.
+
+
+
+.\x80.txt
+
+
+Parsed.
+
+
+
+.\permuted\x81.txt
+
+
+Parsed.
+
+
+
+.\x81.txt
+
+
+Parsed.
+
+
+
+.\permuted\x82.txt
+
+
+Parsed.
+
+
+
+.\x82.txt
+
+
+Parsed.
+
+
+
+.\permuted\x83.txt
+
+
+Parsed.
+
+
+
+.\x83.txt
+
+
+Parsed.
+
+
+
+.\permuted\x84.txt
+
+
+Parsed.
+
+
+
+.\x84.txt
+
+
+Parsed.
+
+
+
+.\permuted\x85.txt
+
+
+Parsed.
+
+
+
+.\x85.txt
+
+
+Parsed.
+
+
+
+.\permuted\x86.txt
+
+
+Parsed.
+
+
+
+.\x86.txt
+
+
+Parsed.
+
+
+
+.\permuted\x87.txt
+
+
+Parsed.
+
+
+
+.\x87.txt
+
+
+Parsed.
+
+
+
+.\permuted\x88.txt
+
+
+Parsed.
+
+
+
+.\x88.txt
+
+
+Parsed.
+
+
+
+.\permuted\x90.txt
+
+
+Parsed.
+
+
+
+.\x90.txt
+
+
+Parsed.
+
+
+
+.\permuted\x92.txt
+
+
+Parsed.
+
+
+
+.\x92.txt
+
+
+Parsed.
+
+
+
+.\permuted\x93.txt
+
+
+Parsed.
+
+
+
+.\x93.txt
+
+
+Parsed.
+
+
+
+.\permuted\x94.txt
+
+
+Parsed.
+
+
+
+.\x94.txt
+
+
+Parsed.
+
+
+
+.\permuted\x95.txt
+
+
+Parsed.
+
+
+
+.\x95.txt
+
+
+Parsed.
+
+
+
+.\permuted\x96.txt
+
+
+Parsed.
+
+
+
+.\x96.txt
+
+
+Parsed.
+
+
+
+.\permuted\x97.txt
+
+
+Parsed.
+
+
+
+.\x97.txt
+
+
+Parsed.
+
+
+
+.\permuted\x98.txt
+
+
+Parsed.
+
+
+
+.\x98.txt
+
+
+Parsed.
+
+
+
+.\permuted\x99.txt
+
+
+Parsed.
+
+
+
+.\x99.txt
+
+
+Parsed.
+
+
+
+.\permuted\x100.txt
+
+
+Parsed.
+
+
+
+.\x100.txt
+
+
+Parsed.
+
+
+
+.\permuted\x103.txt
+
+
+Parsed.
+
+
+
+.\x103.txt
+
+
+Parsed.
+
+
+
+.\permuted\x104.txt
+
+
+Parsed.
+
+
+
+.\x104.txt
+
+
+Parsed.
+
+
+
+.\permuted\x105.txt
+
+
+Parsed.
+
+
+
+.\x105.txt
+
+
+Parsed.
+
+
+
+.\permuted\x106.txt
+
+
+Parsed.
+
+
+
+.\x106.txt
+
+
+Parsed.
+
+
+
+.\permuted\x107.txt
+
+
+Parsed.
+
+
+
+.\x107.txt
+
+
+Parsed.
+
+
+
+.\permuted\x108.txt
+
+
+Parsed.
+
+
+
+.\x108.txt
+
+
+Parsed.
+
+
+
+.\permuted\x109.txt
+
+
+Parsed.
+
+
+
+.\x109.txt
+
+
+Parsed.
+
+
+
+.\permuted\x110.txt
+
+
+Parsed.
+
+
+
+.\x110.txt
+
+
+Parsed.
+
+
+
+.\permuted\x111.txt
+
+
+Parsed.
+
+
+
+.\x111.txt
+
+
+Parsed.
+
+
+
+.\permuted\x112.txt
+
+
+Parsed.
+
+
+
+.\x112.txt
+
+
+Parsed.
+
+
+
+.\permuted\x113.txt
+
+
+Parsed.
+
+
+
+.\x113.txt
+
+
+Parsed.
+
+
+
+.\permuted\x114.txt
+
+
+Parsed.
+
+
+
+.\x114.txt
+
+
+Parsed.
+
+
+
+.\permuted\x115.txt
+
+
+Parsed.
+
+
+
+.\x115.txt
+
+
+Parsed.
+
+
+
+.\permuted\x116.txt
+
+
+Parsed.
+
+
+
+.\x116.txt
+
+
+Parsed.
+
+
+
+.\permuted\x118.txt
+
+
+Parsed.
+
+
+
+.\x118.txt
+
+
+Parsed.
+
+
+
+.\permuted\x119.txt
+
+
+Parsed.
+
+
+
+.\x119.txt
+
+
+Parsed.
+
+
+
+.\permuted\x122.txt
+
+
+Parsed.
+
+
+
+.\x122.txt
+
+
+Parsed.
+
+
+
+.\permuted\x123.txt
+
+
+Parsed.
+
+
+
+.\x123.txt
+
+
+Parsed.
+
+
+
+.\permuted\x125.txt
+
+
+Parsed.
+
+
+
+.\x125.txt
+
+
+Parsed.
+
+
+
+.\permuted\x126.txt
+
+
+Parsed.
+
+
+
+.\x126.txt
+
+
+Parsed.
+
+
+
+.\permuted\x128.txt
+
+
+Parsed.
+
+
+
+.\x128.txt
+
+
+Parsed.
+
+
+
+.\permuted\x129.txt
+
+
+Parsed.
+
+
+
+.\x129.txt
+
+
+Parsed.
+
+
+
+.\permuted\x130.txt
+
+
+Parsed.
+
+
+
+.\x130.txt
+
+
+Parsed.
+
+
+
+.\permuted\x131.txt
+
+
+Parsed.
+
+
+
+.\x131.txt
+
+
+Parsed.
+
+
+
+.\permuted\x132.txt
+
+
+Parsed.
+
+
+
+.\x132.txt
+
+
+Parsed.
+
+
+
+.\permuted\x133.txt
+
+
+Parsed.
+
+
+
+.\x133.txt
+
+
+Parsed.
+
+
+
+.\permuted\x135.txt
+
+
+Parsed.
+
+
+
+.\x135.txt
+
+
+Parsed.
+
+
+
+.\permuted\x137.txt
+
+
+Parsed.
+
+
+
+.\x137.txt
+
+
+Parsed.
+
+
+
+.\permuted\x138.txt
+
+
+Parsed.
+
+
+
+.\x138.txt
+
+
+Parsed.
+
+
+
+.\permuted\x139.txt
+
+
+Parsed.
+
+
+
+.\x139.txt
+
+
+Parsed.
+
+
+
+.\permuted\x140.txt
+
+
+Parsed.
+
+
+
+.\x140.txt
+
+
+Parsed.
+
+
+
+.\permuted\x143.txt
+
+
+Parsed.
+
+
+
+.\x143.txt
+
+
+Parsed.
+
+
+
+.\permuted\x145.txt
+
+
+Parsed.
+
+
+
+.\x145.txt
+
+
+Parsed.
+
+
+
+.\permuted\x146.txt
+
+
+Parsed.
+
+
+
+.\x146.txt
+
+
+Parsed.
+
+
+
+.\permuted\x147.txt
+
+
+Parsed.
+
+
+
+.\x147.txt
+
+
+Parsed.
+
+
+
+.\permuted\x148.txt
+
+
+Parsed.
+
+
+
+.\x148.txt
+
+
+Parsed.
+
+
+
+.\permuted\x149.txt
+
+
+Parsed.
+
+
+
+.\x149.txt
+
+
+Parsed.
+
+
+
+.\permuted\x150.txt
+
+
+Parsed.
+
+
+
+.\x150.txt
+
+
+Parsed.
+
+
+
+.\permuted\x151.txt
+
+
+Parsed.
+
+
+
+.\x151.txt
+
+
+Parsed.
+
+
+
+.\permuted\x152.txt
+
+
+Parsed.
+
+
+
+.\x152.txt
+
+
+Parsed.
+
+
+
+.\permuted\x153.txt
+
+
+Parsed.
+
+
+
+.\x153.txt
+
+
+Parsed.
+
+
+
+.\permuted\x154.txt
+
+
+Parsed.
+
+
+
+.\x154.txt
+
+
+Parsed.
+
+
+
+.\permuted\x155.txt
+
+
+Parsed.
+
+
+
+.\x155.txt
+
+
+Parsed.
+
+
+
+.\permuted\x156.txt
+
+
+Parsed.
+
+
+
+.\x156.txt
+
+
+Parsed.
+
+
+
+.\permuted\x157.txt
+
+
+Parsed.
+
+
+
+.\x157.txt
+
+
+Parsed.
+
+
+
+.\permuted\x158.txt
+
+
+Parsed.
+
+
+
+.\x158.txt
+
+
+Parsed.
+
+
+
+.\permuted\x159.txt
+
+
+Parsed.
+
+
+
+.\x159.txt
 
 
 Parsed.

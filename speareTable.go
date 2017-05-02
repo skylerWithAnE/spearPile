@@ -62,9 +62,9 @@ func compareConflict(a, b []string) bool {
 
 // BuildTable Build That Table!! MAKE SHAKESPEARE PARSE AGAIN!
 func BuildTable() /*map[string]map[string][]string*/ {
-	f, err := os.Create("parseTableLog")
-	Check(err)
-	w := bufio.NewWriter(f)
+	// f, err := os.Create("parseTableLog")
+	// Check(err)
+	// w := bufio.NewWriter(f)
 
 	for _, ntk := range NonTerminalSymbolList {
 		//iterate over the ntks in order
@@ -80,15 +80,15 @@ func BuildTable() /*map[string]map[string][]string*/ {
 				if present {
 					// fmt.Println("CONFLICT at ParseTable[", ntk, "][", symbol, "]")
 					// if !compareConflict(ParseTable[ntk][symbol], splitProd) {
-						w.WriteString("CONFLICT at ParseTable[" + ntk + "][" + symbol + "]=")
-						for _, s := range ParseTable[ntk][symbol] {
-							w.WriteString(s + " ")
-						}
-						w.WriteString("..incoming: ")
-						for _, s := range splitProd {
-							w.WriteString(s + " ")
-						}
-						w.WriteRune('\n')
+					// w.WriteString("CONFLICT at ParseTable[" + ntk + "][" + symbol + "]=")
+					// for _, s := range ParseTable[ntk][symbol] {
+					// 	w.WriteString(s + " ")
+					// }
+					// w.WriteString("..incoming: ")
+					// for _, s := range splitProd {
+					// 	w.WriteString(s + " ")
+					// }
+					// w.WriteRune('\n')
 					// }
 				} else {
 					ParseTable[ntk][symbol] = splitProd
@@ -99,16 +99,16 @@ func BuildTable() /*map[string]map[string][]string*/ {
 				for _, symbol := range FollowMap[ntk] {
 					_, present := ParseTable[ntk][symbol]
 					if present {
-						// if !compareConflict(ParseTable[ntk][symbol], splitProd) {
-							w.WriteString("CONFLICT(2) at ParseTable[" + ntk + "][" + symbol + "]=")
-							for _, s := range ParseTable[ntk][symbol] {
-								w.WriteString(s + " ")
-							}
-							w.WriteString("..incoming: ")
-							for _, s := range splitProd {
-								w.WriteString(s + " ")
-							}
-							w.WriteRune('\n')
+						// // if !compareConflict(ParseTable[ntk][symbol], splitProd) {
+						// w.WriteString("CONFLICT(2) at ParseTable[" + ntk + "][" + symbol + "]=")
+						// for _, s := range ParseTable[ntk][symbol] {
+						// 	w.WriteString(s + " ")
+						// }
+						// w.WriteString("..incoming: ")
+						// for _, s := range splitProd {
+						// 	w.WriteString(s + " ")
+						// }
+						// w.WriteRune('\n')
 						// }
 					} else {
 						ParseTable[ntk][symbol] = splitProd
@@ -118,8 +118,8 @@ func BuildTable() /*map[string]map[string][]string*/ {
 		}
 
 	}
-	w.Flush()
-	f.Close()
+	// w.Flush()
+	// f.Close()
 	// return m
 }
 

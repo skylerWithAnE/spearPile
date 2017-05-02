@@ -68,10 +68,12 @@ func ParseInput(input []Token, fname string) bool {
 	tokenIndex := 0
 	for {
 		// fmt.Print("stack: ")
-		for _, itm := range parseStack.items {
-			fmt.Print(itm.sym, ", ")
+		if Verbose {
+			for _, itm := range parseStack.items {
+				fmt.Print(itm.sym, ", ")
+			}
+			fmt.Println()
 		}
-		fmt.Println()
 		currToken := tokens[0]
 		lookupCode := TableLookUp(peekStack(parseStack), currToken)
 
@@ -107,7 +109,7 @@ func ParseInput(input []Token, fname string) bool {
 				break
 			} else {
 				os.Mkdir("graphs", 0777)
-				rex, err := regexp.Compile("t[\\d]+")
+				rex, err := regexp.Compile("(!?)[a-z][\\d]+")
 				Check(err)
 				ftitle := rex.FindString(fname)
 
@@ -150,11 +152,14 @@ func ParseInput(input []Token, fname string) bool {
 			}
 			treeList = append(treeList, newParent)
 		}
+		if Verbose {
+			fmt.Println()
+		}
 		// fmt.Println("end loop " + peekStack(parseStack))
 	}
 
 	os.Mkdir("graphs", 0777)
-	rex, err := regexp.Compile("t[\\d]+")
+	rex, err := regexp.Compile("(!?)[a-z][\\d]+")
 	Check(err)
 	ftitle := rex.FindString(fname)
 

@@ -1,0 +1,29 @@
+Fourscore and seven years ago.
+
+All The Goths, a variable.
+Shylock, another variable.
+Soothsayer, the adversary.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter All The Goths  and Shylock]
+
+All The Goths: Let us proceed to Act III.
+
+[Exeunt omnes]
+
+Act II: The second act.
+Scene I: No one cares.
+
+[Enter All The Goths and Shylock]
+All The Goths: Open your heart.
+[Exit All The Goths]
+
+Act III: The last act.
+Scene I: Here we go.
+
+[Enter All The Goths and Shylock]
+All The Goths: You are a queen. Open your heart.
+[Exeunt]
+

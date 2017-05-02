@@ -51,7 +51,8 @@ func main() {
 	if len(os.Args) > 1 {
 		fname = os.Args[1]
 	} else {
-		fname = "sdt/t20.txt"
+		fmt.Println("usage: spearePile [fname]")
+		os.Exit(1)
 	}
 	for _, a := range os.Args[2:] {
 		if a == "v" {
@@ -93,7 +94,7 @@ func main() {
 					break
 				}
 				fmt.Println("Failed to tokenize!")
-				return
+				os.Exit(1)
 			}
 
 		} else {

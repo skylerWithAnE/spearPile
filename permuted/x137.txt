@@ -1,0 +1,34 @@
+Fourscore and seven years ago.
+
+All The Goths, a variable which eventually is sixty five.
+Shylock, a new line.
+Claudius, a temporary variable.
+
+Act I: The Play Opens.
+
+Scene I: We Begin.
+
+[Enter All The Goths]
+
+All The Goths: All The Goths, you are a fancy fancy fancy fancy fancy fancy king. You are
+    the sum of yourself and a king. Speak your mind.
+    
+[Enter Shylock and Claudius]
+
+All The Goths: Shylock, You are a fancy fancy fancy queen. You are as good as the sum of 
+    yourself and a fancy queen. Speak your mind. 
+    
+All The Goths: Claudius, open your mind. You are as good as the
+    sum of yourself and a queen. Speak your mind.
+    
+All The Goths: Shylock, speak your mind.
+
+All The Goths: Claudius, Listen to your heart. 
+    You are as good as the sum of yourself and a king.
+    Open your heart.
+
+All The Goths: Shylock, Speak your mind.
+
+
+    
+[Exeunt]

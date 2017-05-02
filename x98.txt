@@ -1,0 +1,31 @@
+Fourscore and seven years ago.
+
+All The Goths, a variable.
+Shylock, another variable.
+
+Act I: The first act.
+Scene I: The first scene.
+
+[Enter All The Goths and Shylock]
+
+All The Goths: You are a toad.
+
+[Exeunt]
+
+Act II: The second act.
+Scene I: The first scene a second time.
+
+[Enter All The Goths and Shylock]
+
+All The Goths: You are a toad.
+
+[Exeunt]
+
+Act I: The first act again.
+Scene I: The first scene again.
+
+[Enter All The Goths and Shylock]
+
+All The Goths: You are a toad.
+
+[Exeunt]
